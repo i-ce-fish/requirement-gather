@@ -1,0 +1,21 @@
+<!--pages/user/login/main.wxml-->
+<view class="container">
+    <view class="card-box  ">
+        <view class="y-font-blod y-font-xl y-line-height-200">登录</view>
+        <view class="button-box y-flex y-vertical-center y-flex-wrap" style="height: {{cardHeight}}">
+
+            <view class="y-col-12">
+                <view class="button-item y-col-12">
+                    <van-button type="primary" plain block bindtap="wxLogin">微信登录</van-button>
+                </view>
+                <view class="button-item y-col-12">
+                    <van-button type="default" plain block bindtap="phoneLogin">手机登录</van-button>
+                </view>
+                <!--                <view class="button-item y-col-12">-->
+                <!--                    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取用户手机号码</button>-->
+                <!--                </view>-->
+
+            </view>
+        </view>
+    </view>
+</view>

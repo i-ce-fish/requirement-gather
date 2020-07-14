@@ -1,0 +1,11 @@
+<view class="scroll-top"
+      style="bottom:{{bottom}}rpx;right:{{right}}rpx"
+      hidden="{{!visible || !toggle}}"
+      catchtap="goTop">
+    <view class="button-box">
+        <van-icon name="arrow-up" size="30rpx" color="#999999"/>
+        <view class="text " style="text-align: center">
+            {{text}}
+        </view>
+    </view>
+</view>

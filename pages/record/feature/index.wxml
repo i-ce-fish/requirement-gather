@@ -1,0 +1,19 @@
+<card>
+    <view wx:for="{{clothes}}" wx:key="index">
+
+        <van-radio-group>
+            <view>
+                {{item.name}}
+            </view>
+            <view class="y-flex y-flex-wrap  ">
+                <view class="y-col-4 y-pt-20" wx:for="{{item.item}}" wx:key="index">
+                    <van-radio>
+                        <view>{{item.name}}</view>
+                        <van-image src="{{item.img}}" width="100rpx" height="100%" fit="widthFix"></van-image>
+                    </van-radio>
+                </view>
+            </view>
+        </van-radio-group>
+    </view>
+
+</card>

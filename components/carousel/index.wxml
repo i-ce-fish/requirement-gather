@@ -1,0 +1,8 @@
+<!--轮播容器需要指定高度-->
+<swiper style="height:{{height}}" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgs}}" wx:key="index">
+        <swiper-item>
+            <van-image width="{{width}}" height="{{height}}" fit="{{fit}}" src="{{item.url}}"/>
+        </swiper-item>
+    </block>
+</swiper>

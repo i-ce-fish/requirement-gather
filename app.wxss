@@ -1,0 +1,453 @@
+/*全局样式*/
+/*todo  tui- rename y-*/
+page {
+    background: #eee;
+    font-size: 28rpx;
+    color: #1b1b1b;
+}
+
+
+/*字体大小 默认为28rpx（14px）*/
+.y-font-xs {
+    font-size: 24rpx;
+}
+
+.y-font-s {
+    font-size: 26rpx;
+}
+
+.y-font-m {
+    font-size: 28rpx;
+}
+
+.y-font-l {
+    font-size: 30rpx;
+}
+
+.y-font-xl {
+    font-size: 32rpx;
+}
+
+.y-font-xxl {
+    font-size: 34rpx;
+}
+
+.y-font-blod {
+    font-weight: bold;
+}
+
+/*只显示2行，溢出显示省略号*/
+.y-ellipsis-2 {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    align-content: center;
+}
+
+
+/* 合并空白，自动换行*/
+/*注意不要换行写，否则会换行*/
+.y-wrap {
+    white-space: pre-line
+}
+
+/*边界换行*/
+.y-word-wrap {
+    word-wrap: break-word
+}
+
+/*行高*/
+.y-line-height-200 {
+    line-height: 200%;
+}
+
+.y-line-height-180 {
+    line-height: 180%;
+}
+
+.y-line-height-150 {
+
+    line-height: 150%;
+}
+
+.y-line-height-100 {
+    line-height: 100%;
+}
+
+
+.y-h-w-100 {
+    height: 100%;
+    width: 100%;
+}
+
+/*布局*/
+.container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/*怪异盒子模型*/
+.y-box {
+    box-sizing: border-box;
+}
+
+/*无边距*/
+.y-padding-none {
+    padding: 0 !important;
+}
+
+/*全部边距*/
+.y-padding-all {
+    padding: 30rpx;
+}
+
+/*上下边距*/
+.y-padding-tb {
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+}
+
+/*左右边距*/
+.y-padding-lr {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+/*右边距*/
+.y-padding-r {
+    padding-right: 30rpx;
+}
+
+/*left*/
+.y-padding-l {
+    padding-left: 30rpx;
+}
+
+
+/*top*/
+.y-padding-t {
+    padding-top: 30rpx;
+}
+
+/*bottom*/
+.y-padding-b {
+    padding-bottom: 30rpx;
+}
+
+.y-pt-24 {
+    padding-top: 24rpx;
+}
+
+.y-p-20 {
+    padding: 20rpx;
+}
+
+.y-pr-20 {
+    padding-right: 20rpx;
+}
+
+.y-pb-20 {
+    padding-bottom: 20rpx;
+}
+
+.y-pt-20 {
+    padding-top: 20rpx;
+}
+
+.y-pl-20 {
+    padding-left: 20rpx;
+}
+
+
+.y-pt-18 {
+    padding-top: 18rpx;
+}
+
+.y-pb-18 {
+    padding-bottom: 18rpx;
+}
+
+.y-mb-20 {
+    margin-bottom: 20rpx;
+}
+
+.y-mt-20 {
+    margin-top: 20rpx;
+}
+
+/* 颜色统一 */
+
+/*主动设置背景色*/
+.y-bgc {
+    background-color: #eee;
+}
+
+.y-bgc-white {
+    background-color: white;
+}
+
+/*字体颜色*/
+/*超链接颜色*/
+
+.y-color-href {
+    color: #5677fc;
+}
+
+/*颜色*/
+.y-color-black {
+    color: #1b1b1b;
+
+}
+
+/*次要文字颜色*/
+.y-color-gray {
+    color: #7d7d7d;
+
+}
+
+/*边框*/
+.y-border-b {
+    border-bottom: 1rpx solid #dadada;
+}
+
+
+/*在子view元素之间加上边框，除了最后一个子元素view*/
+.y-border-between > view:not(:last-child) {
+    border-bottom: 1px solid #dadada;
+}
+
+
+.y-border-lr {
+    border-right: 1rpx solid #dadada;
+    border-left: 1rpx solid #dadada;
+}
+
+
+.y-border-tb {
+    border-top: 1rpx solid #dadada;
+    border-bottom: 1rpx solid #dadada;
+}
+
+.y-border-b {
+    border-bottom: 1rpx solid #dadada;
+}
+
+.y-border-t {
+    border-top: 1rpx solid #dadada;
+
+}
+
+.y-border-all {
+    border: 1rpx solid #dadada;
+}
+
+
+/*阴影*/
+/*底部阴影*/
+.y-shadow-b {
+    box-shadow: 0 2rpx 4rpx 0 rgba(0, 0, 0, 0.16);
+}
+
+/*顶部阴影*/
+.y-shadow-t {
+    box-shadow: 0 -2rpx 4rpx 0 rgba(0, 0, 0, 0.16);
+}
+
+/* 用于未付款金额等的显示 */
+.y-color-red {
+    color: #ff0000;
+}
+
+/* 用于已付款金额等的显示 */
+.y-color-greed {
+    color: #00aa00;
+}
+
+.y-color-white {
+    color: #ffffff;
+}
+
+
+/*表单样式*/
+.y-form-item {
+    display: flex;
+    width: 100%;
+}
+
+.y-form-item .label {
+    width: 25%;
+    padding-right: 20rpx;
+}
+
+
+/*其他字体效果*/
+/*下划线*/
+.y-underline {
+    text-decoration: underline;
+
+}
+
+/*thor ui 部分样式*/
+.y-flex-wrap {
+    flex-wrap: wrap;
+}
+
+
+/* flex start*/
+
+.y-flex {
+    /*display: -webkit-flex;*/
+    display: flex;
+}
+
+.y-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.y-flex-1 {
+    flex: 1;
+}
+
+.y-align-center {
+    justify-content: center;
+}
+
+.y-align-left {
+    justify-content: flex-start !important;
+}
+
+.y-align-right {
+    justify-content: flex-end !important;
+}
+
+.y-align-between {
+    justify-content: space-between !important;
+}
+
+.y-align-around {
+    justify-content: space-around !important;
+}
+
+.y-vertical-center {
+    align-items: center;
+}
+
+.y-vertical-top {
+    align-items: flex-start;
+}
+
+.y-vertical-bottom {
+    align-items: flex-end;
+}
+
+.y-line-feed {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* flex end*/
+.y-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.y-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.y-ellipsis-2 {
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal !important;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.y-center {
+    text-align: center;
+}
+
+.y-right {
+    text-align: right;
+}
+
+.y-opcity {
+    opacity: 0.5;
+}
+
+.y-scale-small {
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.y-height-full {
+    height: 100%;
+}
+
+.y-width-full {
+    width: 100%;
+}
+
+
+.y-col-12 {
+    width: 100%;
+}
+
+.y-col-11 {
+    width: 91.66666667%;
+}
+
+.y-col-10 {
+    width: 83.33333333%;
+}
+
+.y-col-9 {
+    width: 75%;
+}
+
+.y-col-8 {
+    width: 66.66666667%;
+}
+
+.y-col-7 {
+    width: 58.33333333%;
+}
+
+.y-col-6 {
+    width: 50%;
+}
+
+.y-col-5 {
+    width: 41.66666667%;
+}
+
+.y-col-4 {
+    width: 33.33333333%;
+}
+
+.y-col-3 {
+    width: 25%;
+}
+
+.y-col-2 {
+    width: 16.66666667%;
+}
+
+.y-col-1 {
+    width: 8.33333333%;
+}
+

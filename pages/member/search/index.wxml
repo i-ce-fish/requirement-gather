@@ -1,0 +1,65 @@
+<view>
+    <user-info-bar></user-info-bar>
+    <card>
+        <view>
+            第一步：导购出示，顾客扫码
+        </view>
+
+        <view class="y-center y-p-20">
+            <van-image width="375rpx" height="100%" fit="widthFix"
+                       src="/static/img/qrcode.jpg"></van-image>
+        </view>
+        <view class="y-flex y-align-around">
+            <van-button>好友待加</van-button>
+            <van-button type="primary">好友确认</van-button>
+        </view>
+    </card>
+    <card>
+        <van-search placeholder="请输入顾客手机号" use-right-icon-slot>
+            <view slot="right-icon">
+                <view>确认</view>
+            </view>
+        </van-search>
+        <view class="y-line-height-180">
+            <view>
+                会员：杨先生
+            </view>
+            <view>
+                电话：13611605568
+            </view>
+            <view>
+                生日：1988/08/08
+            </view>
+            <view>
+                会员等级：三级
+            </view>
+            <view>
+                积分：257127分
+            </view>
+            <view>
+                卡券：31张
+            </view>
+            <view>
+                储值：9999元
+            </view>
+            <view>
+                共23单，金额3587元，平均折率6.5折
+            </view>
+            <view>
+                接待导购：王晓燕、张晓燕、李晓燕
+            </view>
+            <view>
+                <van-button>查看消费清单</van-button>
+            </view>
+        </view>
+        <van-divider></van-divider>
+        <view class="y-line-height-180">
+            <view>分享人：王先生</view>
+            <view>手机：13656775558</view>
+            <view>积分：257127分</view>
+            <view>卡券：31张</view>
+            <view>会员等级：五级</view>
+            <view>分享券：2张</view>
+        </view>
+    </card>
+</view>

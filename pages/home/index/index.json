@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "门店需求采集",
+  "usingComponents": {
+    "card": "/components/card/index",
+    "user-info-bar": "/components/user-info-bar/index",
+    "big-card": "/components/big-card/index",
+    "footer": "/components/footer/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-icon": "@vant/weapp/icon",
+    "van-button": "@vant/weapp/button"
+  }
+}

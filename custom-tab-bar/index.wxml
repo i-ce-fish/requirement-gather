@@ -1,0 +1,31 @@
+<!--todo 修改tabbar高度时，必须同时修改分类菜单计算公式里相应的tabbar高度-->
+<van-tabbar
+        active="{{ activeTab }}"
+        bind:change="onChange"
+        active-color="#ff4444"
+>
+
+    <van-tabbar-item>我的客
+        <van-icon slot="icon" name="wap-home-o"/>
+        <van-icon slot="icon-active" name="wap-home"/>
+    </van-tabbar-item>
+
+    <van-tabbar-item>采集
+        <van-icon slot="icon" name="bag-o"/>
+        <van-icon slot="icon-active" name="bag"/>
+    </van-tabbar-item>
+
+    <van-tabbar-item>整理
+        <!--        <van-icon slot="icon" name="cart-o" info="{{$state.cart.totalNum}}"/>-->
+        <!--        <van-icon slot="icon-active" name="cart" info="{{$state.cart.totalNum}}"/>-->
+        <van-icon slot="icon" name="cart-o"/>
+        <van-icon slot="icon-active" name="cart"/>
+    </van-tabbar-item>
+
+    <van-tabbar-item>查找
+        <van-icon slot="icon" name="manager-o"/>
+        <van-icon slot="icon-active" name="manager"/>
+    </van-tabbar-item>
+
+
+</van-tabbar>

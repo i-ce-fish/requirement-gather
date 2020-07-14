@@ -1,0 +1,32 @@
+<view class="container  ">
+    <user-info-bar></user-info-bar>
+    <card>
+        <van-tabs active="0" bind:change="tapTime">
+            <van-tab name="0" title="今日需求">内容 1</van-tab>
+            <van-tab title="半周需求">内容 2</van-tab>
+            <van-tab title="本周需求">内容 3</van-tab>
+            <van-tab title="十天需求">内容 4</van-tab>
+        </van-tabs>
+    </card>
+    <card>
+        <van-tabs active="0" bind:change="tapLine">
+            <van-tab name="0" title="顾客来店自诉">内容 1</van-tab>
+            <van-tab title="顾客线上诉求">内容 2</van-tab>
+        </van-tabs>
+    </card>
+    <card>
+        <van-tabs active="0" bind:change="tapAdv">
+            <van-tab name="0" title="今日建议">今日建议 1</van-tab>
+            <van-tab title="卖场调整">卖场调整 2</van-tab>
+            <van-tab title="销售建议">销售建议 3</van-tab>
+            <van-tab title="货品建议">货品建议</van-tab>
+        </van-tabs>
+    </card>
+
+    <card>
+        <van-button bindtap="go" data-url="/pages/member/search/index">会员查询</van-button>
+        <van-button bindtap="go" data-url="/pages/member/register/index">会员注册</van-button>
+        <van-button bindtap="go" data-url="/pages/record/customer-record/index">顾客记录</van-button>
+        <van-button bindtap="go" data-url="/pages/record/feature/index">顾客特征目测</van-button>
+    </card>
+</view>

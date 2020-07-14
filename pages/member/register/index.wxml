@@ -1,0 +1,38 @@
+<view>
+    <user-info-bar></user-info-bar>
+    <card>
+        <view>
+            第一步：
+        </view>
+        <view>
+            导购出示，顾客扫码
+        </view>
+
+        <view class="y-center y-p-20">
+            <van-image width="375rpx" height="100%" fit="widthFix"
+                       src="/static/img/qrcode.jpg"></van-image>
+        </view>
+        <view class="y-flex y-align-around">
+            <van-button>好友待加</van-button>
+            <van-button type="primary">好友确认</van-button>
+        </view>
+    </card>
+    <card>
+        <view>第二步：</view>
+        <view>顾客向门店微信好友发送手机号码，门店微信回复，告知顾客门店联系手机</view>
+        <view>门店微信回复，告知顾客门店联系手机</view>
+        <view>并发送门店小程序商城链接。</view>
+    </card>
+    <card>
+        <view>第三步：</view>
+        <view>导购引导顾客在小程序商城填写注册资料</view>
+        <view>顾客手机号</view>
+        <view>顾客性别</view>
+        <view>顾客年龄</view>
+        <view>顾客身型数据</view>
+        <view>顾客收货地址</view>
+        <view>顾客职业</view>
+        <view>顾客着装喜好</view>
+
+    </card>
+</view>

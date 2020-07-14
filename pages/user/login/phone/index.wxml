@@ -1,0 +1,31 @@
+<!--pages/user/login/main.wxml-->
+<view class="container">
+    <tui-list-view title="登录">
+        <tui-list-cell>
+            <view class="y-line-height-150 y-col-12">
+                <view class="y-color-gray">
+                    账号
+                </view>
+                <view>
+                    <van-field
+                            custom-style="padding:10rpx 0;"
+                            value="{{ userForm.username }}"
+                    ></van-field>
+                </view>
+                <view class="y-color-gray">
+                    密码
+                </view>
+                <view>
+                    <van-field
+                            custom-style="padding:10rpx 0;"
+                            value="{{userForm.password}}"></van-field>
+                </view>
+            </view>
+        </tui-list-cell>
+        <view class="y-flex y-align-center">
+            <van-button type="primary"  bind:click="login">登录</van-button>
+        </view>
+    </tui-list-view>
+
+
+</view>

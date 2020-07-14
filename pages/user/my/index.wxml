@@ -1,0 +1,59 @@
+<view class="container">
+  <view class="head-box y-bgc-white y-padding-lr y-flex">
+    <view class="avatar  y-col-4 y-flex y-vertical-center">
+      <van-image class="" round width="150rpx" height="150rpx" fit="fill" src="{{imgs[1]}}" />
+    </view>
+    <view class="info-box y-col-8 y-color-white">
+      <view class="">杨晴文-上海</view>
+      <view class="">二级会员</view>
+      <view class="">新品88折</view>
+    </view>
+  </view>
+  <view class="grid-box">
+    <view class="my-box">
+      <van-grid column-num="3">
+        <van-grid-item icon="cash-on-deliver" bindtap="go" data-url="/pages/my/copon/index" text="卡券520" />
+        <!-- <van-grid-item icon="cash-on-deliver" bindtap="go('http://cdb99/com')" text="红包5张/卡券520"/> -->
+        <van-grid-item icon="balance-o" bindtap="go" data-url="/pages/my/money/index" text="余额 1788.00" />
+        <van-grid-item icon="gift-o" bindtap="go" data-url="/pages/my/integral/index" text="积分 500" />
+        <van-grid-item icon="friends-o" bindtap="go" data-url="/pages/my/friend/index" text="亲友圈 58人" />
+        <van-grid-item icon="manager-o" text="我的专属顾问" />
+        <van-grid-item icon="qr" bindtap="go" data-url="/pages/my/qrcode/index"  text="我的会员码" />
+      </van-grid>
+    </view>
+    <view class="my-box">
+      <tui-list-view title="我是时尚达人">
+        <van-grid column-num="3">
+          <van-grid-item icon="contact" bindtap="go" data-url="/pages/my/info/index"   text="完善我的基本资料" />
+          <van-grid-item icon="photo-o" bindtap="go" data-url="/pages/my/wear-data/list/index"  text="亲友的穿衣数据" />
+          <van-grid-item icon="photo-o" text="我的货品建议" />
+          <van-grid-item icon="photo-o" text="我的穿搭美图" />
+          <van-grid-item icon="photo-o" text="我当模特" />
+          <van-grid-item icon="photo-o" text="我的定制" />
+        </van-grid>
+      </tui-list-view>
+    </view>
+    <view class="my-box">
+      <tui-list-view title="我的购物车">
+        <van-grid column-num="3">
+          <van-grid-item icon="completed" bindtap="go" data-url="/pages/shopping/order/paid-order/index"  text="已买好的" />
+          <van-grid-item icon="balance-pay" bindtap="go" data-url="/pages/shopping/order/paid-order/index" text="未付款的" />
+          <van-grid-item icon="like-o" text="我想要的" />
+        </van-grid>
+      </tui-list-view>
+    </view>
+    <view class="my-box">
+      <tui-list-view title="温馨提示">
+        <van-grid column-num="3">
+          <van-grid-item icon="photo-o" bindtap="go" data-url="/pages/rule/integral/index" text="积分和折扣规则" />
+          <van-grid-item icon="photo-o" text="分销奖励政策" />
+          <van-grid-item icon="photo-o" text="会员退换货规定" />
+          <van-grid-item icon="photo-o" text="洗涤告示" />
+          <van-grid-item icon="photo-o" text="会员权益" />
+          <van-grid-item icon="photo-o" bindtap="go" data-url="/pages/test/index"  text="测试" />
+        </van-grid>
+      </tui-list-view>
+    </view>
+  </view>
+  <footer isTabbar/>
+</view>

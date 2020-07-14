@@ -1,0 +1,2 @@
+<van-divider contentPosition="center" custom-style="{{isTabbar?'margin-bottom:120rpx':''}}">CopyRight@云想提供技术支持
+</van-divider>

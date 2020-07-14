@@ -1,0 +1,41 @@
+.scroll-top {
+    width: 76rpx;
+    height: 76rpx;
+    background: rgba(255, 255, 255, .98);
+    border: 1rpx solid #BCBCBC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border-radius: 50%;*/
+    position: fixed;
+    /*在popup弹窗（100）之下*/
+    /*搜索框遮罩99*/
+    z-index: 98;
+    opacity: 0.9;
+    box-shadow: 0 0 4rpx 0 #ccc;
+    /* -webkit-transform: translateZ(0);
+    transform: translateZ(0); */
+    /* -webkit-overflow-scroll: touch; */
+}
+
+.button-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+button::after{
+    border: 0 !important;
+
+}
+.text-btn {
+    /*margin: 0!important;*/
+    /*width: 100%!important;*/
+    /*height: 100%!important;*/
+    padding: 0 !important;
+    background-color:transparent;
+    border: not specified!important;
+    color: #999999;
+    font-size: 24rpx!important;
+    line-height: 1!important;
+}

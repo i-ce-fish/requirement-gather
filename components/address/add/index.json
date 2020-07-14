@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "big-card": "/components/big-card/index",
+    "y-input": "/components/y-input/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-area": "@vant/weapp/area/index"
+  }
+}

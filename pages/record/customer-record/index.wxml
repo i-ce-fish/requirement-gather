@@ -1,0 +1,32 @@
+<view>
+    <user-info-bar></user-info-bar>
+    <view class="y-line-height-200">
+        <!--        顾客缺点-->
+        <card>
+            <van-collapse value="{{actShortComing}}" bind:change="tapShortComing">
+                <van-collapse-item title="{{shortcoming.title}}" name="0">
+                    <van-radio-group>
+                        <view class="y-flex y-flex-wrap  ">
+                            <view class="y-col-4 y-pt-20" wx:for="{{shortcoming.item}}" wx:key="index">
+                                <van-radio>{{item}}</van-radio>
+                            </view>
+                        </view>
+                    </van-radio-group>
+                </van-collapse-item>
+            </van-collapse>
+        </card>
+
+        <!--顾客信息-->
+        <card wx:for="{{recordForm}}" wx:key="index">
+            <van-radio-group>
+                <view class="y-font-xxl ">{{item.title}}</view>
+                <view class="y-flex y-flex-wrap  ">
+                    <view class="y-col-4 y-pt-20" wx:for="{{item.item}}" wx:key="index">
+                        <van-radio>{{item}}</van-radio>
+                    </view>
+                </view>
+            </van-radio-group>
+        </card>
+
+    </view>
+</view>

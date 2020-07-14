@@ -1,0 +1,12 @@
+<view class="scroll-top"
+      style="bottom:{{bottom}}rpx;right:{{right}}rpx"
+>
+    <view class="button-box">
+        <button size="mini" open-type="{{openType}}" hover-class="none" class="text-btn">
+            <view>
+                <van-icon wx:if="{{icon}}" name="{{icon}}" size="30rpx" color="#999999"/>
+            </view>
+            <view style="text-align: center">{{text}}</view>
+        </button>
+    </view>
+</view>

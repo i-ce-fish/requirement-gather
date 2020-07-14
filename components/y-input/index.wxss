@@ -1,0 +1,5 @@
+/* components/test.wxss */
+.y-input {
+    color: #7d7d7d;
+
+}

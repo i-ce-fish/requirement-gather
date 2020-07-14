@@ -1,0 +1,7 @@
+<view class="title" wx:if="{{title}}">{{title}}</view>
+
+<view class="card-box">
+    <slot>
+
+    </slot>
+</view>

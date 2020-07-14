@@ -1,0 +1,13 @@
+<view class="y-input">
+    {{label}}
+</view>
+<view  style="border-bottom: 1px solid #ababab" >
+    <van-field custom-style="padding:10rpx 0;"
+               value="{{ value }}"
+               placeholder="{{placeholder}}"
+               border="{{ false }}"
+               bind:blur="onChange"
+               right-icon="{{rightIcon}}"
+    >
+    </van-field>
+</view>

@@ -1,0 +1,7 @@
+<van-notice-bar
+        scrollable="{{false}}"
+        left-icon="contact"
+        text="A01892U0201时尚顾问：杨圣浩"
+>
+    <text slot="right-icon">13806699900</text>
+</van-notice-bar>

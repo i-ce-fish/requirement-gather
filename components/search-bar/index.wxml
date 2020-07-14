@@ -1,0 +1,50 @@
+<view class="search-bar-box">
+    <view class="box {{show?'':'shadow' }} y-flex y-vertical-center ">
+        <view class="y-padding-l" wx:if="{{scanable}}" bindtap="tapScan">
+            <van-icon name="scan" size="40rpx"></van-icon>
+        </view>
+        <view class="sb-box y-col-11">
+            <van-field
+                    value="{{ keyword }}"
+                    placeholder="{{placeholder}}"
+                    border="{{ false }}"
+                    clearable="{{true}}"
+                    right-icon="search"
+                    bindtap="onTap"
+                    custom-style="padding:10rpx"
+            />
+        </view>
+    </view>
+
+    <van-overlay wx:if="{{mask}}" show="{{ show }}" bind:click="onTap" z-index="10">
+
+        <view class="overlay-box">
+
+            <view class="dropdown-box">
+
+                <view class="recent-box">
+                    <view class="title-box">
+                        <view class="title">最近搜索</view>
+                        <view>删除全部</view>
+                    </view>
+                    <view class="content-box">
+                        <view wx:for="{{hot_search}}" wx:key="index" class="item" bindtap="search">{{item}}</view>
+                    </view>
+                </view>
+
+                <van-divider custom-style="padding:0;margin:0"/>
+
+                <view class="hot-box">
+                    <view class="title">热门搜索</view>
+
+                    <view class="content-box">
+                        <view wx:for="{{recent_search}}" wx:key="index" class="item">{{item}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+    </van-overlay>
+
+
+</view>

@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/home/index/index",
+    "pages/record/customer-record/index",
+
+    "pages/member/search/index",
+
+    "pages/user/my/index",
+    "pages/user/login/index/index",
+    "pages/user/login/phone/index",
+    "pages/record/feature/index"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于需求采集"
+    }
+  },
+  "tabBar": {
+    "custom": true,
+    "selectedColor": "#ff4444",
+    "list": [
+      {
+        "pagePath": "pages/home/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/user/my/index",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/user/my/index",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/user/my/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json",
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ff4444",
+    "navigationBarTitleText": "顾客需求采集",
+    "navigationBarTextStyle": "white"
+  },
+  "plugins": {
+  }
+}
+
