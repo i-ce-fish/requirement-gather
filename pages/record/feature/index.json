@@ -3,7 +3,8 @@
     "van-radio": "@vant/weapp/radio/index",
     "van-radio-group": "@vant/weapp/radio-group/index",
     "card": "/components/card/index",
-    "van-image": "@vant/weapp/image"
+    "van-image": "@vant/weapp/image",
+    "van-icon": "@vant/weapp/icon/index"
 
   }
 }

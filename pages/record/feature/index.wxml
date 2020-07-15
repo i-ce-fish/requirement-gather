@@ -1,19 +1,84 @@
-<card>
-    <view wx:for="{{clothes}}" wx:key="index">
+<view>
+    <card wx:for="{{clothes}}" wx:key="index" class="y-padding-t">
 
-        <van-radio-group>
-            <view>
-                {{item.name}}
-            </view>
-            <view class="y-flex y-flex-wrap  ">
-                <view class="y-col-4 y-pt-20" wx:for="{{item.item}}" wx:key="index">
-                    <van-radio>
-                        <view>{{item.name}}</view>
-                        <van-image src="{{item.img}}" width="100rpx" height="100%" fit="widthFix"></van-image>
-                    </van-radio>
+        <van-radio-group value="{{ item.checked }}" bind:change="tapRadio" data-index="{{index}}">
+            <view class="y-flex y-align-between">
+                <view class="y-font-blod y-font-l">
+                    <text class="y-padding-r">{{item.name}}</text>{{item.item[item.checked].name}}
+                </view>
+                <view>
+                    <view class="y-color-gray" wx:if="{{item.type==='showPart' && item.item.length>itemNum}}"
+                          bindtap="showCollapse"
+                          data-index="{{index}}">
+                        查看更多
+                        <van-icon name="arrow-up"
+                        />
+                    </view>
+                    <view class="y-color-gray" wx:if="{{item.type==='show' && item.item.length>itemNum}}"
+                          bindtap="showPartCollapse"
+                          data-index="{{index}}">
+                        查看更多
+                        <van-icon name="arrow-down"/>
+                    </view>
+                    <view class="y-color-gray" wx:if="{{item.type==='hide'}}" bindtap="showCollapse"
+                          data-index="{{index}}">
+                        查看更多
+                        <van-icon name="arrow-up"/>
+                    </view>
+
                 </view>
             </view>
-        </van-radio-group>
-    </view>
 
-</card>
+
+            <!--            显示部分-->
+            <view class="y-flex y-flex-wrap  y-center "
+                  wx:if="{{item.type==='showPart'}}">
+                <view class="y-col-4 y-pt-20" wx:for="{{itemNum}}" wx:for-item="item_" wx:for-index="index">
+                    <view>
+                        <van-image src="{{item.item[item_].img}}" width="150rpx" height="150rpx"
+                                   fit="contain"></van-image>
+                    </view>
+                    <view class="y-pt-20 y-flex y-align-center ">
+                        <van-radio name="{{index}}">
+                            <view>{{item.item[item_].name}}</view>
+                        </van-radio>
+                    </view>
+                </view>
+            </view>
+
+
+            <!--            显示所有-->
+            <view class="y-flex y-flex-wrap  y-center "
+                  wx:if="{{item.type==='show'}}">
+                <view class="y-col-4 y-pt-20" wx:for="{{item.item}}" wx:key="index">
+                    <view>
+                        <van-image src="{{item.img}}" width="150rpx" height="150rpx" fit="contain"></van-image>
+                    </view>
+                    <view class="y-pt-20 y-flex y-align-center ">
+                        <van-radio name="{{index}}">
+                            <view>{{item.name}}</view>
+                        </van-radio>
+                    </view>
+                </view>
+            </view>
+
+            <!--            隐藏-->
+            <view class="y-flex y-flex-wrap  y-center "
+                  wx:if="{{item.type==='hide'}}">
+                <view class="y-col-4 y-pt-20" wx:for="{{0}}" wx:key="index">
+                    <!--                    <view>-->
+                    <!--                        <van-image src="{{item.img}}" width="150rpx" height="150rpx" fit="contain"></van-image>-->
+                    <!--                    </view>-->
+                    <!--                    <view class="y-pt-20 y-flex y-align-center ">-->
+                    <!--                        <van-radio name="{{index}}">-->
+                    <!--                            <view>{{item.name}}</view>-->
+                    <!--                        </van-radio>-->
+                    <!--                    </view>-->
+                </view>
+            </view>
+
+
+        </van-radio-group>
+    </card>
+
+</view>
