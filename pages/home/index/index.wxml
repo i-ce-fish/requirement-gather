@@ -28,5 +28,6 @@
         <van-button bindtap="go" data-url="/pages/member/register/index">会员注册</van-button>
         <van-button bindtap="go" data-url="/pages/record/customer-record/index">顾客记录</van-button>
         <van-button bindtap="go" data-url="/pages/record/feature/index">顾客特征目测</van-button>
+        <van-button bindtap="go" data-url="/pages/admin/employee/index">员工入职登记</van-button>
     </card>
 </view>

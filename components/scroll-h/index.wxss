@@ -1,0 +1,8 @@
+.scroll-view {
+    white-space: nowrap;
+}
+
+/*插槽的子代*/
+.scroll-view-item > view {
+    display: inline-block;
+}

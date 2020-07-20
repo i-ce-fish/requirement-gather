@@ -1,0 +1,371 @@
+<view>
+    <user-info-bar></user-info-bar>
+    <card padding="0">
+        <van-collapse value="{{activeColl}}" data-prop="activeColl" bindchange="setDetail">
+            <van-collapse-item title="美邦丽水店员工入职登记表" name="1">
+                <view>
+                    <y-input-row label="姓名" placeholder="请输入真实姓名"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="手机号码" placeholder="请输入手机号码"
+                                 value="{{userForm.mobile}}"
+                                 data-prop="userForm.mobile"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="微信号" placeholder="请输入微信号"
+                                 value="{{userForm.wxid}}"
+                                 data-prop="userForm.wxid"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="出生日期" placeholder="请输入出生日期"
+                                 value="{{userForm.birthDate}}"
+                                 data-prop="userForm.birthDate"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="身份证号" placeholder="请输入身份证号"
+                                 value="{{userForm.IDNumber}}"
+                                 data-prop="userForm.IDNumber"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="现住址" placeholder="请输入现住址"
+                                 value="{{userForm.curAddress}}"
+                                 data-prop="userForm.curAddress"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="身份证住址" placeholder="请输入身份证住址"
+                                 value="{{userForm.IDCardAddress}}"
+                                 data-prop="userForm.IDCardAddress"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="入职时间" placeholder="请输入入职时间"
+                                 value="{{userForm.entryTime}}"
+                                 data-prop="userForm.entryTime"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="紧急联系人" placeholder="请输入紧急联系人"
+                                 value="{{userForm.emergencyContact}}"
+                                 data-prop="userForm.emergencyContact"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="紧急联系人电话" placeholder="请输入紧急联系人电话"
+                                 value="{{userForm.emergencyMobile}}"
+                                 data-prop="userForm.emergencyMobile"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="最高学历" placeholder="请输入最高学历"
+                                 value="{{userForm.edu}}"
+                                 data-prop="userForm.edu"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="身高" placeholder="请输入身高"
+                                 value="{{userForm.height}}"
+                                 data-prop="userForm.height"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="体重" placeholder="请输入体重"
+                                 value="{{userForm.weight}}"
+                                 data-prop="userForm.weight"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="胸围" placeholder="请输入胸围"
+                                 value="{{userForm.bust}}"
+                                 data-prop="userForm.bust"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="腰围" placeholder="请输入腰围"
+                                 value="{{userForm.waist}}"
+                                 data-prop="userForm.waist"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="臀围" placeholder="请输入臀围"
+                                 value="{{userForm.hips}}"
+                                 data-prop="userForm.hips"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20 ">
+                    <y-input-row label="肩宽" placeholder="请输入肩宽"
+                                 value="{{userForm.shoulderWidth}}"
+                                 data-prop="userForm.shoulderWidth"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20">
+                    <view class=" y-flex y-vertical-center ">
+                        <view class="y-color-gray y-col-3 y-pr-20">身份证人像面</view>
+                        <view>
+                            <van-button bindtap="uploadIDFace" data-prop="imgIDFace">上传</van-button>
+                        </view>
+                    </view>
+                    <view class="y-pt-20" wx:if="{{imgIDFace}}">
+                        <!--                        身份证长宽比1.59-->
+                        <van-image width="700rpx" height="440rpx" fit="fill" src="{{imgIDFace}}"></van-image>
+                    </view>
+                </view>
+
+                <view class="y-pt-20">
+                    <view class=" y-flex y-vertical-center ">
+                        <view class="y-color-gray y-col-3 y-pr-20">身份证国徽面</view>
+                        <view>
+                            <van-button bindtap="uploadIDFace" data-prop="imgIDBadge">上传</van-button>
+                        </view>
+                    </view>
+                    <view class="y-pt-20" wx:if="{{imgIDBadge}}">
+                        <van-image width="700rpx" height="440rpx" fit="fill" src="{{imgIDBadge}}"></van-image>
+                    </view>
+                </view>
+
+
+            </van-collapse-item>
+        </van-collapse>
+    </card>
+
+    <card padding="0">
+        <van-collapse
+                value="{{activeColl}}" data-prop="activeColl" bindchange="setDetail"
+        >
+            <van-collapse-item name="1" title="教育经历">
+                <view wx:for="{{userForm.eduList}}">
+                    <y-input-row label="起讫时间" placeholder="请输入"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                    <y-input-row label="学校/专业" placeholder="请输入"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-pt-20">
+
+                    <van-button bindtap="addList" data-prop="eduList">继续添加教育经历</van-button>
+                </view>
+
+            </van-collapse-item>
+        </van-collapse>
+    </card>
+    <card padding="0">
+        <van-collapse value="{{activeColl}}"
+                      data-prop="activeColl" bindchange="setDetail">
+            <van-collapse-item name="1" title="工作经历">
+                <view>
+                    <y-input-row label="起讫时间" placeholder="请输入"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view>
+                    <y-input-row label="工作单位" placeholder="请输入"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view>
+                    <y-input-row label="职位/部门" placeholder="请输入"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view>
+                    <y-input-row label="主要工作" placeholder="请输入"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view>
+                    <y-input-row label="主要业绩" placeholder="请输入"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+            </van-collapse-item>
+        </van-collapse>
+    </card>
+
+    <card padding="0">
+        <van-collapse value="{{activeColl}}"
+                      data-prop="activeColl" bindchange="setDetail">
+            <van-collapse-item name="1" title="家庭主要关系">
+                <scroll-h>
+                    <!--todo 封装成表格组件-->
+                    <!--                    <view class="y-flex ">-->
+                    <view class="y-pr-20" style="min-width:16.7%">
+                        <view class="y-color-black">
+                            关系
+                        </view>
+                        <view wx:for="{{userForm.familyList}}" wx:key="index">
+                            {{item.relation}}
+                        </view>
+                    </view>
+
+                    <view class="y-pr-20" style="min-width:16.7%">
+                        <view class="y-color-black">
+                            姓名
+                        </view>
+                        <view wx:for="{{userForm.familyList}}" wx:key="index">
+                            {{item.name}}
+                        </view>
+                    </view>
+                    <view class="y-pr-20" style="min-width: 16.7%">
+                        <view class="y-color-black">
+                            年龄
+                        </view>
+                        <view wx:for="{{userForm.familyList}}" wx:key="index">
+                            {{item.age}}
+                        </view>
+                    </view>
+                    <view class="y-pr-20" style="min-width: 25%">
+                        <view class="y-color-black">
+                            工作单位
+                        </view>
+                        <view wx:for="{{userForm.familyList}}" wx:key="index">
+                            {{item.work}}
+                        </view>
+                    </view>
+                    <view class="y-pr-20" style="min-width:25%">
+                        <view class="y-color-black">
+                            手机号码
+                        </view>
+                        <view wx:for="{{userForm.familyList}}" wx:key="index">
+                            {{item.mobile}}
+                        </view>
+                    </view>
+                    <view class="y-pr-20" style="min-width:33.3%">
+                        <view class="y-color-black">
+                            家庭地址
+                        </view>
+                        <view wx:for="{{userForm.familyList}}" wx:key="index">
+                            {{item.address}}
+                        </view>
+                    </view>
+                    <!--                    </view>-->
+                </scroll-h>
+                <view class="y-pt-20">
+                    <van-button bindtap="addFamily" data-prop="familyList">继续添加家庭关系</van-button>
+                </view>
+            </van-collapse-item>
+        </van-collapse>
+    </card>
+
+
+    <card padding="0">
+        <van-collapse value="{{activeColl}}"
+                      data-prop="activeColl" bindchange="setDetail">
+            <van-collapse-item name="1" title="家庭主要关系">
+                <view>
+                    <y-input-row label="试用时间" placeholder="请输入"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+
+                <view>
+                    <y-input-row label="转正时间" placeholder="请输入"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+
+                </view>
+
+                <view>
+                    <y-input-row label="工作岗位" placeholder="请输入"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+            </van-collapse-item>
+        </van-collapse>
+    </card>
+
+    <!--    添加家庭成员的弹窗-->
+    <van-popup
+            custom-style="width: 100%"
+            closeable
+            show="{{ showFamily }}"
+            bind:close="closeFamily">
+
+        <view class="y-padding-all">
+            <view class="y-font-xl y-line-height-180">添加家庭成员</view>
+            <y-input-row label="关系" placeholder="请输入"
+                         value="{{familyForm.relation}}"
+                         data-prop="familyForm.relation"
+                         bindblur="setDetail"
+            ></y-input-row>
+            <y-input-row label="姓名" placeholder="请输入"
+                         value="{{familyForm.name}}"
+                         data-prop="familyForm.name"
+                         bindblur="setDetail"
+            ></y-input-row>
+            <y-input-row label="年龄" placeholder="请输入"
+                         value="{{familyForm.age}}"
+                         data-prop="familyForm.age"
+                         bindblur="setDetail"
+            ></y-input-row>
+            <y-input-row label="工作单位" placeholder="请输入"
+                         value="{{familyForm.work}}"
+                         data-prop="familyForm.work"
+                         bindblur="setDetail"
+            ></y-input-row>
+            <y-input-row label="手机号码" placeholder="请输入"
+                         value="{{familyForm.mobile}}"
+                         data-prop="familyForm.mobile"
+                         bindblur="setDetail"
+            ></y-input-row>
+            <y-input-row label="家庭住址" placeholder="请输入"
+                         value="{{familyForm.address}}"
+                         data-prop="familyForm.address"
+                         bindblur="setDetail"
+            ></y-input-row>
+
+            <view class="y-pt-20">
+
+                <van-button bind:click="closeFamily">取消</van-button>
+                <van-button bind:click="confirmFamily">确认</van-button>
+
+            </view>
+        </view>
+
+
+    </van-popup>
+</view>

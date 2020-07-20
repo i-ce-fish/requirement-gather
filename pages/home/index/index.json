@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "门店需求采集",
   "usingComponents": {
-    "card": "/components/card/index",
+      "card": "/components/card/index",
     "user-info-bar": "/components/user-info-bar/index",
     "big-card": "/components/big-card/index",
     "footer": "/components/footer/index",

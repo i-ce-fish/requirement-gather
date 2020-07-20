@@ -1,12 +1,10 @@
 {
   "pages": [
+    "pages/admin/employee/index",
     "pages/home/index/index",
     "pages/record/feature/index",
-
     "pages/record/customer-record/index",
-
     "pages/member/search/index",
-
     "pages/user/my/index",
     "pages/user/login/index/index",
     "pages/user/login/phone/index"

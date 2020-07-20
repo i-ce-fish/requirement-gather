@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "user-info-bar": "/components/user-info-bar/index",
+    "scroll-h": "/components/scroll-h/index",
+    "card": "/components/card/index",
+    "y-input-row": "/components/y-input-row/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-button": "@vant/weapp/button",
+    "van-image": "@vant/weapp/image",
+    "van-collapse": "@vant/weapp/collapse",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-collapse-item": "@vant/weapp/collapse-item"
+  }
+}
