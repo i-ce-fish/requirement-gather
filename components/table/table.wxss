@@ -1,0 +1,47 @@
+/* components/table.wxss */
+.table-fixed {
+  position: relative;
+  overflow: hidden;
+}
+.table__fixed-columns {
+  position: absolute;
+  left: 0;
+  background-color: #fff;
+  pointer-events: none; /*固定列不接受触摸，相当于滚动表格本身*/
+  z-index: 100;
+}
+.table {
+  width: 100%;
+}
+.tr {
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+}
+.tr:nth-child(even) {
+  background-color: #FAFAFA;
+}
+.td,
+.th {
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  color: #666;
+  border-right: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+}
+.td:first-child,
+.th:first-child {
+  border-left: 1px solid #E6E6E6;
+}
+.th {
+  font-size: 24rpx;
+  line-height: 34rpx;
+  padding: 6rpx 0;
+  border-top: 1px solid #E6E6E6;
+}
+.td {
+  font-size: 28rpx;
+  line-height: 38rpx;
+  padding: 16rpx 0;
+}

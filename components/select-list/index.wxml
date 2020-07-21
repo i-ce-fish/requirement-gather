@@ -1,0 +1,67 @@
+<!--折叠项-->
+        <!--<view wx:for="{{list}}" wx:key="index">-->
+
+
+        <!--    单选-->
+<view wx:if="{{item.type==='radio'}}">
+    <van-radio-group value="{{item.checked}}"  data-prop="item.checked"
+                     bind:change="tapCheckbox">
+        <view class=" y-padding-lr">
+            <!--            <view class="y-flex y-align-between y-vertical-center  y-padding-t">-->
+            <!--                <view class=" y-font-xl y-line-height-200">{{item.title}}-->
+            <!--                </view>-->
+            <!--                        折叠的时候只显示前三个-->
+            <!--                    <view wx:if="{{item.item.length>num}}" class="y-color-gray "-->
+            <!--                          bindtap="{{item.collapse?'hide':'show'}}"-->
+            <!--                          data-index="{{index}}">-->
+            <!--                        更多-->
+            <!--                        <van-icon-->
+            <!--                                name="{{item.collapse?'arrow-down':'arrow-up'}}"/>-->
+            <!--                    </view>-->
+            <!--            </view>-->
+            <view class="y-flex  y-flex-wrap y-vertical-center">
+                <van-radio  class="y-col-4 y-pt-20 "
+                           checked-color="#378694"
+                           wx:for="{{item.item}}"
+                           wx:for-item="innerItem"
+                           wx:key="index">
+                    <!-- remark 神坑 text 标签不能换行写 否则内容也会换行-->
+                    <text class="y-color-gray">{{innerItem}}</text>
+                </van-radio>
+            </view>
+        </view>
+    </van-radio-group>
+</view>
+<view wx:else>
+    <!--    多选-->
+    <!--        <view wx:if="{{item.type ==='checkbox'}}">-->
+    <van-checkbox-group value="{{item.checked}}" data-prop="item.checked"
+                        bind:change="tapCheckbox">
+        <view class=" y-padding-lr">
+            <!--            <view class="y-flex y-align-between y-vertical-center  y-padding-t">-->
+            <!--                <view class=" y-font-xl y-line-height-200">{{item.title}}-->
+            <!--                </view>-->
+            <!--                        折叠的时候只显示前三个-->
+            <!--                    <view wx:if="{{item.item.length>num}}" class="y-color-gray "-->
+            <!--                          bindtap="{{item.collapse?'hide':'show'}}"-->
+            <!--                          data-index="{{index}}">-->
+            <!--                        更多-->
+            <!--                        <van-icon-->
+            <!--                                name="{{item.collapse?'arrow-down':'arrow-up'}}"/>-->
+            <!--                    </view>-->
+            <!--            </view>-->
+            <view class="y-flex  y-flex-wrap y-vertical-center">
+                <van-checkbox name="{{index}}" class="y-col-4 y-pt-20 "
+                              checked-color="#378694" shape="square"
+                              wx:for="{{item.item}}"
+                              wx:for-item="innerItem"
+                              wx:key="index">
+                    <!-- remark 神坑 text 标签不能换行写 否则内容也会换行-->
+                    <text class="y-color-gray">{{innerItem}}</text>
+                </van-checkbox>
+            </view>
+        </view>
+    </van-checkbox-group>
+    <!--        </view>-->
+</view>
+        <!--</view>-->

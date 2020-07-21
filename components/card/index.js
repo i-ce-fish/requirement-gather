@@ -1,9 +1,9 @@
 // components/test.js
 Component({
     //启用aap.wxss全局样式
-    // options: {
-    //   addGlobalClass: true,
-    // },
+    options: {
+        addGlobalClass: true,
+    },
     /**
      * 组件的属性列表
      */
@@ -13,6 +13,18 @@ Component({
         padding: {
             type: String,
             value: "20rpx 30rpx"
+        },
+        //是否显示标题
+        title: {
+            type: String,
+            value: ""
+        }
+        ,
+        //是否显示关闭按钮
+        closeable: {
+            type: Boolean,
+            value: false
+
         }
     },
 
@@ -24,5 +36,9 @@ Component({
     /**
      * 组件的方法列表
      */
-    methods: {}
+    methods: {
+        tapClose(){
+            this.triggerEvent('close')
+        }
+    }
 })

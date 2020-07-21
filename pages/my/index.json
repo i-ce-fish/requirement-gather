@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "user-info-bar": "/components/user-info-bar/index",
+    "table": "/components/table/table",
+    "y-input-row": "/components/y-input-row/index",
+    "card": "/components/card/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
+  }
+}

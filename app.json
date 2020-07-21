@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/record/customer-info/index",
+    "pages/my/index",
     "pages/admin/employee/index",
     "pages/home/index/index",
     "pages/record/feature/index",

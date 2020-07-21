@@ -1,0 +1,85 @@
+<view>
+    <user-info-bar></user-info-bar>
+    <card padding="0">
+        <van-tabs active="{{0}}" bind:change="onChange">
+            <van-tab title="我的业绩">内容1</van-tab>
+            <van-tab title="我的分销">内容 2</van-tab>
+            <van-tab title="我的穿法">内容 3</van-tab>
+        </van-tabs>
+    </card>
+    <card padding="0">
+        <van-collapse value="{{todoList}}" bind:change="setDetail" data-prop="todoList">
+            <van-collapse-item title="今日待办事项提醒" name="0">
+                <view>
+                    <textarea bindblur="bindTextAreaBlur"
+                              auto-height maxlength="-1" placeholder="请输入"/>
+                </view>
+                <view class="y-flex y-align-right">
+                    <van-button type="primary" size="small">保存</van-button>
+                </view>
+            </van-collapse-item>
+        </van-collapse>
+    </card>
+
+    <card padding="0" title="">
+        <view class="y-flex y-align-center y-padding-tb">
+            <table table="{{tableData}}" tbodyHeight></table>
+        </view>
+    </card>
+
+
+    <card padding="0">
+        <van-collapse value="{{todoList}}" bind:change="setDetail" data-prop="todoList">
+            <van-collapse-item title="我的穿法草图" name="0">
+                <view>
+                    <van-uploader file-list="{{ wear.carousels }}" deletable="{{true}}" bind:delete="delCarousel"
+                                  bind:after-read="afterRead">
+
+                    </van-uploader>
+                </view>
+                <view>
+                    <y-input-row label="穿法名称" placeholder="请输入穿法名称"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                    <y-input-row label="穿法简介" placeholder="请输入穿法简介"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                    <y-input-row label="单品组成" placeholder="请输入单品组成"
+                                 value="{{userForm.name}}"
+                                 data-prop="userForm.name"
+                                 bindblur="setDetail"
+                    ></y-input-row>
+                </view>
+                <view class="y-flex y-align-right">
+                    <van-button type="primary" size="small">保存</van-button>
+                </view>
+            </van-collapse-item>
+        </van-collapse>
+    </card>
+
+    <card padding="0">
+        <van-collapse value="{{todoList}}" bind:change="setDetail" data-prop="todoList">
+            <van-collapse-item title="我的分享人" name="0">
+                <table table="{{shareTable}}" tbodyHeight></table>
+            </van-collapse-item>
+        </van-collapse>
+    </card>
+    <card>
+        <view class="y-flex y-align-around">
+            <view>
+                <van-button>我的档案</van-button>
+            </view>
+            <view>
+                <van-button>我的货品</van-button>
+            </view>
+            <view>
+                <van-button>时尚课程</van-button>
+            </view>
+        </view>
+    </card>
+
+</view>

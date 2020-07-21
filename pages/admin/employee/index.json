@@ -1,7 +1,6 @@
 {
   "usingComponents": {
     "user-info-bar": "/components/user-info-bar/index",
-    "scroll-h": "/components/scroll-h/index",
     "card": "/components/card/index",
     "y-input-row": "/components/y-input-row/index",
     "van-field": "@vant/weapp/field/index",

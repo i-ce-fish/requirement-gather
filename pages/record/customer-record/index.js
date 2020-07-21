@@ -27,6 +27,11 @@ Page({
         this.setData({
             actShortComing: e.detail,
         });
+    },
 
-    }
+    setDetail(e) {
+        this.setData({
+            [e.currentTarget.dataset.prop]: e.detail
+        })
+    },
 });

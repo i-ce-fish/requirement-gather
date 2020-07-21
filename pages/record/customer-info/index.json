@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "user-info-bar": "/components/user-info-bar/index",
+    "select-list": "/components/select-list/index",
+    "select-fold-list": "/components/select-fold-list/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "card": "/components/card/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index"
+  }
+}

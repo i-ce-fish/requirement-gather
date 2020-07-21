@@ -1,15 +1,12 @@
+const _ = require('../../../lib/lodash.min');
+
 Page({
     data: {
         activeColl: ['1'],
         userForm: {
-            eduList: ['0'],
-            familyList: ['0']
+            eduList: [{}],
+            familyList: [{}]
         },
-        //家庭成员
-        showFamily: false,
-        familyForm: {}
-
-
         // imgIDFace: ""
     },
     onLoad: function (options) {
@@ -33,31 +30,25 @@ Page({
             }
         })
     },
+    //添加一个数组
     addList(e) {
-        let list = this.data.userForm[e.currentTarget.dataset.prop]
-        list.push('1')
+        let prop = e.currentTarget.dataset.prop;
+        let list = this.data.userForm[prop]
+        list.push({})
         this.setData({
-            [`userForm.${e.currentTarget.dataset.prop}`]: list
+            [`userForm.${prop}`]: list
         })
     },
-    addFamily() {
-        this.setData({
-            showFamily: true
+    //删除一个数组
+    removeList(e) {
+        let prop = e.currentTarget.dataset.prop;
+        let index = e.currentTarget.dataset.index;
+        let list = this.data.userForm[prop]
+        _.remove(list, (o, i) => {
+            return i === index
         })
-    },
-    closeFamily() {
         this.setData({
-            showFamily: false
+            [`userForm.${prop}`]: list
         })
-    },
-    confirmFamily() {
-        let familyList = this.data.userForm.familyList
-        familyList.push(this.data.familyForm)
-
-        this.setData({
-            'userForm.familyList': familyList,
-            'familyForm': {}
-        })
-        this.closeFamily()
     }
 });

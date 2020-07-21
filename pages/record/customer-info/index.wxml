@@ -1,0 +1,32 @@
+<view>
+    <user-info-bar></user-info-bar>
+    <card>
+        <view>
+            <van-radio-group value="{{ radio }}" bind:change="onChange">
+                <view class="y-flex y-align-around">
+                    <van-radio name="1">顾客进店</van-radio>
+                    <van-radio name="2">店内顾客 2</van-radio>
+                </view>
+            </van-radio-group>
+        </view>
+        <!--            todo if-->
+        <view>
+            <select-list item="{{comingCusInfo}}"></select-list>
+        </view>
+    </card>
+
+
+    <card>
+        <view>
+            <van-radio-group value="{{ radio }}" bind:change="onChange">
+                <view class="y-flex y-align-around">
+                    <van-radio name="1">有指定款</van-radio>
+                    <van-radio name="2">无指定款 2</van-radio>
+                </view>
+            </van-radio-group>
+        </view>
+    </card>
+    <card>
+        <select-fold-list list="{{comingCus}}"></select-fold-list>
+    </card>
+</view>

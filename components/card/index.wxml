@@ -1,6 +1,16 @@
-
-<view class="card-box custom-class" style="{{'padding:'+padding}}">
+<view class="card-box  custom-class" style="{{'padding:'+padding}}">
+    <view class="y-flex y-align-between">
+        <view class="y-color-black y-font-xl ">
+            <view wx:if="{{title}}">
+                {{title}}
+            </view>
+        </view>
+        <view wx:if="{{closeable}}">
+            <van-icon name="cross" bindtap="tapClose"/>
+        </view>
+    </view>
     <slot>
+
 
     </slot>
 </view>

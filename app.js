@@ -1,6 +1,23 @@
 //app.js
 import Store from './utils/store.js';
 
+//lodash的特殊配置
+Object.assign(global, {
+    Array: Array,
+    Date: Date,
+    Error: Error,
+    Function: Function,
+    Math: Math,
+    Object: Object,
+    RegExp: RegExp,
+    String: String,
+    TypeError: TypeError,
+    setTimeout: setTimeout,
+    clearTimeout: clearTimeout,
+    setInterval: setInterval,
+    clearInterval: clearInterval
+});
+
 
 //wx直接调用的全局方法
 // 路由跳转并传参
@@ -32,6 +49,23 @@ let store = new Store({
     },
     openPart: true
 })
+const loadash = require('./lib/lodash.min');
+
+Object.assign(global, {
+    Array : Array,
+    Date : Date,
+    Error : Error,
+    Function : Function,
+    Math : Math,
+    Object : Object,
+    RegExp : RegExp,
+    String : String,
+    TypeError : TypeError,
+    setTimeout : setTimeout,
+    clearTimeout : clearTimeout,
+    setInterval : setInterval,
+    clearInterval : clearInterval
+});
 
 App({
     store: store,
