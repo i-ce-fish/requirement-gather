@@ -1,0 +1,4 @@
+<van-button type="{{active?'info':'default'}}" bindtap="tapButton" size="small"
+            custom-style="width:{{width}}">
+    <slot></slot>
+</van-button>

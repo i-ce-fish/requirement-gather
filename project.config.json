@@ -25,11 +25,12 @@
 		},
 		"useIsolateContext": true,
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"compileHotReLoad": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.0",
-	"appid": "wx4a54567a496c84cb",
+	"appid": "wxdf11311086db7dc4",
 	"projectname": "requirement-gather",
 	"debugOptions": {
 		"hidedInDevtools": []

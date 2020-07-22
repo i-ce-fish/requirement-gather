@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "user-info-bar": "/components/user-info-bar/index",
+    "card": "/components/card/index",
+    "van-image": "@vant/weapp/image",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-search": "@vant/weapp/search/index",
+    "switch-button": "/components/switch-button/index"
+
+  }
+}

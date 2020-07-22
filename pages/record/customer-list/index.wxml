@@ -1,0 +1,98 @@
+<view>
+    <user-info-bar></user-info-bar>
+    <card>
+        <view class="y-pt-20 ">
+            <view class="y-flex y-align-around">
+                <switch-button width="200rpx">
+                    显示在店
+                </switch-button>
+                <switch-button width="200rpx">
+                    今日已离店
+                </switch-button>
+                <switch-button width="200rpx">
+                    今日全部
+                </switch-button>
+            </view>
+            <view class="y-flex y-align-around">
+                <switch-button width="200rpx">
+                    按导购筛选
+                </switch-button>
+                <switch-button width="200rpx">
+                    按日期筛选
+                </switch-button>
+                <switch-button width="200rpx">
+                    按日期筛选
+                </switch-button>
+                <switch-button width="200rpx">
+                    更多筛选
+                </switch-button>
+            </view>
+        </view>
+
+        <van-search
+                placeholder="请输入顾客手机号码"
+                use-left-icon-slot
+                use-action-slot
+        >
+            <view slot="left-icon" class="y-flex y-vertical-center y-pr-20">
+                <van-icon name="search" size="50rpx"/>
+            </view>
+            <view slot="action">
+                <van-button size="small">搜索</van-button>
+            </view>
+        </van-search>
+    </card>
+    <view class="" wx:for="{{customerList}}" wx:key="index">
+        <card>
+            <view class="y-flex y-align-between y-line-height-200">
+                <view class="y-col-7 y-pr-20">
+                    <view class="y-flex y-align-between">
+                        <view>
+                            {{item.createTime}}
+                        </view>
+                        <view>{{item.name}}</view>
+
+                    </view>
+                    <view class="y-flex">
+                        <view>
+                            导购:
+                        </view>
+                        <view
+                                class="y-pl-20"
+                                wx:for="{{item.guiders}}" wx:key="index">
+                            {{item}}
+                        </view>
+                    </view>
+
+                    <view class="y-flex y-align-between">
+                        <view>性别: {{item.sex}}</view>
+                        <view>同伴: {{item.friend}}</view>
+                    </view>
+                    <view>
+                        {{item.feature}}
+                    </view>
+                    <view class="y-flex   y-pr-20">
+                        <view class="y-pr-20">
+                            咨询过:
+                        </view>
+                        <view>
+                            <view class="" wx:for="{{item.productHistory}}" wx:key="index">
+                                {{item}}
+                            </view>
+                        </view>
+                    </view>
+                    <view class="y-flex y-align-right y-underline">
+                        查看详情
+                        <van-icon name="arrow" size="30rpx"/>
+                    </view>
+                </view>
+                <view class="y-col-5 y-flex y-align-center y-vertical-center">
+                    <view class="">
+                        <van-image width="300rpx" height="100%" fit="widthFix"
+                                   src="https://www.uniqlo.cn/hmall/test/u0000000017753/model/rank1/first/591-822/1.jpg"></van-image>
+                    </view>
+                </view>
+            </view>
+        </card>
+    </view>
+</view>

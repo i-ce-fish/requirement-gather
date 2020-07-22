@@ -22,7 +22,9 @@ Component({
         },
 
     },
-    data: {},
+    data: {
+        checked: '',
+    },
     methods: {
 
         // show: function (e) {
@@ -47,13 +49,13 @@ Component({
                 [e.currentTarget.dataset.prop]: e.detail
             })
         },
-        tapRadio(e) {
-            this.setData({
-                [e.currentTarget.dataset.prop]: e.detail
-            })
-
-
-        }
+        //不需要取消, 必选的
+        // tapRadio(e) {
+        //     let detail = this.data.checked === e.detail ? '' : e.detail;
+        //     this.setData({
+        //         checked: detail
+        //     })
+        // }
 
     }
 });

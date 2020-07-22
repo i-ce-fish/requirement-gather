@@ -1,32 +1,75 @@
 <view>
     <user-info-bar></user-info-bar>
+    <!--    商品搜搜-->
+    <!--    <van-search-->
+    <!--            placeholder="扫码/输入款号"-->
+    <!--            use-left-icon-slot-->
+    <!--            use-action-slot-->
+    <!--    >-->
+    <!--        <view slot="left-icon" class="y-flex y-vertical-center y-pr-20">-->
+    <!--            <van-icon name="scan" size="50rpx"/>-->
+    <!--        </view>-->
+    <!--        <view slot="action">-->
+    <!--            <van-button size="small" class="y-pr-20">看详情</van-button>-->
+    <!--            <van-button size="small">记需求</van-button>-->
+    <!--        </view>-->
+    <!--    </van-search>-->
+
     <card>
-        <view>
-            <van-radio-group value="{{ radio }}" bind:change="onChange">
-                <view class="y-flex y-align-around">
-                    <van-radio name="1">顾客进店</van-radio>
-                    <van-radio name="2">店内顾客 2</van-radio>
-                </view>
-            </van-radio-group>
-        </view>
         <!--            todo if-->
-        <view>
-            <select-list item="{{comingCusInfo}}"></select-list>
-        </view>
+        <van-collapse value="{{customerInfoColl}}" bind:change="setDetail" data-prop="customerInfoColl">
+            <view wx:for="{{customerInfo}}" wx:key="index">
+                <van-collapse-item title="{{item.title}}" name="{{index}}">
+                    <select-list item="{{item}}"></select-list>
+                </van-collapse-item>
+            </view>
+
+
+        </van-collapse>
+
+        <single-collapse title="顾客识别  示范:红色长发带黑包">
+            <view>
+                <y-input-row label="自定义" placeholder="输入顾客衣服颜色,发型,包包,鞋子"></y-input-row>
+            </view>
+        </single-collapse>
     </card>
 
-
     <card>
-        <view>
-            <van-radio-group value="{{ radio }}" bind:change="onChange">
-                <view class="y-flex y-align-around">
-                    <van-radio name="1">有指定款</van-radio>
-                    <van-radio name="2">无指定款 2</van-radio>
+        <single-collapse title="试穿后照片">
+            <view class="y-flex y-align-between ">
+
+                <view class="y-col-8">
+                    <!--                    4:3的图片比例-->
+                    <van-image width="400rpx" height="533rpx" fit="contain"
+                               src="https://www.uniqlo.cn/hmall/test/u0000000017753/model/rank1/first/591-822/1.jpg">
+
+                    </van-image>
                 </view>
-            </van-radio-group>
-        </view>
+                <view class="y-col-4 y-flex-col y-align-between ">
+                    <van-button>上传顾客全身照</van-button>
+                    <view class="y-font-xs">
+                        特别提示： 拍照需征得顾客许可，由此产生的一切后果由拍摄者承担。
+                    </view>
+                </view>
+            </view>
+        </single-collapse>
     </card>
+
+
     <card>
-        <select-fold-list list="{{comingCus}}"></select-fold-list>
+        <van-collapse value="{{customerAblityColl}}" bind:change="setDetail" data-prop="customerAblityColl">
+            <view wx:for="{{customerAblity}}" wx:key="index">
+                <van-collapse-item title="{{item.title}}" name="{{index}}">
+                    <select-list item="{{item}}"></select-list>
+                </van-collapse-item>
+            </view>
+        </van-collapse>
+    </card>
+
+    <card>
+        <view class="y-flex y-align-right">
+
+            <van-button type="primary">提交</van-button>
+        </view>
     </card>
 </view>

@@ -5,7 +5,8 @@ import tool from "../../../utils/tool";
 let app = getApp()
 const filter = require('../../../utils/filter');
 
-Page(filter.loginCheck({
+// Page(filter.loginCheck({
+Page({
 
     /**
      * 页面的初始数据
@@ -61,4 +62,4 @@ Page(filter.loginCheck({
     }
 
 
-}))
+})
