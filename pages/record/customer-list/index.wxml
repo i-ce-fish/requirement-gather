@@ -3,29 +3,45 @@
     <card>
         <view class="y-pt-20 ">
             <view class="y-flex y-align-around">
-                <switch-button width="200rpx">
-                    显示在店
-                </switch-button>
-                <switch-button width="200rpx">
-                    今日已离店
-                </switch-button>
-                <switch-button width="200rpx">
-                    今日全部
-                </switch-button>
+                <view wx:for="{{btnList}}" wx:key="index">
+                    <van-button size="small" bindtap="tapBtn" data-index="{{index}}" type="{{item.active?'info':''}}">
+                        {{item.text}}
+                    </van-button>
+                </view>
             </view>
-            <view class="y-flex y-align-around">
-                <switch-button width="200rpx">
-                    按导购筛选
-                </switch-button>
-                <switch-button width="200rpx">
-                    按日期筛选
-                </switch-button>
-                <switch-button width="200rpx">
-                    按日期筛选
-                </switch-button>
-                <switch-button width="200rpx">
-                    更多筛选
-                </switch-button>
+            <!--            <view class="y-flex y-align-around">-->
+            <!--                <switch-button width="200rpx">-->
+            <!--                    按导购筛选-->
+            <!--                </switch-button>-->
+            <!--                <switch-button width="200rpx">-->
+            <!--                    按日期筛选-->
+            <!--                </switch-button>-->
+            <!--                <switch-button width="200rpx">-->
+            <!--                    按日期筛选-->
+            <!--                </switch-button>-->
+            <!--                <switch-button width="200rpx">-->
+            <!--                    更多筛选-->
+            <!--                </switch-button>-->
+            <!--            </view>-->
+            <view>
+                <van-dropdown-menu>
+                    <view class="y-col-3">
+                        <van-dropdown-item title="{{guidersDefault}}"
+                                           options="{{ allGuiders }}"/>
+                    </view>
+                    <!--                    <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}"/>-->
+                    <view class="y-flex y-vertical-center y-pr-20 ">
+                        <van-button bind:click="showCalendar" size="small">
+                            选择日期
+                        </van-button>
+                    </view>
+                    <view class="y-flex y-vertical-center ">
+                        <van-button bind:click="showCalendar" size="small">
+                            <!--                            todo-->
+                            更多筛选
+                        </van-button>
+                    </view>
+                </van-dropdown-menu>
             </view>
         </view>
 
@@ -95,4 +111,15 @@
             </view>
         </card>
     </view>
+    <!--    日期弹窗-->
+    <van-calendar show="{{ showCalendar }}" bind:close="closeCalendar" bind:confirm="confirmCalendar"
+                  type="multiple"/>
+    <!--    更多筛选弹窗-->
+    <van-popup custom-style="width: 80%"
+               position="right"
+               closeable
+               show="{{ showMore }}"
+               bind:close="closeMore">
+
+    </van-popup>
 </view>

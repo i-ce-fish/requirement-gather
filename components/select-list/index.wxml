@@ -35,10 +35,11 @@
         </view>
     </van-radio-group>
 </view>
-<view wx:else>
+        <view  wx:else>
+<!--<view wx:if="{{item.type==='checkbox'}}">-->
     <!--    多选-->
     <!--        <view wx:if="{{item.type ==='checkbox'}}">-->
-    <van-checkbox-group value="{{item.checked}}" data-prop="item.checked"
+    <van-checkbox-group value="{{checked}}" data-prop="checked"
                         bind:change="tapCheckbox">
         <view class=" y-padding-lr">
             <!--            <view class="y-flex y-align-between y-vertical-center  y-padding-t">-->

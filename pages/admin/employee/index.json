@@ -8,6 +8,7 @@
     "van-image": "@vant/weapp/image",
     "van-collapse": "@vant/weapp/collapse",
     "van-popup": "@vant/weapp/popup/index",
-    "van-collapse-item": "@vant/weapp/collapse-item"
+    "van-collapse-item": "@vant/weapp/collapse-item",
+    "van-uploader": "@vant/weapp/uploader/index"
   }
 }

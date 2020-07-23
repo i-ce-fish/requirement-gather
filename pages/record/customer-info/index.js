@@ -1,3 +1,4 @@
+const _ = require('../../../lib/lodash.min')
 Page({
     data: {
 
@@ -6,20 +7,17 @@ Page({
                 item: ['无同伴', '1人', '2人及以上'],
                 title: '同伴人数',
                 type: 'radio',
-                default: '无同伴'
             },
             {
                 item: ['男', '女', '+'],
                 title: "性别",
                 type: "checkbox",
-                default: '帅哥'
             },
             {
                 title: '年龄',
                 item: ['幼童', '小童', '大童', '小学生', '初高中',
                     '18-24', '25-30', '35左右', '40左右', '50左右', '60左右', '65以上'],
                 type: 'radio',
-                default: '25-30'
             },
             {
                 item: [
@@ -37,7 +35,6 @@ Page({
                 ],
                 title: "年龄",
                 type: "radio",
-                default: '170-175'
 
             }, {
                 item: [
@@ -49,7 +46,6 @@ Page({
                 ],
                 title: "体型目测",
                 type: "radio",
-                default: '体重正常'
 
             },
         ]
@@ -66,7 +62,6 @@ Page({
                 ],
                 title: "着装态度(重视用心程度)",
                 type: "radio",
-                default: '一般用心'
 
             },
             {
@@ -79,7 +74,6 @@ Page({
                 ],
                 title: "着装能力(会不会打扮)",
                 type: "radio",
-                default: '常识型'
 
 
             },
@@ -91,7 +85,6 @@ Page({
                 ],
                 title: "着装品牌",
                 type: "radio",
-                default: '市场货'
             },
             {
                 item: [
@@ -101,7 +94,6 @@ Page({
                 ],
                 title: "着装时尚度",
                 type: "radio",
-                default: '基本穿搭'
 
             }
         ],
@@ -113,23 +105,49 @@ Page({
 
     },
     init() {
-
         //展开折叠面板1
-        let customerInfoColl = this.data.customerInfoColl
-        this.data.customerInfo.forEach((o, i) => {
-            customerInfoColl.push(i)
-        })
-        this.setData({customerInfoColl})
+        this.setData({customerInfoColl: _.range(this.data.customerInfo.length)})
         //展开折叠面板2
-        let customerAblityColl = this.data.customerInfoColl
-        this.data.customerInfo.forEach((o, i) => {
-            customerAblityColl.push(i)
-        })
-        this.setData({customerAblityColl})
+        this.setData({customerAblityColl: _.range(this.data.customerAblity.length)})
+
     },
     setDetail(e) {
         this.setData({
             [e.currentTarget.dataset.prop]: e.detail
         })
     },
+    selectInfo(e) {
+        let index = e.currentTarget.dataset.index
+        let customerInfoColl = this.data.customerInfoColl
+
+        //可能多选不需要折叠
+        // if (customerInfo[index].type !== 'checkbox') {
+        // 勾选后单选按钮折叠
+        _.remove(customerInfoColl, (o) => {
+            return o === index
+        });
+        // }
+
+        this.setData({
+            customerInfoColl,
+            [`customerInfo[${index}].checked`]: e.detail
+        })
+    },
+    selectAblity(e) {
+        let index = e.currentTarget.dataset.index
+        let customerAblityColl = this.data.customerAblityColl
+
+        //可能多选不需要折叠
+        // if (customerAblity[index].type !== 'checkbox') {
+        // 勾选后折叠
+        _.remove(customerAblityColl, (o) => {
+            return o === index
+        });
+        // }
+
+        this.setData({
+            customerAblityColl,
+            [`customerAblity[${index}].checked`]: e.detail
+        })
+    }
 });

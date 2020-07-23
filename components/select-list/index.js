@@ -43,11 +43,25 @@ Component({
         //     })
         //
         // },
-        tapCheckbox(e) {
-            //todo  trigger
+        setDetail(e) {
             this.setData({
                 [e.currentTarget.dataset.prop]: e.detail
             })
+
+        },
+        tapCheckbox(e) {
+            this.setDetail(e)
+            let checked = []
+            if (this.data.item.type === 'radio') {
+                checked.push(this.data.item.item[e.detail]);
+            }
+            if (this.data.item.type === 'checkbox') {
+                e.detail.forEach((o) => {
+                    checked.push(this.data.item.item[o])
+                })
+            }
+            this.triggerEvent('selected', checked)
+
         },
         //不需要取消, 必选的
         // tapRadio(e) {
