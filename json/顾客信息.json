@@ -1,0 +1,109 @@
+{
+  "customerInfo": {
+    "friend": {
+      "type": "axis",
+      "title": "同伴人数",
+      "min": "0",
+      "max": "2",
+      "value": "0",
+      "item": [
+        "0",
+        "1",
+        "2人以上"
+      ]
+    },
+    "sex": {
+      "type": "checkbox",
+      "item": [
+        "男",
+        "女",
+        "+"
+      ],
+      "title": "性别"
+    },
+    "age": {
+      "type": "axis",
+      "title": "年龄",
+      "min": "0",
+      "max": "70",
+      "value": "25",
+      "item": [
+        "3岁以下",
+        "70岁以上"
+      ]
+    },
+    "height": {
+      "type": "axis",
+      "title": "身高",
+      "min": "100",
+      "max": "200",
+      "value": "170",
+      "item": [
+        "100以下",
+        "200以上"
+      ]
+    },
+    "weight": {
+      "type": "axis",
+      "title": "体重",
+      "min": "0",
+      "max": "4",
+      "value": "2",
+      "item": [
+        "很瘦",
+        "较瘦",
+        "正常",
+        "较胖",
+        "很胖"
+      ]
+    },
+    "feature": "红色头发"
+  },
+  "customerAblity": {
+    "attitude": {
+      "item": [
+        "一般用心",
+        "极不用心",
+        "比较用心",
+        "非常用心"
+      ],
+      "title": "着装态度(重视用心程度)",
+      "type": "radio"
+    },
+    "wearAblity": {
+      "title": "着装能力(会不会打扮)",
+      "item": [
+        "常识型",
+        "有错误",
+        "一般",
+        "比较会穿",
+        "穿搭非常好"
+      ],
+      "type": "axis",
+      "min": "0",
+      "max": "4",
+      "value": "2"
+    },
+    "brand": {
+      "item": [
+        "市场货",
+        "快时尚",
+        "轻奢品"
+      ],
+      "title": "着装品牌",
+      "type": "radio"
+    },
+    "personality": {
+      "item": [
+        "基本穿搭",
+        "有点个性",
+        "非常个性"
+      ],
+      "title": "着装时尚度",
+      "type": "axis",
+      "min": "0",
+      "max": "2",
+      "value": "0"
+    }
+  }
+}
