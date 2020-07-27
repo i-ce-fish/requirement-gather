@@ -36,7 +36,7 @@
                         </van-button>
                     </view>
                     <view class="y-flex y-vertical-center ">
-                        <van-button bind:click="showCalendar" size="small">
+                        <van-button bind:click="showMore" size="small">
                             <!--                            todo-->
                             更多筛选
                         </van-button>
@@ -115,11 +115,29 @@
     <van-calendar show="{{ showCalendar }}" bind:close="closeCalendar" bind:confirm="confirmCalendar"
                   type="multiple"/>
     <!--    更多筛选弹窗-->
-    <van-popup custom-style="width: 80%"
+    <van-popup custom-style="width: 80%;height:100%"
                position="right"
                closeable
                show="{{ showMore }}"
                bind:close="closeMore">
+        <view>
+
+            <view wx:for="{{moreFilter}}" wx:key="index">
+                <select-list item="{{item}}"
+                             bindselected="select"
+                             data-prop="{{index}}"></select-list>
+
+            </view>
+        </view>
+        <view class="y-flex y-col-12 y-bgc-white button-box">
+            <view class="y-col-6">
+                <van-button size="large" bindtap="resetFilter">重置</van-button>
+            </view>
+            <view class="y-col-6">
+                <van-button size="large" color="#1b1b1b" bindtap="tapConfirm">完成</van-button>
+            </view>
+        </view>
 
     </van-popup>
+
 </view>

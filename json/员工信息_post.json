@@ -1,0 +1,67 @@
+{
+  "eduList": [
+    {
+      "startDate": "2010-09-01",
+      "endDate": "2011-09-02",
+      "education": "初中"
+    },
+    {
+      "startDate": "2010-09-01",
+      "endDate": "2011-09-02",
+      "education": "高中"
+    }
+  ],
+  "familyList": [
+    {
+      "name": "老王",
+      "relation": "父子",
+      "age": "50",
+      "org": "工作单位",
+      "mobile": "13255887748",
+      "homeAddress": "广东省广州市番禺区南村镇番禺大道北383号"
+    }
+  ],
+  "workList": [
+    {
+      "startDate": "2010-09-01",
+      "endDate": "2011-09-02",
+      "org": "广州市见微信息公司",
+      "department": "财务部",
+      "position": "会计",
+      "performance": "记了很多账"
+    }
+  ],
+  "lifeImgs": [
+    {
+      "url": "https://www.uniqlo.cn/hmall/test/u0000000015347/model/rank1/first/591-822/1.jpg"
+    },
+    {
+      "url": "https://www.uniqlo.cn/hmall/test/u0000000015347/model/rank1/first/591-822/1.jpg"
+    },
+    {
+      "url": "https://www.uniqlo.cn/hmall/test/u0000000015347/model/rank1/first/591-822/1.jpg"
+    }
+  ],
+  "name": "小王",
+  "mobile": "13211223344",
+  "wxid": "wxid_132sdfsdf465s4",
+  "birthDate": "2001-01-01",
+  "IDNumber": "441122200101012211",
+  "curAddress": "广东省广州市番禺区南村镇番禺大道北383号",
+  "IDCardAddress": "广东省广州市番禺区南村镇番禺大道北383号",
+  "IDCardFace": "身份证人像面图片",
+  "IDCardBadge": "身份证国徽面图片",
+  "entryTime": "2020-07-14",
+  "emergencyContact": "小红",
+  "emergencyMobile": "13244115514",
+  "edu": "本科",
+  "height": "170",
+  "weight": "60",
+  "bust": "60",
+  "waist": "50",
+  "hips": "60",
+  "shoulderWidth": "60",
+  "probationStart": "2020-07-24",
+  "probationEnd": "2020-10-24",
+  "position": "会计"
+}

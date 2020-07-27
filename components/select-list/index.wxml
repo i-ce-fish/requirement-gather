@@ -27,7 +27,7 @@
                     <!-- remark 神坑 text 标签不能换行写 否则内容也会换行-->
                     <!--                    <text class="y-color-gray">{{innerItem}}</text>-->
                     <view class="y-color-gray">
-                        {{item.collapse?item.item[index]:innerItem}}
+                        {{item.collapse?item.item[index]:innerItem.text}}
                     </view>
 
                 </van-radio>
@@ -35,8 +35,8 @@
         </view>
     </van-radio-group>
 </view>
-        <view  wx:else>
-<!--<view wx:if="{{item.type==='checkbox'}}">-->
+        <!--        <view  wx:else>-->
+<view wx:if="{{item.type==='checkbox'}}">
     <!--    多选-->
     <!--        <view wx:if="{{item.type ==='checkbox'}}">-->
     <van-checkbox-group value="{{checked}}" data-prop="checked"
@@ -63,7 +63,7 @@
                     <!-- remark 神坑 text 标签不能换行写 否则内容也会换行-->
                     <!--                    <text class="y-color-gray">{{innerItem}}</text>-->
                     <view class="y-color-gray">
-                        {{item.collapse?item.item[index]:innerItem}}
+                        {{item.collapse?item.item[index]:innerItem.text}}
                     </view>
 
                 </van-checkbox>
@@ -73,3 +73,20 @@
     <!--        </view>-->
 </view>
         <!--</view>-->
+
+<view wx:if="{{item.type==='axis'}}" class=" y-pl-20 y-pr-20 y-padding-tb">
+    <van-slider value="{{ checked }}" use-button-slot bind:drag="drag" min="{{item.min}}" step="{{item.step}}"
+                max="{{item.max}}">
+        <view class="custom-button" slot="button">
+            <van-button size="mini" round>{{ checked }}
+            </van-button>
+        </view>
+    </van-slider>
+    <view class="y-flex y-align-between y-padding-t y-color-gray">
+        <view wx:for="{{item.item}}" wx:key="index"
+        >
+            <!--              bindtap="tapText" data-index="{{index}}" -->
+            {{item.text}}
+        </view>
+    </view>
+</view>

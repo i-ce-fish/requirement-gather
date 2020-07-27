@@ -177,8 +177,8 @@
                         ></y-input-row>
 
                         <y-input-row label="学校/专业" placeholder="请输入"
-                                     value="{{userForm.eduList[index].name}}"
-                                     data-prop="userForm.eduList[{{index}}].name"
+                                     value="{{userForm.eduList[index].education}}"
+                                     data-prop="userForm.eduList[{{index}}].education"
                                      bindblur="setDetail"
                         ></y-input-row>
                     </card>

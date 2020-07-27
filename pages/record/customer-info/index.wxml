@@ -17,23 +17,25 @@
 
     <card>
         <!--            todo if-->
-        <van-collapse value="{{customerInfoColl}}" bind:change="setDetail" data-prop="customerInfoColl">
-            <view wx:for="{{customerInfo}}" wx:key="index">
-                <van-collapse-item title="{{item.title}}:  {{item.checked}}" name="{{index}}">
-                    <select-list item="{{item}}" bindselected="selectInfo" data-index="{{index}}"></select-list>
-                </van-collapse-item>
-            </view>
-        </van-collapse>
+        <!--        <van-collapse value="{{customerInfoColl}}" bind:change="setDetail" data-prop="customerInfoColl">-->
+        <view wx:for="{{customerInfo}}" wx:key="index">
+            <card title="{{item.title}}:  {{item.checked}}" name="{{index}}">
+                <select-list item="{{item}}"
+                             bindselected="selectInfo"
+                             data-prop="{{index}}"></select-list>
+            </card>
+        </view>
+        <!--        </van-collapse>-->
 
-        <single-collapse title="顾客识别  示范:红色长发带黑包">
+        <card title="顾客识别  示范:红色长发带黑包">
             <view>
                 <y-input-row label="自定义" placeholder="输入顾客衣服颜色,发型,包包,鞋子"></y-input-row>
             </view>
-        </single-collapse>
+        </card>
     </card>
 
     <card>
-        <single-collapse title="试穿后照片">
+        <card title="试穿后照片">
             <view class="y-flex y-align-between ">
 
                 <view class="y-col-8">
@@ -50,18 +52,19 @@
                     </view>
                 </view>
             </view>
-        </single-collapse>
+        </card>
     </card>
 
 
     <card>
-        <van-collapse value="{{customerAblityColl}}" bind:change="setDetail" data-prop="customerAblityColl">
-            <view wx:for="{{customerAblity}}" wx:key="index">
-                <van-collapse-item title="{{item.title}}:  {{item.checked}}" name="{{index}}">
-                    <select-list item="{{item}}" bindselected="selectAblity" data-index="{{index}}"></select-list>
-                </van-collapse-item>
-            </view>
-        </van-collapse>
+        <!--        <van-collapse value="{{customerAblityColl}}" bind:change="setDetail" data-prop="customerAblityColl">-->
+        <view wx:for="{{customerAblity}}" wx:key="index">
+            <card title="{{item.title}}:  {{item.checked}}" name="{{index}}">
+                <select-list item="{{item}}" bindselected="selectAblity"
+                             data-prop="{{index}}"></select-list>
+            </card>
+        </view>
+        <!--        </van-collapse>-->
     </card>
 
     <card>

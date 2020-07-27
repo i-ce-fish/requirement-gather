@@ -1,0 +1,36 @@
+{
+  "customerInfo": {
+    "friend": {
+      "value": "0"
+    },
+    "sex": {
+      "value": "0"
+    },
+    "age": {
+      "value": "0"
+    },
+    "height": {
+      "value": "170"
+    },
+    "weight": {
+      "value": "2"
+    },
+    "feature": {
+      "value": "红色头发"
+    }
+  },
+  "customerAblity": {
+    "attitude": {
+      "value": "2"
+    },
+    "wearAblity": {
+      "value": "2"
+    },
+    "brand": {
+      "value": "2"
+    },
+    "personality": {
+      "value": "0"
+    }
+  }
+}
