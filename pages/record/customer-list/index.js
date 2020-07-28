@@ -71,12 +71,16 @@ Page({
         //    更多筛选条件
         moreFilter: {
             entryTime: {
-                value: "", title: "进店时间",
+                value: "",
+                title: "进店时间",
+                type: 'datetime'
             },
 
             leaveTime: {
                 value: "",
-                title: "离店时间"
+                title: "离店时间",
+                type: 'datetime'
+
             },
             guiders: {
                 item: [
@@ -99,8 +103,9 @@ Page({
                     {text: "新入会员", value: 1},
                     {text: "复购会员", value: 2}
                 ],
-                value: "会员情况",
-                type: 'radio'
+                title: "会员情况",
+                type: 'radio',
+
 
             },
             memberAttitude: {
@@ -241,6 +246,13 @@ Page({
     closeMore() {
         this.setData({
             showMore: false
+        })
+    },
+    selected(e) {
+        const prop = e.currentTarget.dataset.prop
+        this.setData({
+            [`moreFilter.${prop}.value`]: e.detail.value
+            // [`moreFilter.${prop}.checked`]: e.detail.checked
         })
     }
 });

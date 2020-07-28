@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/record/customer-info/index",
-    "pages/record/customer-list/index",
     "pages/home/index/index",
+    "pages/record/customer-list/index",
+    "pages/record/customer-info/index",
     "pages/admin/employee/index",
     "pages/my/index",
     "pages/record/feature/index",

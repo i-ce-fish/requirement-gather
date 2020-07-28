@@ -24,24 +24,26 @@
             <!--                </switch-button>-->
             <!--            </view>-->
             <view>
-                <van-dropdown-menu>
-                    <view class="y-col-3">
-                        <van-dropdown-item title="{{guidersDefault}}"
-                                           options="{{ allGuiders }}"/>
-                    </view>
-                    <!--                    <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}"/>-->
-                    <view class="y-flex y-vertical-center y-pr-20 ">
-                        <van-button bind:click="showCalendar" size="small">
-                            选择日期
-                        </van-button>
-                    </view>
-                    <view class="y-flex y-vertical-center ">
-                        <van-button bind:click="showMore" size="small">
-                            <!--                            todo-->
-                            更多筛选
-                        </van-button>
-                    </view>
-                </van-dropdown-menu>
+                <!--                <van-dropdown-menu>-->
+                <!--                    <view class="y-col-3">-->
+                <!--                        <van-dropdown-item title="{{guidersDefault}}"-->
+                <!--                                           options="{{ allGuiders }}"/>-->
+                <!--                    </view>-->
+                <!--                    &lt;!&ndash;                    <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}"/>&ndash;&gt;-->
+                <!--                    <view class="y-flex y-vertical-center y-pr-20 ">-->
+                <!--                        <van-button bind:click="showCalendar" size="small">-->
+                <!--                            选择日期-->
+                <!--                        </van-button>-->
+                <!--                    </view>-->
+                <!--                   -->
+                <!--                </van-dropdown-menu>-->
+                <view class="y-flex y-vertical-center y-align-right ">
+                    <van-button bind:click="showMore" size="small">
+                        <!--                            todo-->
+                        更多筛选
+                    </van-button>
+                </view>
+
             </view>
         </view>
 
@@ -121,15 +123,18 @@
                show="{{ showMore }}"
                bind:close="closeMore">
         <view>
-
-            <view wx:for="{{moreFilter}}" wx:key="index">
-                <select-list item="{{item}}"
-                             bindselected="select"
-                             data-prop="{{index}}"></select-list>
-
+            <view class="y-padding-t"
+                  wx:for="{{moreFilter}}" wx:key="index">
+                <view class="y-padding-lr y-font-xl y-line-height-200">
+                    {{item.title}}
+                </view>
+                <select-list
+                        item="{{item}}"
+                        bindselected="selected"
+                        data-prop="{{index}}"></select-list>
             </view>
         </view>
-        <view class="y-flex y-col-12 y-bgc-white button-box">
+        <view class="y-flex y-col-12 y-bgc-white button-box y-padding-t">
             <view class="y-col-6">
                 <van-button size="large" bindtap="resetFilter">重置</van-button>
             </view>

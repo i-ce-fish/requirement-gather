@@ -74,19 +74,51 @@
 </view>
         <!--</view>-->
 
-<view wx:if="{{item.type==='axis'}}" class=" y-pl-20 y-pr-20 y-padding-tb">
-    <van-slider value="{{ checked }}" use-button-slot bind:drag="drag" min="{{item.min}}" step="{{item.step}}"
-                max="{{item.max}}">
-        <view class="custom-button" slot="button">
-            <van-button size="mini" round>{{ checked }}
-            </van-button>
-        </view>
-    </van-slider>
-    <view class="y-flex y-align-between y-padding-t y-color-gray">
+<view wx:if="{{item.type==='axis'}}" class=" ">
+    <view class="y-pt-20 y-pb-20">
+        {{checked}}
+    </view>
+    <slider value="{{ checked }}"
+            min="{{item.min}}" step="{{item.step}}"
+            max="{{item.max}}"
+            bindchange="sliderEnd"
+            bindchanging="slidering"
+            show-value
+            style="margin: 0"
+    >
+        <!--            use-button-slot bind:drag="drag" -->
+        <!--        <view class="custom-button" slot="button">-->
+        <!--            {{ checked }}-->
+        <!--            <van-button size="mini" round>-->
+        <!--            </van-button>-->
+        <!--        </view>-->
+    </slider>
+    <view class="y-flex y-align-between y-padding-t y-color-gray y-col-11">
         <view wx:for="{{item.item}}" wx:key="index"
+              class="{{item.active?'active':''}}"
         >
             <!--              bindtap="tapText" data-index="{{index}}" -->
             {{item.text}}
         </view>
     </view>
+</view>
+        <!--time 21:22-->
+        <!--date 2010-01-01-->
+        <!--datetime 2010-01-01 21:22-->
+<view wx:if="{{item.type==='datetime'}}">
+    <view class="y-padding-lr">
+        <van-button bindtap="showDatetime">
+            {{checked?checked:'选择时间'}}
+        </van-button>
+    </view>
+    <van-popup show="{{ showDatetime }}" bind:close="closeDatetime"
+               position="bottom" custom-style="width: 100%"
+    >
+        <van-datetime-picker
+                type="datetime"
+                value="{{ currentDate }}"
+                bind:cancel="closeDatetime"
+                bind:confirm="confirmDatetime"
+        />
+    </van-popup>
 </view>

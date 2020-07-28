@@ -1,0 +1,5 @@
+.button-box {
+    position: sticky;
+    bottom: 0;
+    height: 100rpx
+}

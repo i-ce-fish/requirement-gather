@@ -17,15 +17,15 @@
 
     <card>
         <!--            todo if-->
-        <!--        <van-collapse value="{{customerInfoColl}}" bind:change="setDetail" data-prop="customerInfoColl">-->
-        <view wx:for="{{customerInfo}}" wx:key="index">
-            <card title="{{item.title}}:  {{item.checked}}" name="{{index}}">
-                <select-list item="{{item}}"
-                             bindselected="selectInfo"
-                             data-prop="{{index}}"></select-list>
-            </card>
-        </view>
-        <!--        </van-collapse>-->
+        <van-collapse value="{{customerInfoColl}}" bind:change="setDetail" data-prop="customerInfoColl">
+            <view wx:for="{{customerInfo}}" wx:key="index">
+                <van-collapse-item title="{{item.title}}" value="{{item.checked}}" name="{{index}}">
+                    <select-list item="{{item}}"
+                                 bindselected="selectInfo"
+                                 data-prop="{{index}}"></select-list>
+                </van-collapse-item>
+            </view>
+        </van-collapse>
 
         <card title="顾客识别  示范:红色长发带黑包">
             <view>
@@ -57,14 +57,14 @@
 
 
     <card>
-        <!--        <van-collapse value="{{customerAblityColl}}" bind:change="setDetail" data-prop="customerAblityColl">-->
-        <view wx:for="{{customerAblity}}" wx:key="index">
-            <card title="{{item.title}}:  {{item.checked}}" name="{{index}}">
-                <select-list item="{{item}}" bindselected="selectAblity"
-                             data-prop="{{index}}"></select-list>
-            </card>
-        </view>
-        <!--        </van-collapse>-->
+        <van-collapse value="{{customerAblityColl}}" bind:change="setDetail" data-prop="customerAblityColl">
+            <view wx:for="{{customerAblity}}" wx:key="index">
+                <van-collapse-item title="{{item.title}}" value="{{item.checked}}" name="{{index}}">
+                    <select-list item="{{item}}" bindselected="selectAblity"
+                                 data-prop="{{index}}"></select-list>
+                </van-collapse-item>
+            </view>
+        </van-collapse>
     </card>
 
     <card>

@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "顾客列表",
   "usingComponents": {
     "user-info-bar": "/components/user-info-bar/index",
     "card": "/components/card/index",

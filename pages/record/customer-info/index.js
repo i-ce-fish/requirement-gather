@@ -4,6 +4,7 @@ Page({
 
         customerInfo: {
             friend: {
+                prop: "friend",
                 type: "radio",
                 title: "同伴人数",
                 // min: "0",
@@ -27,6 +28,8 @@ Page({
                 ]
             },
             sex: {
+                prop: "sex",
+
                 type: "checkbox",
                 item: [
                     {
@@ -46,6 +49,8 @@ Page({
                 title: "性别"
             },
             age: {
+                prop: "age",
+
                 item: [
                     {text: "幼童", value: "0"},
                     {text: "小童", value: "1"},
@@ -66,30 +71,32 @@ Page({
 
             },
             height: {
+                prop: "height",
+
                 type: "axis",
                 title: "身高",
                 min: "100",
-                max: "200",
+                max: "190",
                 step: '1',
                 item: [
                     {
                         text: "100以下",
                         value: 0
                     }, {
-                        text: "200以上",
+                        text: "190以上",
                         value: 1
                     },
-
-
                 ]
 
             },
             weight: {
+                prop: "weight",
+
                 type: "axis",
                 title: "体重",
                 min: " 0",
                 max: "100",
-                step: "25",
+                step: "1",
                 item: [
                     {
                         text: "很瘦",
@@ -116,12 +123,15 @@ Page({
 
         },
         feature: {
+            prop: "feature",
+
             type: 'input',
             value: "红色头发"
         }
         ,
         customerAblity: {
             attitude: {
+                prop: "attitude",
 
                 item: [
                     {
@@ -144,9 +154,10 @@ Page({
                 type: "axis",
                 min: '0',
                 max: "100",
-                step: "33.333",
+                step: "1"
             },
             wearAblity: {
+                prop: "wearAblity",
 
                 title: "着装能力(会不会打扮)",
                 item: [
@@ -176,9 +187,10 @@ Page({
                 type: "axis",
                 min: "0",
                 max: "100",
-                step: "25",
+                step: "1",
             },
             brand: {
+                prop: "brand",
 
                 item: [
                     {
@@ -199,6 +211,7 @@ Page({
                 type: "radio"
             },
             personality: {
+                prop: "personality",
 
                 item: [
                     {
@@ -216,7 +229,7 @@ Page({
 
                 ],
                 title: "着装时尚度",
-                step: '50',
+                step: '1',
                 type: "axis",
                 min: "0",
                 max: "100",
@@ -231,10 +244,10 @@ Page({
     },
     init() {
         //展开折叠面板1
-        // this.setData({customerInfoColl: _.map(this.data.customerInfo, 'prop')})
+        this.setData({customerInfoColl: _.map(this.data.customerInfo, 'prop')})
         //展开折叠面板2
         //  // this.setData({customerAblityColl: _.range(this.data.customerAblity.length)})
-        // this.setData({customerAblityColl: _.map(this.data.customerAblity, 'prop')})
+        this.setData({customerAblityColl: _.map(this.data.customerAblity, 'prop')})
 
     },
     setDetail(e) {
@@ -245,34 +258,34 @@ Page({
     selectInfo(e) {
         let prop = e.currentTarget.dataset.prop
 
-        // let customerInfoColl = this.data.customerInfoColl
+        let customerInfoColl = this.data.customerInfoColl
         //可能多选不需要折叠
         // if (customerInfo[index].type !== 'checkbox') {
         // 勾选后单选按钮折叠
-        // _.remove(customerInfoColl, (o) => {
-        //     return o === index
-        // });
+        _.remove(customerInfoColl, (o) => {
+            return o === prop
+        });
         // }
         this.setData({
-            // customerInfoColl,
+            customerInfoColl,
             [`customerInfo.${prop}.checked`]: e.detail.checked
         })
     },
     selectAblity(e) {
-        // let index = e.currentTarget.dataset.index
         let prop = e.currentTarget.dataset.prop
 
-        // let customerAblityColl = this.data.customerAblityColl
+        let customerAblityColl = this.data.customerAblityColl
         //可能多选不需要折叠
         // if (customerAblity[index].type !== 'checkbox') {
         // 勾选后折叠
-        // _.remove(customerAblityColl, (o) => {
-        //     return o === index
-        // });
+        _.remove(customerAblityColl, (o) => {
+            return o === prop
+        });
         // }
 
+        console.log(e.detail)
         this.setData({
-            // customerAblityColl,
+            customerAblityColl,
             [`customerAblity.${prop}.checked`]: e.detail.checked
         })
     },
