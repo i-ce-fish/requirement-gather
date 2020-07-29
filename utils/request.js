@@ -30,16 +30,14 @@ function request(req) {
                 // 对于 POST 方法且 header['content-type'] 为 application/json 的数据，会对数据进行 JSON 序列化
                 //对于 POST 方法且 header['content-type'] 为 application/x-www-form-urlencoded 的数据，会将数据转换成 query string
 
-                //get + query string不可用
+                //getList 不可用
                 // 'Content-Type': 'application/json',
-                //登录接口不可用
-                // 'Content-Type': 'json'
-
-                'Content-Type': 'application/x-www-form-urlencoded'
-
+                // 添加接口不可用
+                // "Content-Type": "json"
+                //getList使用json , 其他用默认值application/json
+                'Content-Type': req.contentType ? req.contentType : 'application/json'
             },
             success: function (res) {
-
 
                 console.warn('请求结果', res);
                 if (res.statusCode === 200 && res.data.code === 200) {

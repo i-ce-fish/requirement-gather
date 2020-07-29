@@ -8,17 +8,49 @@ function login(data) {
     })
 }
 
-
-function wxLogin(data) {
+//test add
+function add(data) {
     return rq.request({
-        url: "auth/signin",
-        method:'POST',
-        data
+        url: 'users',
+        method: 'POST',
+        data: data
     })
 }
 
 
+function getList(data) {
+    return rq.request({
+        url: 'users',
+        method: 'get',
+        data: data,
+        contentType: 'json'
+    })
+}
+
+function get(id) {
+    return rq.request({
+        url: 'users/' + id,
+        method: 'get'
+    })
+}
+
+function edit(id, data) {
+    return rq.request({
+        url: 'users/' + id,
+        method: 'put',
+        data
+    })
+}
+
+function wxLogin(data) {
+    return rq.request({
+        url: "auth/signin",
+        method: 'POST',
+        data
+    })
+}
 
 module.exports = {
-    login,wxLogin
+    login, wxLogin,
+    add, getList, get, edit
 }

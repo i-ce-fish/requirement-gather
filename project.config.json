@@ -1,33 +1,33 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-      "es6": true,
-      "postcss": true,
-      "preloadBackgroundData": false,
-      "minified": true,
-      "newFeature": true,
-      "coverView": true,
-      "nodeModules": false,
-      "autoAudits": false,
-      "showShadowRootInWxmlPanel": true,
-      "scopeDataCheck": false,
-      "checkInvalidKey": true,
-      "checkSiteMap": true,
-      "uploadWithSourceMap": true,
-      "compileHotReLoad": false,
-      "babelSetting": {
-        "ignore": [],
-        "disablePlugins": [],
-        "outputPath": ""
-      },
-      "useIsolateContext": true,
-      "useCompilerModule": false,
-      "userConfirmedUseCompilerModuleSwitch": false
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
     },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false
+  },
   "compileType": "miniprogram",
   "libVersion": "2.11.0",
   "appid": "wxdf11311086db7dc4",
@@ -38,16 +38,16 @@
   "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
-	"scripts": {
-		"beforeCompile": "sass-to-wxss",
-		"beforePreview": "",
-		"beforeUpload": ""
-	},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
+  "scripts": {
+    "beforeCompile": "sass-to-wxss",
+    "beforePreview": "",
+    "beforeUpload": ""
+  },
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
 		"conversation": {
 			"current": -1,
 			"list": []

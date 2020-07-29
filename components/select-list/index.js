@@ -71,6 +71,7 @@ Component({
             // this.setData({
             //     checked
             // })
+            //触发选项内容与实际值
             this.triggerEvent('selected', {checked, value: e.detail})
 
         },
@@ -82,37 +83,14 @@ Component({
         //     })
         // }
 
-        //需要松开才触发, 否则一拖动就会折叠
-        drag(e) {
-            console.log(e)
-            let checked;
-            let step = this.data.item.step
-
-            //数轴组件的值
-            let axisValue = e.detail.value;
-            //选项的实际值
-            let itemValue = this.data.item.item[axisValue / step];
-            checked = itemValue ? itemValue.text : axisValue
-
-            //死循环
-            // this.setData({
-            //     checked
-            // });
-
-            //返回选项中的值或者组件中的值
-            this.triggerEvent('selected', {checked, value: axisValue})
-        },
-        //点击数轴下方文字
-        // tapText(e){
-        //     console.log(e.currentTarget.dataset.index)
-        // }
-
         //使用小程序滑块
         sliderEnd(e) {
+            //实际值
             let value = e.detail.value;
+            //实际值对应内容
             let itemValue = this.data.item.item[value];
-            let checked = itemValue ? itemValue.text : value
 
+            let checked = itemValue ? itemValue.text : value
             this.triggerEvent('selected', {checked, value})
         },
         //过频导致性能问题, 太慢会有并发错误
@@ -129,12 +107,11 @@ Component({
             let index = Math.floor(long / (totalLong / unit))
             //遍历设置状态
             item.item.map((o, i) => {
-                console.log(o.active)
                 let result = false
                 if (i === index) {
                     result = true
                 }
-                //减少值不改变时的setData
+                //减少值不改变时不必要的setData
                 if (o.active !== result) {
                     this.setData({
                         [`item.item[${i}].active`]: result
@@ -176,6 +153,7 @@ Component({
         },
         confirmDatetime(e) {
             this.closeDatetime()
+            //格式化时间戳
             let datetime = utils.formatTime(new Date(e.detail));
             this.triggerEvent('selected', {checked: datetime, value: e.detail})
             this.setData({

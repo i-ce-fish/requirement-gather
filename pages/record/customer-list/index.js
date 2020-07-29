@@ -251,8 +251,21 @@ Page({
     selected(e) {
         const prop = e.currentTarget.dataset.prop
         this.setData({
-            [`moreFilter.${prop}.value`]: e.detail.value
-            // [`moreFilter.${prop}.checked`]: e.detail.checked
+            // [`moreFilter.${prop}.value`]: e.detail.value,
+            [`moreFilter.${prop}.checked`]: e.detail
+        })
+    },
+//    重置
+    resetFilter() {
+        let moreFilter = this.data.moreFilter;
+        Object.keys(moreFilter).forEach((o) => {
+            console.log(o)
+            console.log(o.value)
+            //todo 先确定子组件返回的参数格式 <= 确定提交的数据格式
+            // o.value = ""
+        })
+        this.setData({
+            moreFilter
         })
     }
 });

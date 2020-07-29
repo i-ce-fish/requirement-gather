@@ -74,6 +74,7 @@
 </view>
         <!--</view>-->
 
+<!--滑块组件-->
 <view wx:if="{{item.type==='axis'}}" class=" ">
     <view class="y-pt-20 y-pb-20">
         {{checked}}
@@ -102,6 +103,8 @@
         </view>
     </view>
 </view>
+
+        <!--日期时间组件-->
         <!--time 21:22-->
         <!--date 2010-01-01-->
         <!--datetime 2010-01-01 21:22-->

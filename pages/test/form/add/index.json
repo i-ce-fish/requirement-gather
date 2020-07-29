@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "y-input-row": "/components/y-input-row/index",
+    "van-field": "@vant/weapp/field/index"
+  }
+}

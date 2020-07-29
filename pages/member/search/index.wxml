@@ -15,12 +15,9 @@
         </view>
     </card>
     <card>
-        <van-search placeholder="请输入顾客手机号" use-right-icon-slot>
-            <view slot="right-icon">
-                <view>确认</view>
-            </view>
+        <van-search placeholder="请输入顾客手机号" show-action bind:cancel="cfmSearch" action-text="确认">
         </van-search>
-        <view class="y-line-height-180">
+        <view class="y-line-height-200">
             <view>
                 会员：杨先生
             </view>
@@ -43,7 +40,10 @@
                 储值：9999元
             </view>
             <view>
-                共23单，金额3587元，平均折率6.5折
+                共23单，金额3587元
+            </view>
+            <view>
+                平均折率6.5折
             </view>
             <view>
                 接待导购：王晓燕、张晓燕、李晓燕
@@ -53,7 +53,7 @@
             </view>
         </view>
         <van-divider></van-divider>
-        <view class="y-line-height-180">
+        <view class="y-line-height-200">
             <view>分享人：王先生</view>
             <view>手机：13656775558</view>
             <view>积分：257127分</view>

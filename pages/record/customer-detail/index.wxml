@@ -1,0 +1,37 @@
+<view>
+    <user-info-bar></user-info-bar>
+    <!--    cfm == confirm -->
+    <van-search placeholder="请输入顾客手机号" show-action bind:cancel="cfmSearch" action-text="确认">
+    </van-search>
+    <card title="会员基本信息">
+
+        <view class="y-pt-20">
+            <view class="">
+                <van-cell-group>
+                    <van-cell title="会员" value="杨先生"/>
+                    <van-cell title="手机" value="13611605568"/>
+                    <van-cell title="生日" value="1988/08/08"/>
+                    <van-cell title="会员等级" value="三级"/>
+                    <van-cell title="积分" value="257127分"/>
+                    <van-cell title="卡券" value="31张"/>
+                    <van-cell title="储值" value="9999元"/>
+                    <van-cell title="累计消费" value="共23单,金额3587元, 平均折率6.5折"/>
+                    <van-cell title="接待导购：" value="王晓燕、张晓燕、李晓燕"/>
+                </van-cell-group>
+
+            </view>
+
+        </view>
+    </card>
+
+    <card title="详细资料">
+        <view class="y-pt-20">
+            <van-cell-group>
+                <van-cell title="积分" value="23456"/>
+                <van-cell title="余额/储值" value="1988/3000"/>
+                <van-cell title="抵现券元/张" value="900元/4张"/>
+                <van-cell title="优惠券" value="4张"/>
+            </van-cell-group>
+        </view>
+    </card>
+</view>

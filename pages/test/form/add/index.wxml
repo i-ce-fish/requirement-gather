@@ -1,0 +1,63 @@
+<view class="container">
+    <view class="page-body">
+        <form catchsubmit="formSubmit" catchreset="formReset">
+            <!--            <view class="page-section page-section-gap">-->
+            <!--                <view class="page-section-title">switch</view>-->
+            <!--                <switch name="switch"/>-->
+            <!--            </view>-->
+
+            <!--            <view class="page-section page-section-gap">-->
+            <!--                <view class="page-section-title">radio</view>-->
+            <!--                <radio-group name="radio">-->
+            <!--                    <label><radio value="radio1"/>选项一</label>-->
+            <!--                    <label><radio value="radio2"/>选项二</label>-->
+            <!--                </radio-group>-->
+            <!--            </view>-->
+
+            <!--            <view class="page-section page-section-gap">-->
+            <!--                <view class="page-section-title">checkbox</view>-->
+            <!--                <checkbox-group name="checkbox">-->
+            <!--                    <label><checkbox value="checkbox1"/>选项一</label>-->
+            <!--                    <label><checkbox value="checkbox2"/>选项二</label>-->
+            <!--                </checkbox-group>-->
+            <!--            </view>-->
+
+            <!--            <view class="page-section page-section-gap">-->
+            <!--                <view class="page-section-title">slider</view>-->
+            <!--                <slider value="50" name="slider" show-value ></slider>-->
+            <!--            </view>-->
+
+            <input class="weui-input" value="email" placeholder="邮箱📪"/>
+            <input class="weui-input" value="mobile" placeholder="手机"/>
+            <input class="weui-input" value="name" placeholder="姓名"/>
+            <van-field
+                    value="value"
+                    placeholder="请输入用户名"
+                    border="{{ false }}"
+                    bind:change="onChange"
+            />
+            <input class="weui-input" value="password" placeholder="密码"/>
+            <input class="weui-input" value="username" placeholder="用户名"/>
+            <input class="weui-input" value="role_id" placeholder="用户名"/>
+            <!--            <view class="page-section">-->
+            <!--                <view class="page-section-title">input</view>-->
+            <!--                <view class="weui-cells weui-cells_after-title">-->
+            <!--                    <view class="weui-cell weui-cell_input">-->
+            <!--                        <view class="weui-cell__bd" style="margin: 30rpx 0" >-->
+            <!--                        </view>-->
+            <!--                    </view>-->
+            <!--                </view>-->
+            <!--            </view>-->
+
+            <view class="btn-area">
+                <button style="margin: 30rpx 0" formType="reset">Reset</button>
+                <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
+                <button style="margin: 30rpx 0" bindtap="getList">getList</button>
+                <button style="margin: 30rpx 0" bindtap="get">get</button>
+                <button style="margin: 30rpx 0" bindtap="edit">edit</button>
+                <button style="margin: 30rpx 0" bindtap="login">login</button>
+            </view>
+        </form>
+    </view>
+
+</view>

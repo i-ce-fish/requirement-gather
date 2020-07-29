@@ -139,7 +139,7 @@
                 <van-button size="large" bindtap="resetFilter">重置</van-button>
             </view>
             <view class="y-col-6">
-                <van-button size="large" color="#1b1b1b" bindtap="tapConfirm">完成</van-button>
+                <van-button size="large" color="#1b1b1b" bindtap="tapConfirm">确定(35个顾客)</van-button>
             </view>
         </view>
 
