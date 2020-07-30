@@ -1,0 +1,17 @@
+<view>
+    <van-button type="primary" bindtap="goAdd">添加</van-button>
+    <van-cell-group>
+        <view wx:for="{{list}}" wx:key="index">
+            <van-cell
+                    title="{{item.name}}"
+                    value="{{item.mobile}}"
+                    label="{{item.username}}"
+                    bind:click="go"
+                    data-url="/pages/test/form/edit/index"
+                    data-id="{{item.id}}"
+                    is-link
+            />
+        </view>
+    </van-cell-group>
+
+</view>

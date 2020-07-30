@@ -1,0 +1,26 @@
+<view class="container">
+    <view class="y-bgc-white y-padding-all ">
+
+        <form catchsubmit="formSubmit" catchreset="formReset">
+
+            <y-input-row label="姓名" name="name" value="{{user.name}}"></y-input-row>
+            <y-input-row label="用户名" name="username" value="{{user.username}}"></y-input-row>
+            <y-input-row label="密码" name="password" value="{{user.password}}"></y-input-row>
+            <y-input-row label="确认密码" name="password2" value="12345789"></y-input-row>
+            <y-input-row label="邮箱" name="email" value="{{user.email}}"></y-input-row>
+            <y-input-row label="手机" name="mobile" value="{{user.mobile}}"></y-input-row>
+            <y-input-row label="头像" name="avatar" value="{{user.avatar}}"></y-input-row>
+            <y-input-row label="角色id" name="role_id" value="{{user.role_id}}"></y-input-row>
+
+            <view>
+                <button style="margin: 30rpx 0" type="primary" formType="submit">保存</button>
+                <button style="margin: 30rpx 0" type="warn" bindtap="del">删除</button>
+                <!--                <button style="margin: 30rpx 0" bindtap="getList">getList</button>-->
+                <!--                <button style="margin: 30rpx 0" bindtap="get">get</button>-->
+                <!--                <button style="margin: 30rpx 0" bindtap="edit">edit</button>-->
+                <!--                <button style="margin: 30rpx 0" bindtap="login">login</button>-->
+            </view>
+        </form>
+
+    </view>
+</view>

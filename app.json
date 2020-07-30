@@ -1,11 +1,13 @@
 {
   "pages": [
+    "pages/test/form/list/index",
+    "pages/test/form/edit/index",
     "pages/test/form/add/index",
+    "pages/admin/employee/index",
     "pages/home/index/index",
     "pages/record/customer-detail/index",
     "pages/record/customer-info/index",
     "pages/record/customer-list/index",
-    "pages/admin/employee/index",
     "pages/my/index",
     "pages/record/feature/index",
     "pages/record/customer-record/index",

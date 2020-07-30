@@ -1,5 +1,7 @@
 // components/test.js
 Component({
+    behaviors: ['wx://form-field'],
+
     //启用aap.wxss全局样式
     options: {
         addGlobalClass: true,

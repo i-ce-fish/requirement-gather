@@ -40,12 +40,12 @@ wx.$go = function (url, data) {
         url: url + "?" + str
     })
 },
-    wx.$toast = function (text, duration, success) {
+    wx.$toast = function (text, duration, icon) {
         wx.showToast({
             title: text ? text : '未完善的功能',
-            icon: success ? 'success' : 'none',
+            icon: icon ? 'success' : 'none',
             duration: duration || 2000
-        })
+        });
     }
 
 //  全局状态管理

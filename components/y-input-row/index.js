@@ -1,5 +1,9 @@
 // components/test.js
 Component({
+    //使表单识别自定义组件
+    behaviors: ['wx://form-field'],
+    // behaviors: ['wx://form-field-group']
+
     //启用aap.wxss全局样式
     options: {
         addGlobalClass: true,
@@ -36,8 +40,14 @@ Component({
      */
     methods: {
         onChange(e) {
+            this.setData({
+                value: e.detail.value
+            })
             this.triggerEvent("blur", e.detail.value)
         },
+        // onInput(e) {
+        //     this.triggerEvent("input", e.detail.value)
+        // }
 
     }
 })

@@ -42,6 +42,14 @@ function edit(id, data) {
     })
 }
 
+function del(id) {
+    return rq.request({
+        url: 'users/' + id,
+        method: 'DELETE'
+    })
+
+}
+
 function wxLogin(data) {
     return rq.request({
         url: "auth/signin",
@@ -52,5 +60,5 @@ function wxLogin(data) {
 
 module.exports = {
     login, wxLogin,
-    add, getList, get, edit
+    get, getList, add, edit, del
 }
