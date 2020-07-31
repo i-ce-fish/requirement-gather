@@ -1,0 +1,38 @@
+<view>
+    <user-info-bar></user-info-bar>
+    <card title="上传主图(1张)">
+        <view class="y-line-height-180 y-pt-20 y-color-gray">
+
+            <view>图片为正面全身照</view>
+            <view>图片大小为3M以内</view>
+
+            <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable="{{true}}" max-count="1"/>
+        </view>
+
+    </card>
+    <card title="上传辅图">
+        <view class="y-line-height-180 y-pt-20 y-color-gray">
+
+            <view class="y-color-gray">辅图依次为穿法的侧图、背图和其他细节图</view>
+
+            <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable="{{true}}"/>
+        </view>
+
+    </card>
+    <card>
+        <y-input-row label="穿法编号" placeholder="单行输入/自动产生编码"></y-input-row>
+    </card>
+
+    <card padding="0">
+
+        <van-collapse value="{{coll}}" bind:change="setDetail" data-prop="coll">
+            <view wx:for="{{wearList}}" wx:key="index">
+                <van-collapse-item title="{{item.title}}" value="{{item.checked}}" name="{{index}}">
+                    <select-list-add item="{{item}}"
+                                     bindselected="select"
+                                     data-prop="{{index}}"></select-list-add>
+                </van-collapse-item>
+            </view>
+        </van-collapse>
+    </card>
+</view>

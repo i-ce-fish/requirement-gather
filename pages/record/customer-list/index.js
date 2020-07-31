@@ -99,7 +99,7 @@ Page({
             },
             memberType: {
                 item: [
-                    {text: "游客", value: 1},
+                    {text: "游客", value: 0},
                     {text: "新入会员", value: 1},
                     {text: "复购会员", value: 2}
                 ],

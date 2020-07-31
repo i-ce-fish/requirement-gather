@@ -34,9 +34,9 @@
         <van-button bindtap="go" data-url="/pages/my/index">我的</van-button>
         <van-button bindtap="go" data-url="/pages/record/customer-info/index">顾客信息页</van-button>
         <van-button bindtap="go" data-url="/pages/record/customer-list/index">顾客列表页</van-button>
+        <van-button bindtap="go" data-url="/pages/wear/add/index">添加穿法</van-button>
         <!--测试表单-->
-        <van-button bindtap="go" data-url="/pages/test/form/add/index">员工添加页</van-button>
-        <van-button bindtap="go" data-url="/pages/test/form/edit/index">员工修改页</van-button>
-        <van-button bindtap="go" data-url="/pages/test/form/list/index">员工列表页</van-button>
+        <van-button bindtap="go" data-url="/pages/test/form/add/index">form添加页</van-button>
+        <van-button bindtap="go" data-url="/pages/test/form/list/index">list列表页</van-button>
     </card>
 </view>

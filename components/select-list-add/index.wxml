@@ -1,11 +1,9 @@
 <!--折叠项-->
-        <!--<view wx:for="{{list}}" wx:key="index">-->
         <!--    单选-->
 <view wx:if="{{item.type==='radio'}}">
     <van-radio-group value="{{checked}}" data-prop="checked"
                      bind:change="tapCheckbox">
         <view class=" y-padding-lr">
-
             <view class="y-flex  y-flex-wrap y-vertical-center">
                 <van-radio class="y-col-4 y-pt-20 "
                            checked-color="#378694"
@@ -20,19 +18,25 @@
                     </view>
 
                 </van-radio>
+
+                <!--                默认可添加-->
+                <view class="y-col-4 y-pt-20" wx:if="{{!item.unAddable}}">
+                    <van-button type="primary" bindtap="showPopup" data-title="{{item.title}}" icon="plus"
+                                size="mini"></van-button>
+                </view>
             </view>
         </view>
     </van-radio-group>
 </view>
-        <!--        <view  wx:else>-->
+
+
+        <!--    多选-->
 <view wx:if="{{item.type==='checkbox'}}">
-    <!--    多选-->
     <!--        <view wx:if="{{item.type ==='checkbox'}}">-->
     <van-checkbox-group value="{{checked}}" data-prop="checked"
                         bind:change="tapCheckbox">
         <view class=" y-padding-lr">
-
-        <view class="y-flex  y-flex-wrap y-vertical-center">
+            <view class="y-flex  y-flex-wrap y-vertical-center">
                 <van-checkbox name="{{index}}" class="y-col-4 y-pt-20 "
                               checked-color="#378694" shape="square"
                               wx:for="{{item.item}}"
@@ -43,63 +47,34 @@
                     <view class="y-color-gray">
                         {{item.collapse?item.item[index]:innerItem.text}}
                     </view>
-
                 </van-checkbox>
+
+                <!--                默认可添加-->
+                <view class="y-col-4 y-pt-20" wx:if="{{!item.unAddable}}">
+                    <van-button type="primary" bindtap="showPopup" data-title="{{item.title}}" icon="plus"
+                                size="mini"></van-button>
+                </view>
             </view>
         </view>
     </van-checkbox-group>
-    <!--        </view>-->
 </view>
-        <!--</view>-->
 
-        <!--滑块组件-->
-<view wx:if="{{item.type==='axis'}}" class=" ">
-    <view class="y-pt-20 y-pb-20">
-        {{checked}}
-    </view>
-    <slider value="{{ checked }}"
-            min="{{item.min}}" step="{{item.step}}"
-            max="{{item.max}}"
-            bindchange="sliderEnd"
-            bindchanging="slidering"
-            show-value
-            style="margin: 0"
-    >
-        <!--            use-button-slot bind:drag="drag" -->
-        <!--        <view class="custom-button" slot="button">-->
-        <!--            {{ checked }}-->
-        <!--            <van-button size="mini" round>-->
-        <!--            </van-button>-->
-        <!--        </view>-->
-    </slider>
-    <view class="y-flex y-align-between y-padding-t y-color-gray y-col-11">
-        <view wx:for="{{item.item}}" wx:key="index"
-              class="{{item.active?'active':''}}"
-        >
-            <!--              bindtap="tapText" data-index="{{index}}" -->
-            {{item.text}}
+
+        <!--添加选项时候的弹窗-->
+<van-popup show="{{ showPopup }}" bind:close="closePopup" closeable custom-style="width: 100%">
+    <view class="y-padding-all y-line-height-200">
+
+        <view class=" y-color-black y-font-blod y-font-l ">添加{{item.title}}选项</view>
+        <view class="y-pt-20">
+            <y-input-row label="选项" placeholder="请输入"></y-input-row>
+
+        </view>
+        <view class=" y-flex y-align-around y-pt-20">
+
+            <van-button bindtap="closePopup">取消</van-button>
+            <van-button bindtap="tapAdd" type="primary">添加</van-button>
         </view>
     </view>
-</view>
 
-        <!--日期时间组件-->
-        <!--time 21:22-->
-        <!--date 2010-01-01-->
-        <!--datetime 2010-01-01 21:22-->
-<view wx:if="{{item.type==='datetime'}}">
-    <view class="y-padding-lr">
-        <van-button bindtap="showDatetime">
-            {{checked?checked:'选择时间'}}
-        </van-button>
-    </view>
-    <van-popup show="{{ showDatetime }}" bind:close="closeDatetime"
-               position="bottom" custom-style="width: 100%"
-    >
-        <van-datetime-picker
-                type="datetime"
-                value="{{ currentDate }}"
-                bind:cancel="closeDatetime"
-                bind:confirm="confirmDatetime"
-        />
-    </van-popup>
-</view>
+
+</van-popup>

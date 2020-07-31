@@ -25,6 +25,26 @@ Page({
             })
         })
     },
+    edit(id, data) {
+        user.edit(id, data).then(res => {
+            wx.$toast('修改成功', 700, 'success')
+            setTimeout(() => {
+                this.goList()
+            }, 700)
+        })
+
+    },
+    del() {
+        user.del(this.data.id).then((res) => {
+            wx.$toast('删除成功', 700, 'success')
+            setTimeout(() => {
+                this.goList()
+            }, 700)
+        })
+    },
+    goList() {
+        wx.$go('/pages/test/form/list/index')
+    },
     formSubmit(e) {
 
         let rules = [
@@ -57,43 +77,14 @@ Page({
 
         let checkRes = form.validation(e.detail.value, rules);
 
+        //测试期间跳过校验
         checkRes = ''
         if (!checkRes) {
-            user.edit(this.data.id, e.detail.value).then(res => {
-                wx.showToast({
-                    title: '修改成功',
-                    icon: 'success',
-                    duration: 700,
-                    success() {
-                        setTimeout(
-                            () => {
-                                wx.$go('/pages/test/form/list/index')
-                            }, 700
-                        )
-                    }
-                })
-            })
-
+            this.edit(this.data.id, e.detail.value)
         } else {
             wx.$toast(checkRes)
         }
 
     },
 
-    del() {
-        user.del(this.data.id).then((res) => {
-            wx.showToast({
-                title: '删除成功',
-                icon: 'success',
-                duration: 700,
-                success() {
-                    setTimeout(
-                        () => {
-                            wx.$go('/pages/test/form/list/index')
-                        }, 700
-                    )
-                }
-            })
-        })
-    }
 })

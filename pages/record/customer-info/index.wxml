@@ -15,6 +15,7 @@
     <!--        </view>-->
     <!--    </van-search>-->
 
+
     <card>
         <!--            todo if-->
         <van-collapse value="{{customerInfoColl}}" bind:change="setDetail" data-prop="customerInfoColl">

@@ -1,10 +1,8 @@
 const _ = require('../../../lib/lodash.min')
 Page({
     data: {
-
         customerInfo: {
             friend: {
-                prop: "friend",
                 type: "radio",
                 title: "同伴人数",
                 // min: "0",
@@ -23,13 +21,9 @@ Page({
                         text: "2人以上",
                         value: "2"
                     },
-
-
                 ]
             },
             sex: {
-                prop: "sex",
-
                 type: "checkbox",
                 item: [
                     {
@@ -44,13 +38,10 @@ Page({
                         text: "+",
                         value: 2
                     },
-
                 ],
                 title: "性别"
             },
             age: {
-                prop: "age",
-
                 item: [
                     {text: "幼童", value: "0"},
                     {text: "小童", value: "1"},
@@ -67,12 +58,8 @@ Page({
                 ],
                 title: "顾客年龄",
                 type: 'checkbox'
-
-
             },
             height: {
-                prop: "height",
-
                 type: "axis",
                 title: "身高",
                 min: "100",
@@ -87,11 +74,8 @@ Page({
                         value: 1
                     },
                 ]
-
             },
             weight: {
-                prop: "weight",
-
                 type: "axis",
                 title: "体重",
                 min: " 0",
@@ -117,22 +101,16 @@ Page({
                         text: "很胖",
                         value: 4
                     },
-
                 ]
             }
-
         },
         feature: {
-            prop: "feature",
-
             type: 'input',
             value: "红色头发"
         }
         ,
         customerAblity: {
             attitude: {
-                prop: "attitude",
-
                 item: [
                     {
                         text: "极不用心",
@@ -157,8 +135,6 @@ Page({
                 step: "1"
             },
             wearAblity: {
-                prop: "wearAblity",
-
                 title: "着装能力(会不会打扮)",
                 item: [
                     {
@@ -181,8 +157,6 @@ Page({
                         text: "穿搭非常好",
                         value: 4
                     },
-
-
                 ],
                 type: "axis",
                 min: "0",
@@ -190,8 +164,6 @@ Page({
                 step: "1",
             },
             brand: {
-                prop: "brand",
-
                 item: [
                     {
                         text: "市场货",
@@ -205,14 +177,11 @@ Page({
                         text: "轻奢品",
                         value: 2
                     },
-
                 ],
                 title: "着装品牌",
                 type: "radio"
             },
             personality: {
-                prop: "personality",
-
                 item: [
                     {
                         text: "基本穿搭",
@@ -225,9 +194,7 @@ Page({
                     {
                         text: "非常个性",
                         value: 2
-                    },
-
-                ],
+                    },],
                 title: "着装时尚度",
                 step: '1',
                 type: "axis",
@@ -244,11 +211,16 @@ Page({
     },
     init() {
         //展开折叠面板1
+        _.forEach(this.data.customerInfo, (o, key) => {
+            o.prop = key
+        })
         this.setData({customerInfoColl: _.map(this.data.customerInfo, 'prop')})
         //展开折叠面板2
+        _.forEach(this.data.customerAblity, (o, key) => {
+            o.prop = key
+        })
         //  // this.setData({customerAblityColl: _.range(this.data.customerAblity.length)})
         this.setData({customerAblityColl: _.map(this.data.customerAblity, 'prop')})
-
     },
     setDetail(e) {
         this.setData({
@@ -257,7 +229,6 @@ Page({
     },
     selectInfo(e) {
         let prop = e.currentTarget.dataset.prop
-
         let customerInfoColl = this.data.customerInfoColl
         //可能多选不需要折叠
         // if (customerInfo[index].type !== 'checkbox') {
@@ -273,7 +244,6 @@ Page({
     },
     selectAblity(e) {
         let prop = e.currentTarget.dataset.prop
-
         let customerAblityColl = this.data.customerAblityColl
         //可能多选不需要折叠
         // if (customerAblity[index].type !== 'checkbox') {
@@ -282,7 +252,6 @@ Page({
             return o === prop
         });
         // }
-
         console.log(e.detail)
         this.setData({
             customerAblityColl,

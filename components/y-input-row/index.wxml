@@ -1,5 +1,5 @@
 <view class="y-flex y-vertical-center y-bgc-white">
-    <view class="y-input y-col-3 y-pr-20 ">
+    <view class="y-input y-col-3 y-pr-20 y-color-black">
         {{label}}
     </view>
     <view class="y-flex-1 ">
