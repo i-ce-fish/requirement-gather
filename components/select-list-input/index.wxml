@@ -1,0 +1,65 @@
+<!--折叠项-->
+        <!--    单选-->
+<view wx:if="{{item.type==='radio'}}">
+    <van-radio-group value="{{checked}}" data-prop="checked"
+                     bind:change="tapCheckbox">
+        <view class=" y-padding-lr">
+            <view class="y-flex  y-flex-wrap y-vertical-center">
+                <van-radio class="y-col-4 y-pt-20 "
+                           checked-color="#378694"
+                           name="{{index}}"
+                           wx:for="{{item.item}}"
+                           wx:for-item="innerItem"
+                           wx:key="index">
+                    <!-- remark 神坑 text 标签不能换行写 否则内容也会换行-->
+                    <!--                    <text class="y-color-gray">{{innerItem}}</text>-->
+                    <view class="y-color-gray">
+                        {{item.collapse ? item.item[index] : innerItem.text}}
+                    </view>
+
+                </van-radio>
+
+                <!--                默认可添加-->
+                <view class="y-col-12 y-pt-20">
+                    <y-input-row label="{{item.inputLabel?item.inputLabel:'自定义'}}"
+                                 placeholder="{{item.inputPlaceholder?item.inputPlaceholder:'请输入'}}"
+                                 bindblur="cfmInput"
+                    ></y-input-row>
+                </view>
+            </view>
+        </view>
+    </van-radio-group>
+</view>
+
+
+        <!--    多选-->
+<view wx:if="{{item.type==='checkbox'}}">
+    <!--        <view wx:if="{{item.type ==='checkbox'}}">-->
+    <van-checkbox-group value="{{checked}}" data-prop="checked"
+                        bind:change="tapCheckbox">
+        <view class=" y-padding-lr">
+            <view class="y-flex  y-flex-wrap y-vertical-center">
+                <van-checkbox name="{{index}}" class="y-col-4 y-pt-20 "
+                              checked-color="#378694" shape="square"
+                              wx:for="{{item.item}}"
+                              wx:for-item="innerItem"
+                              wx:key="index">
+                    <!-- remark 神坑 text 标签不能换行写 否则内容也会换行-->
+                    <!--                    <text class="y-color-gray">{{innerItem}}</text>-->
+                    <view class="y-color-gray">
+                        {{item.collapse ? item.item[index] : innerItem.text}}
+                    </view>
+                </van-checkbox>
+                <!--                默认可添加-->
+                <view class="y-col-12 y-pt-20">
+                    <y-input-row label="{{item.inputLabel?item.inputLabel:'自定义'}}"
+                                 placeholder="{{item.inputPlaceholder?item.inputPlaceholder:'请输入'}}"
+                                 bindblur="cfmInput"
+                    ></y-input-row>
+                </view>
+            </view>
+        </view>
+    </van-checkbox-group>
+</view>
+
+
