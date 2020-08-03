@@ -1,0 +1,151 @@
+<view>
+    <user-info-bar></user-info-bar>
+    <view>
+        <card>
+
+            <view class="y-line-height-180">
+                <view>顾客：女，39岁，会员号123456</view>
+                <view>穿着人：男，15岁，初中生，160cm 微胖，白皙</view>
+            </view>
+        </card>
+        <card>
+            <van-search placeholder="扫码/输入款号" show-action bind:cancel="cfmSearch" action-text="确定"
+                        use-left-icon-slot>
+                <view slot="left-icon" class="y-flex y-vertical-center y-pr-20">
+                    <van-icon name="scan" size="50rpx"/>
+                </view>
+            </van-search>
+
+            <view>
+
+                <view class="y-flex y-align-around">
+
+                    <view>
+                        <van-image width="300rpx" height="100%" fit="widthFix"
+                                   src="https://www.uniqlo.cn/hmall/test/u0000000018468/model/rank1/first/591-822/1.jpg"></van-image>
+                    </view>
+                    <view>
+                        <van-image width="300rpx" height="100%" fit="widthFix"
+                                   src="https://www.uniqlo.cn/hmall/test/u0000000018468/model/rank2/first/591-822/1.jpg"></van-image>
+                    </view>
+                </view>
+                <view class="y-line-height-200">
+
+                    <view class="y-font-xl y-font-blod">商品信息</view>
+                    <view>品类：针织短袖恤</view>
+                    <view>品牌：metersbonwe</view>
+                    <view>款号：707418</view>
+                    <view>性别：男款</view>
+                    <view>吊牌价：119.0</view>
+                    <view>季节：夏</view>
+                    <view class="y-flex y-align-right">
+
+                        <van-button type="primary" size="small">确定</van-button>
+                    </view>
+                </view>
+
+            </view>
+        </card>
+        <card padding='0'>
+
+
+            <van-collapse value="{{coll}}" bind:change="setDetail" data-prop="coll">
+                <!--价格需求-->
+                <view>
+                    <van-collapse-item title="{{price.title}}" value="{{price.checked}}  {{price.customize}}"
+                                       name="price">
+                        <select-list-input item="{{price}}" bindselected="select"
+                                           data-prop="price"
+                                           data-index="price"
+                                           bindinput="inputCustomize"
+                        ></select-list-input>
+                    </van-collapse-item>
+                </view>
+
+                <!--                面料需求-->
+                <view>
+                    <van-collapse-item title="面料需求" value="{{fabric.checked}}" name="fabric">
+
+                        <view wx:for="{{fabric}}" wx:key="index" class="y-pt-20">
+                            <view class=" y-line-height-180 y-padding-lr">
+                                {{item.title}}
+                            </view>
+                            <view class="y-padding-lr">
+
+                                <select-list-input item="{{item}}"
+                                                   data-prop="{{index}}"
+                                                   data-index="fabric.{{index}}"
+                                                   bindselected="select"
+                                                   bindinput="inputCustomize"
+                                ></select-list-input>
+                            </view>
+                        </view>
+                    </van-collapse-item>
+                </view>
+
+
+                <!--                遍历的-->
+                <view wx:for="{{filter}}" wx:key="index">
+                    <van-collapse-item title="{{item.title}}" value="{{item.checked}}  {{item.customize}}"
+                                       name="{{index}}">
+                        <select-list-input item="{{item}}"
+                                           bindselected="select"
+                                           data-prop="{{index}}"
+                                           data-index="filter.{{index}}"
+                                           bindinput="inputCustomize"
+                        ></select-list-input>
+                    </van-collapse-item>
+                </view>
+
+                <!--                图片-->
+
+                <view>
+                    <van-collapse-item title="{{pattern.title}}" value="{{pattern.checked}}" name="pattern">
+                        <view class="y-padding-lr">
+
+                            <y-input-row label="{{pattern.inputLabel}}"
+                                         placeholder="{{printing.inputPlaceholder}}"></y-input-row>
+                        </view>
+                        <van-uploader file-list="{{ pattern.imgs }}" deletable="{{true}}" bind:delete="delPatternImg"
+                                      bind:after-read="uploadPatternImgs">
+                        </van-uploader>
+                    </van-collapse-item>
+
+
+                </view>
+
+                <!--                颜色-->
+                <view>
+                    <van-collapse-item title="{{color.title}}" value="{{color.checked}}" name="color">
+                        <view class="y-padding-lr">
+
+                            <y-input-row label="{{color.inputLabel}}"
+                                         placeholder="{{color.inputPlaceholder}}"
+                                         data-prop="color"
+                                         bindblur="onlyInput"
+                            ></y-input-row>
+
+                        </view>
+                    </van-collapse-item>
+                </view>
+                <!--                印花工艺-->
+                <view>
+                    <van-collapse-item title="{{printing.title}}" value="{{printing.checked}}" name="printing">
+                        <view class="y-padding-lr">
+
+
+                            <y-input-row label="{{printing.inputLabel}}"
+                                         placeholder="{{printing.inputPlaceholder}}"
+                                         data-prop="printing"
+                                         bindblur="onlyInput"
+                            ></y-input-row>
+                        </view>
+                    </van-collapse-item>
+                </view>
+            </van-collapse>
+
+
+        </card>
+
+    </view>
+</view>

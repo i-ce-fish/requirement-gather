@@ -22,7 +22,7 @@ Component({
         },
         placeholder: {
             type: String,
-            value: ""
+            value: "请输入"
         },
         rightIcon: {
             type: String,

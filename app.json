@@ -3,6 +3,7 @@
     "pages/home/index/index",
     "pages/wear/add/index",
     "pages/record/customer-info/index",
+    "pages/record/customer-goods/index",
     "pages/test/form/list/index",
     "pages/test/form/edit/index",
     "pages/test/form/add/index",
@@ -52,7 +53,5 @@
     "navigationBarTitleText": "顾客需求采集",
     "navigationBarTextStyle": "white"
   },
-  "plugins": {
-  }
+  "plugins": {}
 }
-

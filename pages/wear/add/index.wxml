@@ -35,4 +35,10 @@
             </view>
         </van-collapse>
     </card>
+
+    <card>
+        <view class="y-flex y-align-around">
+            <van-button type="primary">提交</van-button>
+        </view>
+    </card>
 </view>
