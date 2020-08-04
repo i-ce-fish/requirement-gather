@@ -110,6 +110,8 @@ App({
             }
         })
     },
+    onLoad() {
+    },
     onError(err) {
         //全局错误监听
         console.log("发生错误：" + err)

@@ -7,18 +7,16 @@ Page({
         chosen: ''
     },
 
-    add(data) {
-        user.add(data).then(res => {
-            wx.$toast('添加成功', 700, 'success')
-            setTimeout(
-                () => {
-                    wx.$go('/pages/test/form/list/index')
-                }, 700
-            )
-        })
+    async add(data) {
+        await user.add(data)
+        wx.$toast('添加成功', 700, 'success')
+        setTimeout(
+            () => {
+                wx.$go('/pages/test/form/list/index')
+            }, 700
+        )
     },
     formSubmit(e) {
-
 
         let rules = [
             {

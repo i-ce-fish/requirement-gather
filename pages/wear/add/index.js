@@ -157,8 +157,74 @@ Page({
                 ]
             }
 
+        },
+        //    扫码读取的图片
+        pro: {
+            catalog: 'T恤',
+            catalogId: '1',
+            name: '男经典纯棉圆领T恤',
+            //掉拍肩
+            price: "199.99",
+            inventory: '99',
+            styleId: '226250-70'
+        },
+        //穿法相关单品数据格式
+        productList: [
+            {
+                catalog: 'T恤',
+                catalogId: '1',
+                item: [
+                    {
+                        catalog: 'T恤',
+                        catalogId: '1',
+                        name: '男经典纯棉圆领T恤',
+                        //掉拍肩
+                        price: "199.99",
+                        inventory: '99',
+                        styleId: '226250-70'
+                    }, {
+                        catalog: 'T恤',
+                        catalogId: '1',
+                        name: '男经典纯棉圆领T恤',
+                        //掉拍肩
+                        price: "199.99",
+                        inventory: '99',
+                        styleId: '226250-70'
+                    }, {
+                        catalog: 'T恤',
+                        catalogId: '1',
+                        name: '男经典纯棉圆领T恤',
+                        //掉拍肩
+                        price: "199.99",
+                        inventory: '99',
+                        styleId: '226250-70'
+                    }
+                ]
+            }, {
+                catalog: '裙子',
+                catalogId: '1',
+                item: [
+                    {
+                        catalog: '裙子',
+                        catalogId: '1',
+                        name: '女经典裙子',
+                        //掉拍肩
+                        price: "199.99",
+                        inventory: '99',
+                        styleId: '226250-70'
+                    }, {
+                        catalog: '裙子',
+                        catalogId: '1',
+                        name: '女经典裙子',
+                        //掉拍肩
+                        price: "199.99",
+                        inventory: '99',
+                        styleId: '226250-70'
+                    }
+                ]
+            },
 
-        }
+        ]
     },
     onLoad: function (options) {
         //遍历设置prop属性, 折叠用

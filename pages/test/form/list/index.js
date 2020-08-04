@@ -11,12 +11,10 @@ Page({
     onShow() {
         this.getList()
     },
-    getList() {
-        user.getList().then(res => {
-            console.log(res)
-            this.setData({
-                list: res.list
-            })
+    async getList() {
+        const {list} = await user.getList()
+        this.setData({
+            list
         })
     },
     goAdd() {

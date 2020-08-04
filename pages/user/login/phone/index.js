@@ -73,15 +73,14 @@ Page({
     onShareAppMessage: function () {
 
     },
-    login() {
+    async login() {
         //todo
         //登录接口需要单独设计content-type，后期不需要这种登录方式
         // 'Content-Type': 'application/json',
-        user.login(this.data.userForm).then(res => {
-            wx.setStorageSync('token', res.token),
+        const res = await user.login(this.data.userForm)
+        wx.setStorageSync('token', res.token),
             // globalData.userinfo = "test info"
-                this.goHome()
-        })
+            this.goHome()
 
     },
     goHome() {

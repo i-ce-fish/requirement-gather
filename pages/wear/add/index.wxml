@@ -3,20 +3,77 @@
     <card title="上传主图(1张)">
         <view class="y-line-height-180 y-pt-20 y-color-gray">
 
+            <view>店门现货穿搭完成后，拍照、上传主图1张</view>
             <view>图片为正面全身照</view>
             <view>图片大小为3M以内</view>
+            <view>模特可以有不同的动作</view>
 
             <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable="{{true}}" max-count="1"/>
         </view>
 
     </card>
-    <card title="上传辅图">
+    <card title="上传侧面图">
         <view class="y-line-height-180 y-pt-20 y-color-gray">
-
             <view class="y-color-gray">辅图依次为穿法的侧图、背图和其他细节图</view>
-
             <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable="{{true}}"/>
         </view>
+    </card>
+    <card title="上传背后图">
+        <view class="y-line-height-180 y-pt-20 y-color-gray">
+            <view class="y-color-gray">辅图依次为穿法的侧图、背图和其他细节图</view>
+            <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable="{{true}}"/>
+        </view>
+    </card>
+    <card title="上传配饰单品/细节图">
+        <view class="y-line-height-180 y-pt-20 y-color-gray">
+            <view class="y-color-gray">辅图依次为穿法的侧图、背图和其他细节图</view>
+            <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable="{{true}}"/>
+        </view>
+    </card>
+
+    <card title="穿法单品">
+
+        <van-search placeholder="扫码/输入款号" show-action bind:cancel="cfmSearch" action-text="确定"
+                    use-left-icon-slot>
+            <view slot="left-icon" class="y-flex y-vertical-center y-pr-20">
+                <van-icon name="scan" size="50rpx"/>
+            </view>
+        </van-search>
+
+        <view wx:for="{{productList}}" wx:key="index">
+
+            <card>
+                <view>
+                    {{item.catalog}}
+                </view>
+
+                <van-cell-group>
+                    <view wx:for="{{item.item}}" wx:key="index">
+                        <van-cell
+                                title="{{item.styleId}}"
+                                use-label-slot
+                        >
+                            <view slot="label">
+                                <view>
+                                    {{item.name}}
+                                </view>
+                            </view>
+
+                            <view>
+                                <view>
+                                    ￥{{item.price}}
+                                </view>
+                                <view class="y-color-red">
+                                    {{item.inventory}}
+                                </view>
+                            </view>
+                        </van-cell>
+                    </view>
+                </van-cell-group>
+
+            </card>
+        </view>
+
 
     </card>
     <card>

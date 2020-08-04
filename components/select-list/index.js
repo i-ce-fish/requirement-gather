@@ -21,6 +21,7 @@ Component({
     methods: {
 
 
+        //todo 封装page
         setDetail(e) {
             this.setData({
                 [e.currentTarget.dataset.prop]: e.detail

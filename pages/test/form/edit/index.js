@@ -18,30 +18,28 @@ Page({
         this.get(this.data.id)
 
     },
-    get(id) {
-        user.get(id).then(res => {
-            this.setData({
-                user: res
-            })
+    async get(id) {
+        const res = await user.get(id)
+        this.setData({
+            user: res
         })
     },
-    edit(id, data) {
-        user.edit(id, data).then(res => {
-            wx.$toast('修改成功', 700, 'success')
-            setTimeout(() => {
-                this.goList()
-            }, 700)
-        })
+    async edit(id, data) {
+        await user.edit(id, data)
+        wx.$toast('修改成功', 700, 'success')
+        setTimeout(() => {
+            this.goList()
+        }, 700)
 
     },
-    del() {
-        user.del(this.data.id).then((res) => {
-            wx.$toast('删除成功', 700, 'success')
-            setTimeout(() => {
-                this.goList()
-            }, 700)
-        })
+    async del() {
+        await user.del(this.data.id)
+        wx.$toast('删除成功', 700, 'success')
+        setTimeout(() => {
+            this.goList()
+        }, 700)
     },
+
     goList() {
         wx.$go('/pages/test/form/list/index')
     },

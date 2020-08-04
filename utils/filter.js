@@ -12,6 +12,26 @@ function loginCheck(pageObj) {
                 let currentInstance = getPageInstance();
                 _onLoad.call(currentInstance, options);
 
+
+                /**
+                 *   todo 页面级权限控制
+                 *  静态: 前端维护本地权限表
+                 *  动态: 后端维护
+                 *
+                 */
+
+                const route = getPageInstance().route
+                const role = {roleId: 1, roleName: 'admin'}
+
+                const permission = [
+                    {
+                        page: 'pages/user/login/index/index',
+                        roleId: [1, 2, 3, 4, 5]
+                    }
+                ]
+                //    route.getRoute.getRoleId
+
+
             } else {
                 //跳转到登录页
                 wx.redirectTo({
@@ -25,7 +45,7 @@ function loginCheck(pageObj) {
 
 // 获取当前页面
 function getPageInstance() {
-    var pages = getCurrentPages();
+    const pages = getCurrentPages();
     return pages[pages.length - 1];
 }
 
