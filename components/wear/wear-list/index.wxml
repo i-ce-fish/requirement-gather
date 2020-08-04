@@ -1,0 +1,36 @@
+<view wx:for="{{list}}" wx:key="index" class="y-flex y-mt-20 y-padding-tb y-shadow-b y-bgc-white"
+      style="height: 600rpx;">
+
+    <view class="y-col-6 y-flex y-center y-align-center" style="position: relative" bindtap="tapImg"
+          data-img="{{item.img}}">
+        <!--                通过两张图片叠加，实现毛玻璃效果，前景图片绝对定位-->
+        <view class="bg-img-box">
+            <van-image height="100%" width="100%" fit="fill"
+                       src="{{item.img}}"></van-image>
+        </view>
+        <view class="img-box">
+            <van-image height="600rpx" width="375rpx" fit="contain"
+                       src="{{item.img}}"></van-image>
+        </view>
+    </view>
+    <view class="y-col-6 y-padding-lr y-box y-flex-col y-align-between"
+          bindtap="go" data-url="/pages/wear/detail/index?id={{item.id}}"
+    >
+        <view>
+            <!--            <view class="y-line-height-180">-->
+            <!--                {{item.code}}-->
+            <!--            </view>-->
+            <view class="y-line-height-180 y-font-blod y-font-l">
+                {{item.title}}
+            </view>
+            <view class="y-pt-20">
+                {{item.intro}}
+            </view>
+
+        </view>
+        <view class="y-underline y-flex y-align-right">
+            详情
+        </view>
+
+    </view>
+</view>
