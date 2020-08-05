@@ -1,20 +1,20 @@
 <!--折叠项-->
         <!--    单选-->
 <view wx:if="{{item.type==='radio'}}">
-    <van-radio-group value="{{checked}}" data-prop="checked"
+    <van-radio-group value="{{item.value}}"
                      bind:change="tapCheckbox">
         <view class=" y-padding-lr">
             <view class="y-flex  y-flex-wrap y-vertical-center">
                 <van-radio class="y-col-4 y-pt-20 "
                            checked-color="#378694"
-                           name="{{index}}"
+                           name="{{innerItem.value}}"
                            wx:for="{{item.item}}"
                            wx:for-item="innerItem"
                            wx:key="index">
                     <!-- remark 神坑 text 标签不能换行写 否则内容也会换行-->
                     <!--                    <text class="y-color-gray">{{innerItem}}</text>-->
                     <view class="y-color-gray">
-                        {{item.collapse?item.item[index]:innerItem.text}}
+                        {{item.collapse ? item.item[index] : innerItem.text}}
                     </view>
 
                 </van-radio>
@@ -29,23 +29,23 @@
     </van-radio-group>
 </view>
 
-
         <!--    多选-->
 <view wx:if="{{item.type==='checkbox'}}">
     <!--        <view wx:if="{{item.type ==='checkbox'}}">-->
-    <van-checkbox-group value="{{checked}}" data-prop="checked"
+    <van-checkbox-group value="{{item.value}}"
                         bind:change="tapCheckbox">
         <view class=" y-padding-lr">
             <view class="y-flex  y-flex-wrap y-vertical-center">
-                <van-checkbox name="{{index}}" class="y-col-4 y-pt-20 "
+                <van-checkbox class="y-col-4 y-pt-20 "
                               checked-color="#378694" shape="square"
+                              name="{{innerItem.value}}"
                               wx:for="{{item.item}}"
                               wx:for-item="innerItem"
                               wx:key="index">
                     <!-- remark 神坑 text 标签不能换行写 否则内容也会换行-->
                     <!--                    <text class="y-color-gray">{{innerItem}}</text>-->
                     <view class="y-color-gray">
-                        {{item.collapse?item.item[index]:innerItem.text}}
+                        {{item.collapse ? item.item[index] : innerItem.text}}
                     </view>
                 </van-checkbox>
 

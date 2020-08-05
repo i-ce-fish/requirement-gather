@@ -5,7 +5,7 @@ import tool from "../../../utils/tool";
 let app = getApp()
 const filter = require('../../../utils/filter');
 
-Page(filter.loginCheck({
+Page(filter.permission({
 // Page({
 
         /**

@@ -1,5 +1,6 @@
 //app.js
 import Store from './utils/store.js';
+import router from './utils/router'
 
 //lodash的特殊配置
 Object.assign(global, {
@@ -25,7 +26,6 @@ Object.assign(global, {
  // 直接使用 get(obj, path);
  */
 
-
 //wx直接调用的全局方法
 // 路由跳转并传参
 //ps url已经带有参数的情况未处理
@@ -37,9 +37,12 @@ wx.$go = function (url, data) {
     }
     str = str.slice(0, str.length - 1)
     wx.navigateTo({
-        url: url + "?" + str
+        url: url
+            + "?" + str
     })
 },
+
+
     wx.$toast = function (text, duration, icon) {
         wx.showToast({
             title: text ? text : '未完善的功能',
@@ -56,7 +59,7 @@ let store = new Store({
     },
     openPart: true
 })
-const loadash = require('./lib/lodash.min');
+// const loadash = require('./lib/lodash.min');
 
 Object.assign(global, {
     Array: Array,

@@ -1,0 +1,143 @@
+{
+  "carousels": {
+    "mainImgs": [
+      {
+        "url": "https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg"
+      }
+    ],
+    "sideImgs": [
+      {
+        "url": "https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg"
+      },
+      {
+        "url": "https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg"
+      },
+      {
+        "url": "https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg"
+      }
+    ],
+    "backImgs": [
+      {
+        "url": "https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg"
+      },
+      {
+        "url": "https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg"
+      },
+      {
+        "url": "https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg"
+      }
+    ],
+    "detailImgs": [
+      {
+        "url": "https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg"
+      },
+      {
+        "url": "https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg"
+      },
+      {
+        "url": "https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg"
+      }
+    ]
+  },
+  "labelList": {
+    "sex": {
+      "value": [
+        "1",
+        "2",
+        "0"
+      ],
+      "checked": [
+        "女",
+        "中性",
+        "男"
+      ]
+    },
+    "age": {
+      "checked": [
+        "幼童"
+      ],
+      "value": [
+        "0"
+      ]
+    },
+    "season": {
+      "value": "0",
+      "checked": "春"
+    },
+    "goods": {
+      "checked": "本店期货",
+      "value": "1"
+    },
+    "occasion": {
+      "checked": [
+        "居家舒适"
+      ],
+      "value": [
+        "3"
+      ]
+    },
+    "personality": {
+      "checked": "有点个性",
+      "value": "1"
+    },
+    "wearFrom": {
+      "checked": "卡通动漫",
+      "value": "1"
+    },
+    "popularArea": {
+      "checked": "中心城市",
+      "value": "1"
+    },
+    "temperament": {
+      "checked": [
+        "妩媚动人",
+        "沉稳老练",
+        "冷酷肃杀"
+      ],
+      "value": [
+        "1",
+        "2",
+        "4"
+      ]
+    },
+    "wearStyle": {
+      "checked": [
+        "森女",
+        "商务"
+      ],
+      "value": [
+        "1",
+        "2"
+      ]
+    }
+  },
+  "productList": [
+    {
+      "catalog": "T恤",
+      "catalogId": "1",
+      "item": [
+        {
+          "productId": "1"
+        },
+        {
+          "productId": "3"
+        },
+        {
+          "productId": "4"
+        }
+      ]
+    },
+    {
+      "catalog": "裙子",
+      "catalogId": "1",
+      "item": [
+        {
+          "productId": "4"
+        },
+        {
+          "productId": "5"
+        }
+      ]
+    }
+  ]
+}

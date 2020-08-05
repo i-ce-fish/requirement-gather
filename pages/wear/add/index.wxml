@@ -8,26 +8,27 @@
             <view>图片大小为3M以内</view>
             <view>模特可以有不同的动作</view>
 
-            <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable="{{true}}" max-count="1"/>
+            <van-uploader file-list="{{ carousels.mainImgs }}" bind:after-read="afterRead" deletable="{{true}}"
+                          max-count="1"/>
         </view>
 
     </card>
     <card title="上传侧面图">
         <view class="y-line-height-180 y-pt-20 y-color-gray">
             <view class="y-color-gray">辅图依次为穿法的侧图、背图和其他细节图</view>
-            <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable="{{true}}"/>
+            <van-uploader file-list="{{ carousels.sideImgs }}" bind:after-read="afterRead" deletable="{{true}}"/>
         </view>
     </card>
     <card title="上传背后图">
         <view class="y-line-height-180 y-pt-20 y-color-gray">
             <view class="y-color-gray">辅图依次为穿法的侧图、背图和其他细节图</view>
-            <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable="{{true}}"/>
+            <van-uploader file-list="{{ carousels.backImgs }}" bind:after-read="afterRead" deletable="{{true}}"/>
         </view>
     </card>
     <card title="上传配饰单品/细节图">
         <view class="y-line-height-180 y-pt-20 y-color-gray">
-            <view class="y-color-gray">辅图依次为穿法的侧图、背图和其他细节图</view>
-            <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable="{{true}}"/>
+            <view class="y-color-gray">可以是鞋包配围巾帽子等，也可以是穿法局部的特写。</view>
+            <van-uploader file-list="{{ carousels.detailImgs }}" bind:after-read="afterRead" deletable="{{true}}"/>
         </view>
     </card>
 
@@ -83,7 +84,7 @@
     <card padding="0">
 
         <van-collapse value="{{coll}}" bind:change="setDetail" data-prop="coll">
-            <view wx:for="{{wearList}}" wx:key="index">
+            <view wx:for="{{labelList}}" wx:key="index">
                 <van-collapse-item title="{{item.title}}" value="{{item.checked}}" name="{{index}}">
                     <select-list-add item="{{item}}"
                                      bindselected="select"
@@ -95,6 +96,7 @@
 
     <card>
         <view class="y-flex y-align-around">
+            <van-button type="primary">添加新的标签</van-button>
             <van-button type="primary">提交</van-button>
         </view>
     </card>

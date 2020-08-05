@@ -1,5 +1,5 @@
 // utils/filter.js
-function loginCheck(pageObj) {
+function permission(pageObj) {
     //for dev
     // return pageObj;
 
@@ -13,6 +13,9 @@ function loginCheck(pageObj) {
                 _onLoad.call(currentInstance, options);
 
 
+                //需要区分page和component
+
+
                 /**
                  *   todo 页面级权限控制
                  *  静态: 前端维护本地权限表
@@ -20,6 +23,8 @@ function loginCheck(pageObj) {
                  *
                  */
 
+
+                console.error('filter')
                 const route = getPageInstance().route
                 const role = {roleId: 1, roleName: 'admin'}
 
@@ -49,4 +54,4 @@ function getPageInstance() {
     return pages[pages.length - 1];
 }
 
-exports.loginCheck = loginCheck;
+exports.permission = permission;

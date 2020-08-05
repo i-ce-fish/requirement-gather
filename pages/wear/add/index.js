@@ -1,27 +1,49 @@
 const _ = require('../../../lib/lodash.min')
 Page({
     data: {
-        fileList: [],
-        wearList: {
+        carousels: {
+            mainImgs: [
+                {url: 'https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg'}
+            ],
+            sideImgs: [
+                {url: 'https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg'},
+                {url: 'https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg'},
+                {url: 'https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg'}
+
+            ],
+            backImgs: [
+                {url: 'https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg'},
+                {url: 'https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg'},
+                {url: 'https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg'}
+            ],
+            detailImgs: [
+                {url: 'https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg'},
+                {url: 'https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg'},
+                {url: 'https://www.uniqlo.cn/hmall/test/u0000000015348/main/first/561/1.jpg'}],
+        },
+
+        labelList: {
             sex: {
                 type: "checkbox",
                 title: "性别",
                 item: [
                     {
                         text: "男",
-                        value: 0
+                        value: '0'
                     },
                     {
                         text: "女",
-                        value: 1
+                        value: '1'
                     },
                     {
                         text: "中性",
-                        value: 2
+                        value: '2'
                     },
 
                 ],
-                unAddable: true
+                unAddable: true,
+                value: ['1', '2'],
+                checked: ['女', '中性']
 
             },
             age: {
@@ -39,7 +61,7 @@ Page({
                     {text: "60左右", value: "10"},
                     {text: "65以上", value: "11"}
                 ],
-                title: "适穿",
+                title: "适穿年龄",
                 type: 'checkbox'
 
 
@@ -49,19 +71,21 @@ Page({
                 type: "radio",
                 item: [
                     {text: '春', value: '0'},
-                    {text: '夏', value: '0'},
-                    {text: '秋', value: '0'},
-                    {text: '冬', value: '0'},
-                    {text: '全季', value: '0'}
-                ]
+                    {text: '夏', value: '1'},
+                    {text: '秋', value: '2'},
+                    {text: '冬', value: '3'},
+                    {text: '全季', value: '4'}
+                ],
+                value: '1',
+                checked: '春',
             },
             goods: {
                 title: '现货匹配',
                 type: 'radio',
                 item: [
                     {text: '本店现货', value: '0'},
-                    {text: '本店期货', value: '0'},
-                    {text: '云想现货', value: '0'}
+                    {text: '本店期货', value: '1'},
+                    {text: '云想现货', value: '2'}
                 ],
                 unAddable: true
             },
@@ -70,27 +94,24 @@ Page({
                 type: "checkbox",
                 item: [
                     {text: '正式商务', value: '0'},
-                    {text: '通勤上班', value: '0'},
-                    {text: '居家舒适', value: '0'},
-                    {text: '户外休闲', value: '0'},
-                    {text: '活力运动', value: '0'},
-                    {text: '性感夜店', value: '0'},
-                    {text: '礼服场合', value: '0'},
-                    {text: '旅游度假', value: '0'},
-                    {text: '其他场合', value: '0'}
+                    {text: '通勤上班', value: '2'},
+                    {text: '居家舒适', value: '3'},
+                    {text: '户外休闲', value: '4'},
+                    {text: '活力运动', value: '5'},
+                    {text: '性感夜店', value: '6'},
+                    {text: '礼服场合', value: '7'},
+                    {text: '旅游度假', value: '8'},
+                    {text: '其他场合', value: '9'}
                 ]
             },
             personality: {
                 item: [
-                    {text: "基本穿搭", value: 0},
-                    {text: "有点个性", value: 1},
-                    {text: "非常个性", value: 2},
+                    {text: "基本穿搭", value: '0'},
+                    {text: "有点个性", value: '1'},
+                    {text: "非常个性", value: '2'},
                 ],
                 title: "着装时尚度",
                 type: "radio",
-                step: '1',
-                min: "0",
-                max: "100",
                 unAddable: true
             },
             wearFrom: {
@@ -98,9 +119,9 @@ Page({
                 type: 'radio',
                 item: [
                     {text: '明星', value: '0'},
-                    {text: '卡通动漫', value: '0'},
-                    {text: '街拍达人', value: '0'},
-                    {text: '其他来源', value: '0'}
+                    {text: '卡通动漫', value: '1'},
+                    {text: '街拍达人', value: '2'},
+                    {text: '其他来源', value: '3'}
                 ]
             },
             popularArea: {
@@ -108,12 +129,12 @@ Page({
                 type: 'radio',
                 item: [
                     {text: '港台', value: '0'},
-                    {text: '中心城市', value: '0'},
-                    {text: '上海中学生', value: '0'},
-                    {text: '巴黎街头', value: '0'},
-                    {text: '娱乐圈', value: '0'},
-                    {text: '剑桥哈佛', value: '0'},
-                    {text: '日韩', value: '0'}
+                    {text: '中心城市', value: '1'},
+                    {text: '上海中学生', value: '2'},
+                    {text: '巴黎街头', value: '3'},
+                    {text: '娱乐圈', value: '4'},
+                    {text: '剑桥哈佛', value: '5'},
+                    {text: '日韩', value: '6'}
                 ]
             },
             temperament: {
@@ -121,22 +142,22 @@ Page({
                 type: 'checkbox',
                 item: [
                     {text: '阳光帅气', value: '0'},
-                    {text: '妩媚动人', value: '0'},
-                    {text: '沉稳老练', value: '0'},
-                    {text: '性感风骚', value: '0'},
-                    {text: '冷酷肃杀', value: '0'},
-                    {text: '浪漫多情', value: '0'},
-                    {text: '小清新', value: '0'},
-                    {text: '富贵大气', value: '0'},
-                    {text: '睿智聪慧', value: '0'},
-                    {text: '憨厚老实', value: '0'},
-                    {text: '年轻活力', value: '0'},
-                    {text: '健美有型', value: '0'},
-                    {text: '循规蹈矩', value: '0'},
-                    {text: '善良和蔼', value: '0'},
-                    {text: '清净寡欲', value: '0'},
-                    {text: '干练敏捷', value: '0'},
-                    {text: '超凡脱俗', value: '0'}
+                    {text: '妩媚动人', value: '1'},
+                    {text: '沉稳老练', value: '2'},
+                    {text: '性感风骚', value: '3'},
+                    {text: '冷酷肃杀', value: '4'},
+                    {text: '浪漫多情', value: '5'},
+                    {text: '小清新', value: '6'},
+                    {text: '富贵大气', value: '7'},
+                    {text: '睿智聪慧', value: '8'},
+                    {text: '憨厚老实', value: '9'},
+                    {text: '年轻活力', value: '10'},
+                    {text: '健美有型', value: '12'},
+                    {text: '循规蹈矩', value: '13'},
+                    {text: '善良和蔼', value: '14'},
+                    {text: '清净寡欲', value: '15'},
+                    {text: '干练敏捷', value: '16'},
+                    {text: '超凡脱俗', value: '17'}
                 ]
             },
             wearStyle: {
@@ -144,30 +165,21 @@ Page({
                 type: 'checkbox',
                 item: [
                     {text: '简约', value: '0'},
-                    {text: '森女', value: '0'},
-                    {text: '商务', value: '0'},
-                    {text: '少淑', value: '0'},
-                    {text: '呆萌', value: '0'},
-                    {text: '民族', value: '0'},
-                    {text: '学院', value: '0'},
-                    {text: '瑞丽', value: '0'},
-                    {text: '洛丽塔', value: '0'},
-                    {text: '军旅', value: '0'},
-                    {text: '轻奢', value: '0'},
+                    {text: '森女', value: '1'},
+                    {text: '商务', value: '2'},
+                    {text: '少淑', value: '3'},
+                    {text: '呆萌', value: '4'},
+                    {text: '民族', value: '5'},
+                    {text: '学院', value: '6'},
+                    {text: '瑞丽', value: '7'},
+                    {text: '洛丽塔', value: '8'},
+                    {text: '军旅', value: '9'},
+                    {text: '轻奢', value: '10'},
                 ]
             }
 
         },
-        //    扫码读取的图片
-        pro: {
-            catalog: 'T恤',
-            catalogId: '1',
-            name: '男经典纯棉圆领T恤',
-            //掉拍肩
-            price: "199.99",
-            inventory: '99',
-            styleId: '226250-70'
-        },
+
         //穿法相关单品数据格式
         productList: [
             {
@@ -228,10 +240,10 @@ Page({
     },
     onLoad: function (options) {
         //遍历设置prop属性, 折叠用
-        _.forEach(this.data.wearList, (o, key) => {
+        _.forEach(this.data.labelList, (o, key) => {
             o.prop = key
         })
-        this.setData({coll: _.map(this.data.wearList, 'prop')})
+        this.setData({coll: _.map(this.data.labelList, 'prop')})
 
     },
     setDetail(e) {
@@ -268,9 +280,11 @@ Page({
             return o === prop
         });
         // }
+        console.log(e.detail)
         this.setData({
             coll,
-            [`wearList.${prop}.checked`]: e.detail.checked
+            [`labelList.${prop}.checked`]: e.detail.checked,
+            [`labelList.${prop}.value`]: e.detail.value
         })
     },
 

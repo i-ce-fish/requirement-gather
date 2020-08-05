@@ -18,6 +18,7 @@ Component({
         }
     },
 
+    //核心思路: 此组件只做展示和数据预处理, 组件的控制(item.checked,  itme.value)由父组件完成
     properties: {
         item: {
             type: Object,
@@ -26,33 +27,33 @@ Component({
 
     },
     data: {
-        checked: '',
         showPopup: false
-
     },
     methods: {
-        setDetail(e) {
-            this.setData({
-                [e.currentTarget.dataset.prop]: e.detail
-            })
-
-        },
+        // setDetail(e) {
+        //     this.setData({
+        //         [e.currentTarget.dataset.prop]: e.detail
+        //     })
+        // },
         tapCheckbox(e) {
-            this.setDetail(e)
-            let checked = []
-            if (this.data.item.type === 'radio') {
-                checked.push(this.data.item.item[e.detail].text)
+            let checked
+            let value
+            let item = this.data.item;
+            if (item.type === 'radio') {
+                checked = item.item[e.detail].text
+                value = item.item[e.detail].value
             }
-            if (this.data.item.type === 'checkbox') {
+            if (item.type === 'checkbox') {
+                checked = []
+                value = []
+
                 e.detail.forEach((o) => {
-                    checked.push(this.data.item.item[o].text)
+                    checked.push(item.item[o].text)
+                    value.push(item.item[o].value)
                 })
             }
-            // this.setData({
-            //     checked
-            // })
             //触发选项内容与实际值
-            this.triggerEvent('selected', {checked, value: e.detail})
+            this.triggerEvent('selected', {checked, value})
 
         },
         showPopup() {
