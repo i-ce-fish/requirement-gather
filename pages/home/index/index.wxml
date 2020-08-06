@@ -26,22 +26,22 @@
     <card>
         <view class="y-flex y-align-around y-flex-wrap">
 
-            <van-button bindtap="go" data-url="/pages/member/search/index">会员查询</van-button>
-            <van-button bindtap="go" data-url="/pages/user/login/index/index">登录</van-button>
-            <van-button bindtap="go" data-url="/pages/user/login/phone/index">手机登录</van-button>
-            <!--        <van-button bindtap="go" data-url="/pages/member/register/index">会员注册</van-button>-->
-            <!--        <van-button bindtap="go" data-url="/pages/record/customer-record/index">顾客记录</van-button>-->
-            <!--        <van-button bindtap="go" data-url="/pages/record/feature/index">顾客特征目测</van-button>-->
-            <van-button bindtap="go" data-url="/pages/admin/employee/index">员工入职登记</van-button>
-            <van-button bindtap="go" data-url="/pages/my/index">我的</van-button>
-            <van-button bindtap="go" data-url="/pages/record/customer-info/index">顾客信息页</van-button>
-            <van-button bindtap="go" data-url="/pages/record/customer-list/index">顾客列表页</van-button>
-            <van-button bindtap="go" data-url="/pages/record/customer-goods/index">顾客商品信息</van-button>
-            <van-button bindtap="go" data-url="/pages/wear/add/index">添加穿法</van-button>
-            <van-button bindtap="go" data-url="/pages/record/customer-goods/index">顾客货品需求</van-button>
+            <van-button bindtap="go" data-url="member/search">会员查询</van-button>
+            <van-button bindtap="go" data-url="login">登录</van-button>
+            <van-button bindtap="go" data-url="login/phone">手机登录</van-button>
+            <!--        <van-button bindtap="go" data-url="member/register">会员注册</van-button>-->
+            <!--        <van-button bindtap="go" data-url="record/customer-record">顾客记录</van-button>-->
+            <!--        <van-button bindtap="go" data-url="record/feature">顾客特征目测</van-button>-->
+            <van-button bindtap="go" data-url="employee/add">员工入职登记</van-button>
+            <van-button bindtap="go" data-url="my/work">我的</van-button>
+            <van-button bindtap="go" data-url="record/customer-info">顾客信息页</van-button>
+            <van-button bindtap="go" data-url="record/customer-list">顾客列表页</van-button>
+            <van-button bindtap="go" data-url="record/customer-goods">顾客商品信息</van-button>
+            <van-button bindtap="go" data-url="wear/add">添加穿法</van-button>
+            <van-button bindtap="go" data-url="record/customer-goods">顾客货品需求</van-button>
             <!--测试表单-->
-            <van-button bindtap="go" data-url="/pages/test/form/add/index">form添加页</van-button>
-            <van-button bindtap="go" data-url="/pages/test/form/list/index">list列表页</van-button>
+            <van-button bindtap="go" data-url="test/form/add">form添加页</van-button>
+            <van-button bindtap="go" data-url="test/form/list">list列表页</van-button>
         </view>
     </card>
 </view>

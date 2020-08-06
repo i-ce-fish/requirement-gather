@@ -1,4 +1,5 @@
 // pages/my/user/main.js
+let app = getApp()
 Page({
 
   /**
@@ -63,13 +64,13 @@ Page({
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function () {
 
-  },
-  go:function(e){
-    wx.$go(e.currentTarget.dataset.url)
-  }
+    },
+    go: function (e) {
+        app.$router.push(e.currentTarget.dataset.url)
+    },
 })

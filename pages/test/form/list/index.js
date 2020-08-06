@@ -1,4 +1,5 @@
 const user = require('../../../../api/user')
+const app = getApp()
 Page({
     data: {
         list: []
@@ -17,11 +18,9 @@ Page({
             list
         })
     },
-    goAdd() {
-        wx.$go('/pages/test/form/add/index')
-    },
     go(e) {
         let dataset = e.currentTarget.dataset;
-        wx.$go(dataset.url, {id: dataset.id})
+        app.$router.push(dataset.url, {id: dataset.id})
+
     }
 });

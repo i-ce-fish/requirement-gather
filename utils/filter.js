@@ -1,4 +1,6 @@
 // utils/filter.js
+
+//AOP
 function permission(pageObj) {
     //for dev
     // return pageObj;
@@ -24,7 +26,6 @@ function permission(pageObj) {
                  */
 
 
-                console.error('filter')
                 const route = getPageInstance().route
                 const role = {roleId: 1, roleName: 'admin'}
 

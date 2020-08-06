@@ -1,12 +1,15 @@
 const user = require('../../../../api/user')
 const _ = require('../../../../lib/lodash.min')
-const form = require('../../../../utils/formValidation')
+const form = require('../../../../utils/form-validation')
+const app = getApp();
+
 Page({
     data: {
         user: {}
     },
     onLoad(e) {
-        this.setData({id: e.id})
+        // this.setData({id: app.$router.params.id})
+        this.get(app.$router.params.id)
 
     },
     onShow() {
@@ -15,7 +18,7 @@ Page({
         // 数组中索引最大的页面--当前页面
         // let currentPage = pages[pages.length - 1];
         // 打印出当前页面中的 options
-        this.get(this.data.id)
+        // this.get(this.data.id)
 
     },
     async get(id) {
@@ -33,7 +36,7 @@ Page({
 
     },
     async del() {
-        await user.del(this.data.id)
+        await user.del(app.$router.params.id)
         wx.$toast('删除成功', 700, 'success')
         setTimeout(() => {
             this.goList()
@@ -41,7 +44,7 @@ Page({
     },
 
     goList() {
-        wx.$go('/pages/test/form/list/index')
+        app.$router.push('test/form/list')
     },
     formSubmit(e) {
 
@@ -78,7 +81,7 @@ Page({
         //测试期间跳过校验
         checkRes = ''
         if (!checkRes) {
-            this.edit(this.data.id, e.detail.value)
+            this.edit(app.$router.params.id, e.detail.value)
         } else {
             wx.$toast(checkRes)
         }

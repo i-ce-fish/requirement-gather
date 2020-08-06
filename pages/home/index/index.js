@@ -1,6 +1,6 @@
 // pages/home/index/main.js
 
-import tool from "../../../utils/tool";
+import tool from "../../../utils/index";
 
 let app = getApp()
 const filter = require('../../../utils/filter');
@@ -53,7 +53,7 @@ Page(filter.permission({
         },
 
         go: function (e) {
-            wx.$go(e.currentTarget.dataset.url)
+            app.$router.push(e.currentTarget.dataset.url)
         },
         init() {
             wx.setNavigationBarTitle({

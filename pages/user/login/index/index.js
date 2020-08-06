@@ -2,7 +2,7 @@
 
 
 let user = require('../../../../api/user')
-let utils = require('../../../../utils/index')
+let utils = require('../../../../utils/wx-util')
 Page({
 
     /**

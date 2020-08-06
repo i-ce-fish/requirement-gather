@@ -1,4 +1,4 @@
-const _ = require('../../lib/lodash.min');
+const _ = require('../../../lib/lodash.min');
 
 Page({
     data: {

@@ -1,6 +1,6 @@
 //app.js
 import Store from './utils/store.js';
-import router from './utils/router'
+import MiniRouter from './route/router'
 
 //lodash的特殊配置
 Object.assign(global, {
@@ -37,8 +37,7 @@ wx.$go = function (url, data) {
     }
     str = str.slice(0, str.length - 1)
     wx.navigateTo({
-        url: url
-            + "?" + str
+        url: url + "?" + str
     })
 },
 
@@ -80,38 +79,30 @@ Object.assign(global, {
 App({
     store: store,
     onLaunch: function (options) {
-        //todo remove
-        // 展示本地存储能力
-        var logs = wx.getStorageSync('logs') || []
-        logs.unshift(Date.now())
-        wx.setStorageSync('logs', logs)
+        //创建路由
+        this.$router = new MiniRouter()
 
-        // 登录
-        wx.login({
-            success: res => {
-                // 发送 res.code 到后台换取 openId, sessionKey, unionId
-            }
-        })
+
         // 获取用户信息
-        wx.getSetting({
-            success: res => {
-                if (res.authSetting['scope.userInfo']) {
-                    // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-                    wx.getUserInfo({
-                        success: res => {
-                            // 可以将 res 发送给后台解码出 unionId
-                            this.globalData.userInfo = res.userInfo
-
-                            // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-                            // 所以此处加入 callback 以防止这种情况
-                            if (this.userInfoReadyCallback) {
-                                this.userInfoReadyCallback(res)
-                            }
-                        }
-                    })
-                }
-            }
-        })
+        // wx.getSetting({
+        //     success: res => {
+        //         if (res.authSetting['scope.userInfo']) {
+        //             // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+        //             wx.getUserInfo({
+        //                 success: res => {
+        //                     // 可以将 res 发送给后台解码出 unionId
+        //                     this.globalData.userInfo = res.userInfo
+        //
+        //                     // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+        //                     // 所以此处加入 callback 以防止这种情况
+        //                     if (this.userInfoReadyCallback) {
+        //                         this.userInfoReadyCallback(res)
+        //                     }
+        //                 }
+        //             })
+        //         }
+        //     }
+        // })
     },
     onLoad() {
     },
@@ -130,17 +121,6 @@ App({
         shopTitle: '永康美斯特邦威 会员内购'
     },
 
-// 通过app调用的全局方法, 获取某个节点的坐标信息
-    getNodeViewport(selector) {
+//
 
-        const query = wx.createSelectorQuery()
-        query.select(selector).boundingClientRect()
-        //返回一个promise函数
-        return new Promise((resolve, reject) => {
-            query.exec(function (res) {
-                // res[0].top       // #the-id节点的上边界坐标
-                resolve(res)
-            })
-        })
-    }
 })

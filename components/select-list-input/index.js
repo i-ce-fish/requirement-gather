@@ -1,5 +1,5 @@
 const utils = require('../../utils/index')
-import tool from "../../utils/tool";
+import tool from "../../utils/index";
 
 Component({
     options: {addGlobalClass: true},

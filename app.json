@@ -7,14 +7,14 @@
     "pages/test/form/list/index",
     "pages/test/form/edit/index",
     "pages/test/form/add/index",
-    "pages/admin/employee/index",
+    "pages/employee/add/index",
     "pages/record/customer-detail/index",
     "pages/record/customer-list/index",
-    "pages/my/index",
+    "pages/my/work/index",
     "pages/record/feature/index",
     "pages/record/customer-record/index",
     "pages/member/search/index",
-    "pages/user/my/index",
+    "pages/my/index/index",
     "pages/user/login/index/index",
     "pages/user/login/phone/index"
   ],
@@ -32,15 +32,15 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/user/my/index",
+        "pagePath": "pages/my/index/index",
         "text": "分类"
       },
       {
-        "pagePath": "pages/user/my/index",
+        "pagePath": "pages/my/index/index",
         "text": "购物车"
       },
       {
-        "pagePath": "pages/user/my/index",
+        "pagePath": "pages/my/index/index",
         "text": "我的"
       }
     ]
