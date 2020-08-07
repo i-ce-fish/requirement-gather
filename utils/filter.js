@@ -1,5 +1,13 @@
 // utils/filter.js
 
+
+/**
+ * 废弃, 路由控制权限
+ *
+ * Page增加代理
+ * @param pageObj
+ * @returns {{onLoad}|*}
+ */
 //AOP
 function permission(pageObj) {
     //for dev
@@ -13,30 +21,6 @@ function permission(pageObj) {
                 // 获取当前页面
                 let currentInstance = getPageInstance();
                 _onLoad.call(currentInstance, options);
-
-
-                //需要区分page和component
-
-
-                /**
-                 *   todo 页面级权限控制
-                 *  静态: 前端维护本地权限表
-                 *  动态: 后端维护
-                 *
-                 */
-
-
-                const route = getPageInstance().route
-                const role = {roleId: 1, roleName: 'admin'}
-
-                const permission = [
-                    {
-                        page: 'pages/user/login/index/index',
-                        roleId: [1, 2, 3, 4, 5]
-                    }
-                ]
-                //    route.getRoute.getRoleId
-
 
             } else {
                 //跳转到登录页

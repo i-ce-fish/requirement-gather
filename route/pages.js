@@ -1,70 +1,65 @@
 export default [
     //尽量添加注释
 
+    /**
+     * 没有role 默认不需要权限
+     * admin: 后台管理
+     * manager: 店长
+     * guider: 导购
+     */
     //首页
     {
         url: 'pages/home/index/index',
         name: 'home',
-        role: [1, 2, 3, 47]
+        role: ['admin', 'manager', 'guider']
     },
     //我的
     {
         url: "pages/user/my/index",
         name: 'my',
-        role: [1, 2, 3, 4]
-
-
+        role: ['admin', 'manager', 'guider']
     },
     //我的工作
     {
         url: "pages/my/work/index",
         name: 'my/work',
-        role: [1, 2, 3, 4]
-
+        role: ['admin', 'manager', 'guider']
     },
     //穿法/添加
     {
         url: "pages/wear/add/index",
         name: 'wear/add',
-        role: [1, 2, 3, 4]
-
+        role: ['admin', 'manager', 'guider']
     },
     //登录页
     {
         url: "pages/user/login/index/index",
         name: 'login',
-        role: [1, 2, 3, 4]
-
+        role: ['admin', 'manager', 'guider']
     },
     //手机登录页
     {
         url: "pages/user/login/phone/index",
         name: 'login/phone',
-        role: [1, 2, 3, 4]
-
+        role: ['admin', 'manager', 'guider']
     },
     //会员查询页
     {
         url: "pages/member/search/index",
         name: 'member/search',
-        role: [1, 2, 3, 4]
-
+        role: ['admin', 'manager', 'guider']
     },
 
     //员工添加页
     {
         url: "pages/employee/add/index",
         name: 'employee/add',
-        role: [1, 2, 3, 4]
-
-
+        role: ['admin', 'manager', 'guider']
     },
     //记录/顾客信息
     {
         url: "pages/record/customer-info/index",
         name: 'record/customer-info',
-        role: [1, 2, 3, 4]
-
     },
     //记录/顾客商品
     {

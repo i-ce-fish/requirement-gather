@@ -31,21 +31,19 @@ function _getPages_() {
  *
  * 判断当前用户是否包含页面权限
  *
- * todo 能否用AOP优化?
  * @param  ./route/pages
- * @returns {boolean}
+ * @returns {boolean}  true:有权限 , false 没权限, 默认为无权限
  */
 function permission(page) {
-//    todo get role id from wx.getStrage
-    let role = 1
-
-    //todo page.role  undefine
-    // if (page.role && page.role.indexOf(role) > -1) {
-    //     return true;
-    // } else {
-    //     return false;
-    // }
-
+    //todo
+    // let role = wx.getStorageSync('role')
+    let role = 'admin';
+    if (page.role && page.role.indexOf(role) > -1) {
+        return true;
+    } else {
+        wx.$toast('您没有权限')
+        return false
+    }
 }
 
 export default class Router {
@@ -96,13 +94,16 @@ export default class Router {
 
         const page = JSON.parse(JSON.stringify(this.getPageFor(name)))
 
+        //未登录
+        if (!wx.getStorageSync('token')) {
+            this.push('login')
+        }
         //没有权限
-        if (!permission()) {
+        if (!permission(page)) {
             return
         }
 
-        console.error(page);
-
+        //找不到页面
         if (!page) {
             throw Error(`!! Not found page ->：[${name}] !!`)
             return
@@ -155,6 +156,8 @@ export default class Router {
      * @param params
      */
     reLaunch(name, params = null, type = 'params') {
+
+
         return this.push(name, params, {fn: symbol.reLaunch}, type)
     }
 
@@ -164,6 +167,7 @@ export default class Router {
      * @param params
      */
     redirect(name, params = null, type = 'params') {
+
         return this.push(name, params, {fn: symbol.redirect}, type)
     }
 
@@ -173,6 +177,8 @@ export default class Router {
      * @returns {*}
      */
     switchTab(name) {
+
+
         return this.push(name, null, {fn: symbol.switchTab})
     }
 
