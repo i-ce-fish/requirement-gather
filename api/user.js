@@ -1,64 +1,64 @@
-let rq = require('../utils/request')
+import request from "../utils/request";
 
-function login(data) {
-    return rq.request({
+export function login(data) {
+    return request({
         url: 'auth/login',
         method: 'POST',
         data: data
     })
 }
 
-//test add
-function add(data) {
-    return rq.request({
-        url: 'users',
-        method: 'POST',
-        data: data
-    })
-}
 
-
-function getList(data) {
-    return rq.request({
-        url: 'users',
-        method: 'get',
-        data: data,
-        contentType: 'json'
-    })
-}
-
-function get(id) {
-    return rq.request({
-        url: 'users/' + id,
-        method: 'get'
-    })
-}
-
-function edit(id, data) {
-    return rq.request({
-        url: 'users/' + id,
-        method: 'put',
-        data
-    })
-}
-
-function del(id) {
-    return rq.request({
-        url: 'users/' + id,
-        method: 'DELETE'
-    })
-
-}
-
-function wxLogin(data) {
-    return rq.request({
+export function wxLogin(data) {
+    return request({
         url: "auth/signin",
         method: 'POST',
         data
     })
 }
 
-module.exports = {
-    login, wxLogin,
-    get, getList, add, edit, del
+/**
+ * CRUD API DEMO
+ * @param data
+ * @returns {Promise<unknown>}
+ */
+export function getUsers(data) {
+    return request({
+        url: "users",
+        method: 'GET',
+        contentType: 'json',
+        data
+    })
 }
+
+export function getUser(id) {
+    return request({
+        url: "users/" + id,
+        method: 'GET'
+    })
+}
+
+export function addUser(data) {
+    return request({
+        url: "users",
+        method: 'POST',
+        data
+    })
+
+}
+
+export function putUser(data) {
+    return request({
+        url: "users",
+        method: 'PUT',
+        data
+    })
+}
+
+export function delUser(id) {
+    return request({
+        url: "users/" + id,
+        method: 'DELETE'
+    })
+}
+

@@ -1,6 +1,7 @@
-const user = require('../../../../api/user')
-const _ = require('../../../../lib/lodash.min')
-const form = require('../../../../utils/form-validation')
+import _ from '../../../../utils/lodash.min'
+import {delUser, putUser} from "../../../../api/user";
+import {validation} from "../../../../utils/form-validation";
+
 const app = getApp();
 
 Page({
@@ -28,7 +29,7 @@ Page({
         })
     },
     async edit(id, data) {
-        await user.edit(id, data)
+        await putUser(id, data)
         wx.$toast('修改成功', 700, 'success')
         setTimeout(() => {
             this.goList()
@@ -36,7 +37,7 @@ Page({
 
     },
     async del() {
-        await user.del(app.$router.params.id)
+        await delUser(app.$router.params.id)
         wx.$toast('删除成功', 700, 'success')
         setTimeout(() => {
             this.goList()
@@ -76,7 +77,7 @@ Page({
                 msg: ["请输入区间数字", "请输入0-1之间的数字"]
             }];
 
-        let checkRes = form.validation(e.detail.value, rules);
+        let checkRes = validation(e.detail.value, rules);
 
         //测试期间跳过校验
         checkRes = ''

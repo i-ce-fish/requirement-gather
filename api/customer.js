@@ -1,12 +1,18 @@
-let rq = require('../utils/request')
+import request from "../utils/request";
 
-function get(id) {
-    return rq.request({
+export function getCustomer(id) {
+    return request({
         url: 'customers/' + id,
         method: 'GET'
     })
 }
 
-module.exports = {
-    get
+export function getCustomers(data) {
+    return request({
+        url: 'customers',
+        method: 'GET',
+        contentType: 'json',
+        data
+    })
 }
+

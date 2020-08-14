@@ -1,7 +1,9 @@
 // pages/user/login/main.js
 
 
-let user = require('../../../../api/user')
+import {login} from "../../../../api/user";
+
+let app = getApp()
 
 Page({
 
@@ -77,7 +79,7 @@ Page({
         //todo
         //登录接口需要单独设计content-type，后期不需要这种登录方式
         // 'Content-Type': 'application/json',
-        const res = await user.login(this.data.userForm)
+        const res = await login(this.data.userForm)
         wx.setStorageSync('token', res.token),
             // globalData.userinfo = "test info"
             this.goHome()

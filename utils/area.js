@@ -1,4 +1,4 @@
-module.exports.area = {
+const area = {
     province_list: {
         110000: '北京市',
         120000: '天津市',
@@ -4038,6 +4038,7 @@ module.exports.area = {
         820101: '澳门半岛',
         820201: '离岛',
     },
-};
+}
+export default area;
 
 

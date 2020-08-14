@@ -2,7 +2,6 @@ export default [
     //尽量添加注释
 
     /**
-     * 没有role 默认不需要权限
      * admin: 后台管理
      * manager: 店长
      * guider: 导购
@@ -60,41 +59,51 @@ export default [
     {
         url: "pages/record/customer-info/index",
         name: 'record/customer-info',
+
+        role: ['admin', 'manager', 'guider']
     },
     //记录/顾客商品
     {
         url: "pages/record/customer-goods/index",
-        name: 'record/customer-goods'
+        name: 'record/customer-goods',
+        role: ['admin', 'manager', 'guider']
     },
     //记录/顾客详情
     {
         url: "pages/record/customer-detail/index",
-        name: 'record/customer-detail'
+        name: 'record/customer-detail',
+        role: ['admin', 'manager', 'guider']
     },
     //记录/列表
     {
         url: "pages/record/customer-list/index",
-        name: 'record/customer-list'
+        name: 'record/customer-list',
+        role: ['admin', 'manager', 'guider']
     },
     //记录/
     {
         url: "pages/record/feature/index",
-        name: 'record/feature'
+        name: 'record/feature',
+        role: ['admin', 'manager', 'guider']
     },
     //记录/顾客?
     {
         url: "pages/record/customer-record/index",
-        name: 'record/customer-record'
+        name: 'record/customer-record',
+        role: ['admin', 'manager', 'guider']
     },
     //接口测试
     {
         url: "pages/test/form/list/index",
-        name: 'test/form/list'
+        name: 'test/form/list',
+        role: ['admin', 'manager', 'guider']
     }, {
         url: "pages/test/form/edit/index",
-        name: 'test/form/edit'
+        name: 'test/form/edit',
+        role: ['admin', 'manager', 'guider']
     }, {
         url: "pages/test/form/add/index",
-        name: 'test/form/add'
+        name: 'test/form/add',
+        role: ['admin', 'manager', 'guider']
     }
 ]

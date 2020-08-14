@@ -1,4 +1,5 @@
-const user = require('../../../../api/user')
+import {getUsers} from "../../../../api/user";
+
 const app = getApp()
 Page({
     data: {
@@ -13,7 +14,7 @@ Page({
         this.getList()
     },
     async getList() {
-        const {list} = await user.getList()
+        const {list} = await getUsers()
         this.setData({
             list
         })
@@ -21,6 +22,5 @@ Page({
     go(e) {
         let dataset = e.currentTarget.dataset;
         app.$router.push(dataset.url, {id: dataset.id})
-
     }
 });

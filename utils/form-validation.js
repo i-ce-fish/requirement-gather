@@ -7,111 +7,115 @@
  * @version 1.3.1
  **/
 
-const form = {
-    //当出现错误时返回错误消息，否则返回空即为验证通过
-    /*
-     formData:Object 表单对象。{key:value,key:value},key==rules.name
-     rules: Array [{name:name,rule:[],msg:[]},{name:name,rule:[],msg:[]}]
-            name:name 属性=> 元素的名称
-            rule:字符串数组 ["required","isMobile","isEmail","isCarNo","isIdCard","isAmount","isNum","isChinese","isEnglish",isEnAndNo","isSpecial","isEmoji",""isDate","isUrl","isSame:key","range:[1,9]","minLength:9","maxLength:Number"]
-            msg:数组 []。 与数组 rule 长度相同,对应的错误提示信息
-    */
-    validation: function (formData, rules) {
-        for (let item of rules) {
-            let key = item.name;
-            let rule = item.rule;
-            let msgArr = item.msg;
-            if (!key || !rule || rule.length === 0 || !msgArr || msgArr.length === 0) {
+//当出现错误时返回错误消息，否则返回空即为验证通过
+/*
+ formData:Object 表单对象。{key:value,key:value},key==rules.name
+ rules: Array [{name:name,rule:[],msg:[]},{name:name,rule:[],msg:[]}]
+        name:name 属性=> 元素的名称
+        rule:字符串数组 ["required","isMobile","isEmail","isCarNo","isIdCard","isAmount","isNum","isChinese","isEnglish",isEnAndNo","isSpecial","isEmoji",""isDate","isUrl","isSame:key","range:[1,9]","minLength:9","maxLength:Number"]
+        msg:数组 []。 与数组 rule 长度相同,对应的错误提示信息
+*/
+function validation(formData, rules) {
+    for (let item of rules) {
+        let key = item.name;
+        let rule = item.rule;
+        let msgArr = item.msg;
+        if (!key || !rule || rule.length === 0 || !msgArr || msgArr.length === 0) {
+            continue;
+        }
+        for (let i = 0, length = rule.length; i < length; i++) {
+            let ruleItem = rule[i];
+            let msg = msgArr[i];
+            if (!ruleItem || !msg) {
                 continue;
             }
-            for (let i = 0, length = rule.length; i < length; i++) {
-                let ruleItem = rule[i];
-                let msg = msgArr[i];
-                if (!ruleItem || !msg) {
-                    continue;
-                }
-                //数据处理
-                let value = null;
-                if (~ruleItem.indexOf(":")) {
-                    let temp = ruleItem.split(":");
-                    ruleItem = temp[0];
-                    value = temp[1];
-                }
-                let isError = false;
-                switch (ruleItem) {
-                    case "required":
-                        isError = form._isNullOrEmpty(formData[key]);
-                        break;
-                    case "isMobile":
-                        isError = !form._isMobile(formData[key]);
-                        break;
-                    case "isEmail":
-                        isError = !form._isEmail(formData[key]);
-                        break;
-                    case "isCarNo":
-                        isError = !form._isCarNo(formData[key]);
-                        break;
-                    case "isIdCard":
-                        isError = !form._isIdCard(formData[key]);
-                        break;
-                    case "isAmount":
-                        isError = !form._isAmount(formData[key]);
-                        break;
-                    case "isNum":
-                        isError = !form._isNum(formData[key]);
-                        break;
-                    case "isChinese":
-                        isError = !form._isChinese(formData[key]);
-                        break;
-                    case "isEnglish":
-                        isError = !form._isEnglish(formData[key]);
-                        break;
-                    case "isEnAndNo":
-                        isError = !form._isEnAndNo(formData[key]);
-                        break;
-                    case "isSpecial":
-                        isError = !form._isSpecial(formData[key]);
-                        break;
-                    case "isEmoji":
-                        isError = !form._isEmoji(formData[key]);
-                        break;
-                    case "isDate":
-                        isError = !form._isDate(formData[key]);
-                        break;
-                    case "isUrl":
-                        isError = !form._isUrl(formData[key]);
-                        break;
-                    case "isSame":
-                        isError = !form._isSame(formData[key], formData[value]);
-                        break;
-                    case "range":
-                        let range = null;
-                        try {
-                            range = JSON.parse(value);
-                            if (range.length <= 1) {
-                                throw new Error("range值传入有误！")
-                            }
-                        } catch (e) {
-                            return "range值传入有误！"
+            //数据处理
+            let value = null;
+            if (~ruleItem.indexOf(":")) {
+                let temp = ruleItem.split(":");
+                ruleItem = temp[0];
+                value = temp[1];
+            }
+            let isError = false;
+            switch (ruleItem) {
+                case "required":
+                    isError = form._isNullOrEmpty(formData[key]);
+                    break;
+                case "isMobile":
+                    isError = !form._isMobile(formData[key]);
+                    break;
+                case "isEmail":
+                    isError = !form._isEmail(formData[key]);
+                    break;
+                case "isCarNo":
+                    isError = !form._isCarNo(formData[key]);
+                    break;
+                case "isIdCard":
+                    isError = !form._isIdCard(formData[key]);
+                    break;
+                case "isAmount":
+                    isError = !form._isAmount(formData[key]);
+                    break;
+                case "isNum":
+                    isError = !form._isNum(formData[key]);
+                    break;
+                case "isChinese":
+                    isError = !form._isChinese(formData[key]);
+                    break;
+                case "isEnglish":
+                    isError = !form._isEnglish(formData[key]);
+                    break;
+                case "isEnAndNo":
+                    isError = !form._isEnAndNo(formData[key]);
+                    break;
+                case "isSpecial":
+                    isError = !form._isSpecial(formData[key]);
+                    break;
+                case "isEmoji":
+                    isError = !form._isEmoji(formData[key]);
+                    break;
+                case "isDate":
+                    isError = !form._isDate(formData[key]);
+                    break;
+                case "isUrl":
+                    isError = !form._isUrl(formData[key]);
+                    break;
+                case "isSame":
+                    isError = !form._isSame(formData[key], formData[value]);
+                    break;
+                case "range":
+                    let range = null;
+                    try {
+                        range = JSON.parse(value);
+                        if (range.length <= 1) {
+                            throw new Error("range值传入有误！")
                         }
-                        isError = !form._isRange(formData[key], range[0], range[1])
-                        break;
-                    case "minLength":
-                        isError = !form._minLength(formData[key], value)
-                        break;
-                    case "maxLength":
-                        isError = !form._maxLength(formData[key], value)
-                        break;
-                    default:
-                        break;
-                }
-                if (isError) {
-                    return msg;
-                }
+                    } catch (e) {
+                        return "range值传入有误！"
+                    }
+                    isError = !form._isRange(formData[key], range[0], range[1])
+                    break;
+                case "minLength":
+                    isError = !form._minLength(formData[key], value)
+                    break;
+                case "maxLength":
+                    isError = !form._maxLength(formData[key], value)
+                    break;
+                default:
+                    break;
+            }
+            if (isError) {
+                return msg;
             }
         }
-        return "";
-    },
+    }
+    return "";
+}
+
+
+const form = {
+
+
     _isNullOrEmpty: function (value) {
         return (value === null || value === '' || value === undefined) ? true : false;
     },
@@ -253,6 +257,6 @@ const form = {
         return value.length <= Number(max)
     }
 };
-module.exports = {
-    validation: form.validation
-};
+export {
+    validation
+}

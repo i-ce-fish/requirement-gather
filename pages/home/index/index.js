@@ -1,6 +1,5 @@
 // pages/home/index/main.js
 
-import tool from "../../../utils/index";
 
 let app = getApp()
 

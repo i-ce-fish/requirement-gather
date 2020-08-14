@@ -1,8 +1,10 @@
 // pages/user/login/main.js
 
 
-let user = require('../../../../api/user')
-let utils = require('../../../../utils/wx-util')
+import {login, wxLogin} from "../../../../api/user";
+import {px2rpx} from "../../../../utils/wx-util";
+
+let app = getApp()
 Page({
 
     /**
@@ -81,7 +83,7 @@ Page({
         //todo
         //登录接口需要单独设计content-type，后期不需要这种登录方式
         // 'Content-Type': 'application/json',
-        const res = await user.login(this.data.userForm)
+        const res = await login(this.data.userForm)
         wx.setStorageSync('token', res.token),
             // globalData.userinfo = "test info"
             this.goHome()
@@ -94,7 +96,7 @@ Page({
     },
     init() {
         // card高度为整个视口
-        let cardHeight = utils.px2rpx(wx.getSystemInfoSync().windowHeight) - 200
+        let cardHeight = px2rpx(wx.getSystemInfoSync().windowHeight) - 200
         this.setData({
             cardHeight: cardHeight + 'rpx'
         })
@@ -104,7 +106,7 @@ Page({
         wx.login({
             success(res) {
                 console.log(res)
-                user.wxLogin({code: res.code}).then(
+                wxLogin({code: res.code}).then(
                     res => {
                         wx.$toast(res)
                     }

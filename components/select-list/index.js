@@ -1,5 +1,4 @@
-const utils = require('../../utils/index')
-import tool from "../../utils/index";
+import {formatTime, throttle} from "../../utils/util";
 
 Component({
     options: {addGlobalClass: true},
@@ -66,7 +65,7 @@ Component({
             this.triggerEvent('selected', {checked, value})
         },
         //过频导致性能问题, 太慢会有并发错误
-        slidering: tool.throttle(function (e) {
+        slidering: throttle(function (e) {
             let item = this.data.item;
             let value = e[0].detail.value;
             //考虑起点不为0的情况
@@ -108,7 +107,7 @@ Component({
         confirmDatetime(e) {
             this.closeDatetime()
             //格式化时间戳
-            let datetime = utils.formatTime(new Date(e.detail));
+            let datetime = formatTime(new Date(e.detail));
             this.triggerEvent('selected', {checked: datetime, value: e.detail})
             this.setData({
                 checked: datetime

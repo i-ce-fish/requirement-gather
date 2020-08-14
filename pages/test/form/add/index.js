@@ -1,6 +1,6 @@
-const user = require('../../../../api/user')
-const _ = require('../../../../lib/lodash.min')
-const form = require('../../../../utils/form-validation')
+import _ from '../../../../utils/lodash.min'
+import {validation} from "../../../../utils/form-validation";
+
 const app = getApp()
 Page({
     data: {
@@ -9,7 +9,7 @@ Page({
     },
 
     async add(data) {
-        await user.add(data)
+        await addUser(data)
         wx.$toast('添加成功', 700, 'success')
         setTimeout(
             () => {
@@ -47,7 +47,7 @@ Page({
                 msg: ["请输入区间数字", "请输入0-1之间的数字"]
             }];
 
-        let checkRes = form.validation(e.detail.value, rules);
+        let checkRes = validation(e.detail.value, rules);
 
         if (!checkRes) {
             this.add(e.detail.value)

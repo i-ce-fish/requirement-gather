@@ -20,7 +20,7 @@ function request(req) {
             url: ServerIP + req.url,
             data: req.data,
             method: req.method,
-            timeout: 10000,
+            timeout: 5000,
             //这几项必须设置
             header: {
                 'Accept': 'application/json',
@@ -40,10 +40,17 @@ function request(req) {
             success: function (res) {
 
                 console.warn('请求结果', res);
-                if (res.statusCode === 200 && res.data.code === 200) {
-                    resolve(res.data.data);
-                } else {
-                    console.warn("返回码校验失败", res.data)
+
+                switch (res.data.code) {
+                    case 200:
+                        resolve(res.data.data);
+                        break;
+                    //    服务器的token已过期/登录失效/未登录
+                    case 500:
+                        getApp().$router.push('user/login/index')
+                        break;
+                    default:
+                        console.warn("返回码校验失败", res.data);
                 }
             },
             fail: function (err) {
@@ -64,4 +71,6 @@ function request(req) {
 }
 
 
-exports.request = request
+// exports.request = request
+
+export default request
