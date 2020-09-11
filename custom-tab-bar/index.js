@@ -14,14 +14,16 @@ Component({
         onChange(e) {
             // event.detail 的值为当前选中项的索引
             const map = new Map()
-                .set(0, '/pages/home/index/index')
-                .set(1, "/pages/user/my/index")
-                .set(2, "/pages/user/my/index")
-                .set(3, "/pages/user/my/index")
+                .set(0, 'home')
+                .set(1, "my")
+                .set(2, "my")
+                .set(3, "my")
 
-            wx.switchTab({
-                url: map.get(e.detail)
-            })
+            getApp().$router.switchTab(map.get(e.detail))
+
+            // wx.switchTab({
+            //     url: map.get(e.detail)
+            // })
         },
         onShow() {
         }

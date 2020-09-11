@@ -58,7 +58,6 @@ let store = new Store({
     },
     openPart: true
 })
-// const loadash = require('./lib/lodash.min');
 
 Object.assign(global, {
     Array: Array,

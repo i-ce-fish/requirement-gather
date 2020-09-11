@@ -14,7 +14,7 @@ export default [
     },
     //我的
     {
-        url: "pages/user/my/index",
+        url: "pages/my/index/index",
         name: 'my',
         role: ['admin', 'manager', 'guider']
     },
@@ -53,7 +53,7 @@ export default [
     {
         url: "pages/employee/add/index",
         name: 'employee/add',
-        role: ['admin', 'manager', 'guider']
+        role: ['admin', 'manager']
     },
     //记录/顾客信息
     {

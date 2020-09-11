@@ -85,18 +85,18 @@ export default class Router {
     /******** Public ********/
 
     /**
-     * 保留当前页面，跳转到应用内的某个页面。但是不能跳到 tabbar 页面
+     * 保留当前页面，跳转到应用内的某个页面。但是不能跳到 {tabbar} 页面
      * @param name
      * @param params
      * @returns {*}
      */
     push(name, params = null, type = 'params') {
-
         const page = JSON.parse(JSON.stringify(this.getPageFor(name)))
 
-        //未登录
+        //未登录, 未登录页面无需token
         if (!wx.getStorageSync('token')) {
-            this.push('login')
+            // this.push('login')        // 未登录时这个会无限循环!
+            wx.navigateTo({url: 'pages/user/login/index/index'})
         }
         //没有权限
         if (!permission(page)) {
